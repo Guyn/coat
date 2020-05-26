@@ -124,11 +124,15 @@ code {
 	border-radius: var(--border-radius);
 	padding: calc(var(--padding) / 4);
 	color: var(--code-color);
-	max-width: 100%; 
-	overflow-x: auto;
+	max-width: calc(100% - (var(--padding) * 2));
 }
 pre > code {
 	padding: 2em;
+}
+pre {
+	width: 100%;
+	overflow-x: auto;
+	margin-left: calc(var(--padding) * -1);
 }
 
 /*
