@@ -1,0 +1,38 @@
+{
+	"name": "@guyn/coat",
+	"version": "1.0.0",
+	"description": "Let your HTML put on a coat",
+	"main": "index.js",
+	"scripts": {
+		"test": "npm run test",
+		"build": "sass src/theme:theme",
+		"dev": "sass src/theme:theme --watch",
+		"stylelint": "stylelint 'src/*.scss' 'src/**/*.scss'",
+		"stylelint:fix": "stylelint 'src/*.scss' 'src/**/*.scss' --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Guyn/coat.git"
+	},
+	"keywords": [
+		"coat",
+		"html",
+		"css",
+		"styling"
+	],
+	"author": "Sil van Diepen",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Guyn/coat/issues"
+	},
+	"homepage": "https://github.com/Guyn/coat#readme",
+	"dependencies": {
+		"sass": "^1.26.5"
+	},
+	"devDependencies": {
+		"@guyn/color": "0.0.2",
+		"stylelint": "^13.5.0",
+		"stylelint-logical-order": "0.0.8",
+		"stylelint-order": "^4.0.0"
+	}
+}

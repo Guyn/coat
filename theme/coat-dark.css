@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+:root {
+  /* 
+  	Base
+  */
+  --coat-padding: 2rem;
+  --coat-transition-time: 0.3s;
+  --coat-transition-bezier: ease-in-out;
+  --coat-transition: var(--coat-transition-time) var(--coat-transition-bezier);
+  --coat-max-width: 960px;
+  --coat-border-radius: 0.25em;
+  --coat-border-color: var(--coat-color-foreground);
+  --coat-border-width: 1px;
+  /* 
+  	Fonts
+  */
+  --coat-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  	Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --coat-heading-step: 0.5;
+  --coat-heading-font-family: var(--coat-font-family);
+  --coat-font-color: var(--coat-color-foreground);
+  /* 
+  	Code
+  */
+  --coat-code-font: "Courier New", Courier, monospace;
+  --coat-code-font-color: var(--coat-color-foreground);
+  --coat-code-background: var(--coat-color-primary);
+}
+
+/*
+    Settings
+*/
+:root {
+  /* 
+  	Colors
+  */
+  --coat-color-primary: #0b6b97;
+  --coat-color-secondary: #410d4c;
+  --coat-color-foreground: rgba(30, 30, 30, 1);
+  --coat-color-background: rgba(245, 245, 245, 1);
+  /* 
+  	Base
+  */
+  --coat-background-color: var(--coat-color-foreground);
+  --coat-content-background-color: rgba(20, 20, 20, 1);
+  /* 
+  	Fonts
+  */
+  --coat-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  	Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --coat-font-color: var(--coat-color-background);
+  /* 
+  	Code
+  */
+  --coat-code-font: "IBM Plex Mono", "Courier New", Courier, monospace;
+  --coat-code-font-color: var(--coat-color-background);
+  /*
+  	Table
+  */
+  --coat-table-background-color: black;
+  --coat-table-border-color: var(--coat-content-background-color);
+  --coat-table-font-color: white;
+}
+
+/*
+    Html & Body
+*/
+html,
+body {
+  color: var(--coat-font-color);
+  font-family: var(--coat-font-family);
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  background-color: var(--coat-background-color);
+  padding: calc(var(--coat-padding) / 2);
+}
+
+body {
+  width: 100%;
+  max-width: var(--coat-max-width);
+  border-radius: var(--coat-border-radius);
+  background-color: var(--coat-content-background-color);
+  padding: var(--coat-padding);
+}
+
+/*
+    Base Sizing
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+* + * {
+  margin-top: 1em;
+}
+
+/*
+	Dividers
+*/
+hr {
+  height: 1px;
+  border: none;
+  background-color: var(--border-color);
+  color: var(--border-color);
+}
+
+/*
+    Title
+*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  position: relative;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: calc(1em * (var(--coat-heading-step) * 6));
+  font-family: var(--coat-h1-font-family, var(--coat-heading-font-family, var(--coat-font-family)));
+  line-height: 1;
+}
+
+h2 {
+  font-size: calc(1em * (var(--coat-heading-step) * 5));
+  font-family: var(--coat-h2-font-family, var(--coat-heading-font-family, var(--coat-font-family)));
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: calc(1em * (var(--coat-heading-step) * 4));
+  font-family: var(--coat-h3-font-family, var(--coat-heading-font-family, var(--coat-font-family)));
+  line-height: 1.25;
+}
+
+h4 {
+  font-size: calc(1em * (var(--coat-heading-step) * 3));
+  font-family: var(--coat-h4-font-family, var(--coat-heading-font-family, var(--coat-font-family)));
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: calc(1em * (var(--coat-heading-step) * 2));
+  font-family: var(--coat-h5-font-family, var(--coat-heading-font-family, var(--coat-font-family)));
+  line-height: 1.75;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: calc(1em * (var(--coat-heading-step) * 1));
+  font-family: var(--coat-h6-font-family, var(--coat-heading-font-family, var(--coat-font-family)));
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header-anchor {
+  position: absolute;
+  right: 100%;
+  border-radius: var(--coat-border-radius);
+  background-color: var(--coat-color-secondary);
+  color: currentColor;
+  font-size: 0.5em;
+  text-decoration: none;
+  padding: calc(var(--coat-padding) / 8);
+}
+
+/*
+	Paragraphs
+*/
+p {
+  font-size: 1em;
+  line-height: 1.75;
+}
+
+p a {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  border-radius: var(--coat-border-radius);
+  background-color: var(--coat-color-secondary);
+  color: currentColor;
+  text-decoration: none;
+  padding: calc(var(--coat-padding) / 12) calc(var(--coat-padding) / 4);
+}
+
+p a[aria-label]::before,
+p a[href]::before {
+  content: attr(href);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 2;
+  border-radius: inherit;
+  background-color: var(--coat-color-background);
+  color: var(--coat-color-foreground);
+  font-weight: bold;
+  font-size: 0.75em;
+  font-family: var(--coat-code-font);
+  white-space: nowrap;
+  transform: translateX(-50%) translateY(-25%) scale(0.5);
+  opacity: 0;
+  transition: var(--coat-transition-time);
+  padding: inherit;
+}
+
+p a[aria-label]::before {
+  content: attr(aria-label);
+}
+
+p a:hover::before {
+  transform: translateX(-50%) translateY(0%) scale(1);
+  opacity: 1;
+}
+
+/*
+    Table
+*/
+table {
+  width: 100%;
+  border-radius: var(--coat-border-radius);
+  border-collapse: collapse;
+  background-color: var(--coat-table-background-color, transparent);
+  color: var(--coat-table-font-color, currentColor);
+}
+
+table td,
+table th {
+  text-align: left;
+  padding: calc(var(--coat-padding) / 2);
+}
+
+table td {
+  border: 1px solid var(--coat-table-border-color, var(--coat-border-color));
+}
+
+table tbody tr {
+  position: relative;
+}
+
+table td,
+table th {
+  font-size: 1em;
+  line-height: 1.75;
+}
+
+/*
+	Code
+*/
+code {
+  display: inline-block;
+  border-radius: var(--coat-border-radius);
+  background-color: var(--coat-code-background);
+  color: var(--coat-code-font-color);
+  padding: calc(var(--coat-padding) / 4);
+  /* max-width: calc(100% - (var(--coat-padding) * 2)); */
+}
+
+code,
+pre > code,
+pre > code > xmp {
+  font-size: 0.85em;
+  font-family: var(--coat-code-font);
+  line-height: 2;
+}
+
+pre > code {
+  background-color: transparent;
+  padding: var(--coat-padding) calc(var(--coat-padding) * 1.25);
+}
+
+pre {
+  width: 100%;
+  border-radius: var(--coat-border-radius);
+  background-color: var(--coat-code-background);
+  overflow-x: auto;
+}
+
+/*
+    List
+*/
+ol li,
+ul li {
+  list-style-type: none;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+/*
+    Unordered List
+*/
+ul li::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: var(--coat-color-primary);
+  font-size: 0.75em;
+  margin-right: -0.25em;
+}
+
+/*
+    Ordered List
+*/
+ol {
+  counter-reset: list;
+}
+
+ol li {
+  counter-increment: list;
+}
+
+ol li::before {
+  content: counter(list) "";
+  border-radius: var(--coat-border-radius);
+  background: var(--coat-color-primary);
+  font-size: 0.75em;
+  padding: calc(var(--coat-padding) / 4) calc(var(--coat-padding) / 4);
+  margin-right: -0.25em;
+}
+
+/*# sourceMappingURL=coat-dark.css.map */
