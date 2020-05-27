@@ -30,18 +30,20 @@
     Settings
 */
 :root {
+  --coat-padding: 1rem;
   /* 
   	Colors
   */
-  --coat-color-primary: #fff1ca;
-  --coat-color-secondary: #75a5dd;
+  --coat-color-primary: #BEC8D0;
+  --coat-color-secondary: #2E71BE;
   --coat-color-foreground: rgba(30, 30, 30, 1);
-  --coat-color-background: #ffe497;
+  --coat-color-background: #dce1e5;
   /* 
   	Base
   */
-  --coat-background-color: var(--coat-color-foreground);
+  --coat-background-color: rgba(255, 255, 255, 1);
   --coat-content-background-color: rgba(255, 255, 255, 1);
+  --coat-border-color: #BEC8D0;
 }
 
 /*
@@ -308,6 +310,27 @@ ol li::before {
   font-size: 0.75em;
   padding: calc(var(--coat-padding) / 4) calc(var(--coat-padding) / 4);
   margin-right: -0.25em;
+}
+
+nav {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10;
+}
+
+nav a {
+  display: block;
+  border-radius: var(--coat-border-radius);
+  background-color: var(--coat-color-background);
+  color: var(--coat-color-foreground);
+  padding: calc(var(--coat-padding) / 4);
+  text-decoration: none;
+}
+
+nav a + a {
+  margin: 0;
+  margin-left: calc(var(--coat-padding) / 2);
 }
 
 /*# sourceMappingURL=bare.css.map */
