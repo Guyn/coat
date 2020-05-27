@@ -4,20 +4,13 @@
 		<title>Goat by Guyn</title>
 		<link rel="stylesheet" type="text/css" href="theme/coat.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+		<script src="load-readme.js"></script>
 		<script>
 			function setTheme(file) {
 				document
 					.querySelector("link[type='text/css']")
 					.setAttribute("href", "theme/" + file + ".css");
 			}
-
-			fetch("./readme.md")
-				.then((response) => response.text())
-				.then(
-					(result) =>
-						(document.querySelector("body").innerHTML += marked(result))
-				);
 		</script>
 		<style>
 			* {
@@ -27,26 +20,40 @@
 	</head>
 
 	<body>
-		<a href="#coat" aria-label="Set Coat theme" onclick="setTheme('coat');"
-			>Coat</a
-		>
 		<a
-			href="#coat-dark"
+			href="#theme-coat"
+			aria-label="Set Coat theme"
+			onclick="setTheme('coat');"
+		>
+			Coat
+		</a>
+		<a
+			href="#theme-coat-dark"
 			aria-label="Set Coat Dark theme"
 			onclick="setTheme('coat-dark');"
-			>Coat Dark</a
 		>
+			Coat Dark
+		</a>
 		<a
-			href="#coat-light"
+			href="#theme-coat-light"
 			aria-label="Set Coat Light theme"
 			onclick="setTheme('coat-light');"
-			>Coat Light</a
 		>
-		<a href="#retro" aria-label="Set Retro theme" onclick="setTheme('retro');"
-			>Retro</a
+			Coat Light
+		</a>
+		<a
+			href="#theme-retro"
+			aria-label="Set Retro theme"
+			onclick="setTheme('retro');"
 		>
-		<a href="#bare" aria-label="Set Retro theme" onclick="setTheme('bare');"
-			>Bare</a
+			Retro
+		</a>
+		<a
+			href="#theme-bare"
+			aria-label="Set Retro theme"
+			onclick="setTheme('bare');"
 		>
+			Bare
+		</a>
 	</body>
 </html>
