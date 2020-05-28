@@ -329,9 +329,13 @@ ol li::before {
 }
 
 nav {
+  position: fixed;
+  left: 50%;
+  z-index: 2;
   display: inline-flex;
   justify-content: center;
   width: 100%;
+  transform: translateX(-50%);
 }
 
 nav a {
@@ -339,8 +343,13 @@ nav a {
   border-radius: var(--coat-border-radius);
   background-color: var(--coat-color-background);
   color: var(--coat-color-foreground);
-  padding: calc(var(--coat-padding) / 4);
+  white-space: nowrap;
+  padding: calc(var(--coat-padding) / 2) calc(var(--coat-padding) / 3);
   text-decoration: none;
+}
+nav a:hover {
+  background-color: var(--coat-color-primary);
+  color: var(--coat-color-foreground);
 }
 
 nav a + a {
@@ -348,22 +357,72 @@ nav a + a {
   margin-left: calc(var(--coat-padding) / 2);
 }
 
-nav ul {
+nav > ul {
   display: flex;
   justify-content: center;
-  padding: calc(var(--coat-padding) / 2);
   border-radius: var(--coat-border-radius);
   background-color: var(--coat-color-background);
+  padding: 0;
 }
-nav ul li a:hover {
-  background-color: var(--coat-content-background-color);
+
+nav > ul li {
+  position: relative;
+  margin: 0;
 }
-nav ul li::before {
+nav > ul li a {
+  border-radius: 0;
+}
+nav > ul li:first-child > a {
+  border-radius: var(--coat-border-radius) 0 0 var(--coat-border-radius);
+}
+nav > ul li:last-child > a {
+  border-radius: 0 var(--coat-border-radius) var(--coat-border-radius) 0;
+}
+nav > ul li:first-child:last-child > a {
+  border-radius: var(--coat-border-radius);
+}
+nav > ul li::before {
   content: none;
 }
-nav ul li + * {
+nav > ul li:hover ul {
+  transform: translateY(0em);
+  opacity: 1;
+}
+
+nav > ul ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(1em);
+  opacity: 0;
+  transition: transform var(--coat-transition);
+  margin: 0;
+}
+
+nav > ul ul li a {
+  border-radius: 0;
+  background-color: var(--coat-color-foreground);
+  color: var(--coat-color-background);
+}
+nav > ul ul li:first-child a {
+  border-radius: var(--coat-border-radius) var(--coat-border-radius) 0 0;
+}
+nav > ul ul li:last-child a {
+  border-radius: 0 0 var(--coat-border-radius) var(--coat-border-radius);
+}
+nav > ul ul li:first-child:last-child a {
+  border-radius: var(--coat-border-radius);
+}
+
+/* Spacing */
+nav li + li {
   margin: 0;
   margin-left: calc(var(--coat-padding) / 2);
+}
+nav li li + li {
+  margin: 0;
 }
 
 /*# sourceMappingURL=coat-light.css.map */
