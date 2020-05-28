@@ -333,7 +333,6 @@ nav {
   display: inline-flex;
   justify-content: center;
   width: 100%;
-  gap: 10;
 }
 
 nav a {
@@ -346,6 +345,24 @@ nav a {
 }
 
 nav a + a {
+  margin: 0;
+  margin-left: calc(var(--coat-padding) / 2);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: calc(var(--coat-padding) / 2);
+  border-radius: var(--coat-border-radius);
+  background-color: var(--coat-color-background);
+}
+nav ul li a:hover {
+  background-color: var(--coat-content-background-color);
+}
+nav ul li::before {
+  content: none;
+}
+nav ul li + * {
   margin: 0;
   margin-left: calc(var(--coat-padding) / 2);
 }
