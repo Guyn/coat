@@ -7,7 +7,6 @@
 		"test": "npm run test",
 		"build": "sass src/theme:theme",
 		"dev": "sass src/theme:theme --watch",
-		"dokkie": "npx dokkie --layout=index.html",
 		"stylelint": "stylelint 'src/*.scss' 'src/**/*.scss'",
 		"stylelint:fix": "stylelint 'src/*.scss' 'src/**/*.scss' --fix"
 	},
