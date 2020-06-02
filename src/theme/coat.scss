@@ -1,7 +1,7 @@
 @import "../../node_modules/@guyn/color/dist/colors.scss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
-@import "../defaults";
+@import "../partials/defaults";
 /*
     Settings
 */
@@ -42,4 +42,4 @@ $secondary-color: $blue;
 	--coat-table-border-width: 3px;
 	--coat-table-background-color-even: #{lighten($secondary-color, 50%)};
 }
-@import "../base";
+@import "../partials/base";

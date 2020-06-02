@@ -1,0 +1,54 @@
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+
+// Colors
+$tokens: (
+	comment: #999988 italic 1,
+	prolog: #999988 italic 1,
+	doctype: #999988 italic 1,
+	cdata: #999988 italic 1,
+	namespace: inherit normal 0.7,
+	string: #e3116c normal 1,
+	attr-value: #e3116c normal 1,
+	punctuation: #ffffff normal 0.8,
+	operator: #cccccc normal 1,
+	entity: #36acaa normal 1,
+	url: #36acaa normal 1,
+	symbol: #36acaa normal 1,
+	number: #36acaa normal 1,
+	boolean: #36acaa normal 1,
+	variable: #36acaa normal 1,
+	constant: #36acaa normal 1,
+	property: #36acaa normal 1,
+	regex: #36acaa normal 1,
+	inserted: #36acaa normal 1,
+	atrule: #00a4db normal 1,
+	keyword: #00a4db normal 1,
+	attr-name: #00a4db normal 1,
+	tag: var(--coat-color-background) normal 1,
+	selector: var(--coat-color-background) normal 1,
+	important: inherit bold 1,
+	function: inherit bold 1,
+	bold: inherit bold 1,
+	italic: inherit italic 1,
+);
+$language-autohotkey: (
+	selector: #00a4db normal 1,
+	tag: #9a050f normal 1,
+	keyword: #00009f normal 1,
+);
+:root {
+	--coat-code-font-color: var(--coat-color-);
+	--coat-code-font-size: 1em;
+	--coat-code-font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New",
+		Courier, monospace;
+	--coat-code-line-height: 1.2em;
+	--coat-code-background-color: var(--coat-color-foreground);
+	--coat-code-selection: #b3d4fc;
+	--coat-code-border-color: transparent;
+	--coat-code-code-background-color: var(--coat-color-foreground);
+}
+
+@import "prism";

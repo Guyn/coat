@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
-@import "../defaults";
+@import "../partials/defaults";
 /*
     Settings
 */
@@ -41,7 +41,7 @@ $secondary-color: $red;
 	--coat-background-color: var(--coat-color-secondary);
 	--coat-code-font: "IBM Plex Mono", "Courier New", Courier, monospace;
 }
-@import "../base";
+@import "../partials/base";
 
 html,
 body {

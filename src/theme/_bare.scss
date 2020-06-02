@@ -1,5 +1,5 @@
 @import "../../node_modules/@guyn/color/dist/colors.scss";
-@import "../defaults";
+@import "../partials/defaults";
 /*
     Settings
 */
@@ -24,4 +24,4 @@ $secondary-color: $blue;
 
 	--coat-border-color: #{$primary-color};
 }
-@import "../base";
+@import "../partials/base";
