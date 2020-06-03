@@ -49,6 +49,7 @@ pre[class*="language-"] {
 }
 
 /* Inline code */
+:not(pre) > code,
 :not(pre) > code[class*="language-"] {
 	border: 1px solid coat(code-border-color);
 	background: coat(code-background-color);
