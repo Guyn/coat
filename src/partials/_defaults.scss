@@ -39,6 +39,12 @@ $coat: (
 	link-font-color-hover: $color-primary,
 	link-background-color-hover: black,
 	link-border-bottom: 2px solid rgba($color-primary, 0.25),
+	// List
+		list-prefix-border-radius: 0,
+	list-prefix-background-color: transparent,
+	list-prefix-width: auto,
+	list-prefix-symbol: "--",
+	list-prefix-font-color: $color-primary,
 	// Code Examples
 		code-font-family:
 		"'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",

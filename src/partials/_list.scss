@@ -10,11 +10,14 @@ ol:not([class]) {
 		list-style-type: none;
 		line-height: 2;
 		& + li {
-			margin-top: coat(margin);
+			margin-top: coat(list-margin);
 		}
 		&::before {
 			position: absolute;
 			left: 0;
+			width: coat(list-prefix-width);
+			border-radius: coat(list-prefix-border-radius);
+			background: coat(list-prefix-background-color);
 		}
 	}
 	ol,
@@ -30,9 +33,9 @@ ol:not([class]) {
 ul:not([class]) {
 	li {
 		&::before {
-			content: "—";
+			content: coat(list-prefix-symbol);
 			display: inline-block;
-			color: coat(color-primary);
+			color: coat(list-prefix-font-color);
 		}
 	}
 }
@@ -47,8 +50,10 @@ ol:not([class]) {
 		counter-increment: list;
 		&::before {
 			content: counter(list) "";
-			border-radius: coat(border-radius);
-			background: coat(color-primary);
+			width: coat(list-prefix-width);
+			border-radius: coat(list-prefix-border-radius);
+			background: coat(list-prefix-background-color);
+			color: coat(list-prefix-font-color);
 			font-size: 0.75em;
 			margin-right: -0.25em;
 		}
