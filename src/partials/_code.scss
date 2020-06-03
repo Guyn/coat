@@ -3,22 +3,25 @@
 */
 code {
 	display: inline-block;
-	border-radius: var(--coat-border-radius);
-	background-color: var(--coat-code-background);
-	color: var(--coat-code-font-color);
-	padding: calc(var(--coat-padding) / 4);
-	/* max-width: calc(100% - (var(--coat-padding) * 2)); */
+	border-radius: coat(code-border-radius);
+	background-color: coat(code-background-color);
+	color: coat(code-font-color);
+	font-size: coat(code-font-size);
+	padding: coat(code-padding);
+}
+code,
+pre {
+	font-family: coat(code-font-family);
 }
 code,
 pre > code,
 pre > code > xmp {
-	font-size: 0.85em;
-	font-family: var(--coat-code-font);
+	font-size: coat(code-font-size);
 	line-height: 2;
 }
 pre > code {
 	background-color: transparent;
-	padding: var(--coat-padding) calc(var(--coat-padding) * 1.25);
+	padding: coat(code-padding);
 }
 pre {
 	width: 100%;

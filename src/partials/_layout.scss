@@ -1,0 +1,46 @@
+/*
+    Html & Body
+*/
+html,
+body {
+	background-color: coat(background-color);
+	color: coat(font-color);
+	font-family: coat(font-family);
+}
+body {
+	// display: flex;
+	// flex-wrap: wrap;
+	// justify-content: center;
+	padding: calc(#{coat(padding)} / 2);
+}
+// #main {
+// 	width: 100%;
+// 	max-width: coat(max-width);
+// 	border-radius: coat(border-radius);
+// 	padding: coat(padding);
+// 	background-color: coat(content-background-color);
+// }
+
+#header {
+	grid-area: header;
+}
+#sidebar {
+	grid-area: sidebar;
+}
+#main {
+	grid-area: main;
+}
+#footer {
+	grid-area: footer;
+}
+body {
+	@media #{$desktop} {
+		display: grid;
+		grid-template-areas:
+			"header header header header"
+			"sidebar main main ."
+			". footer footer .";
+		grid-template-columns: repeat(4, minmax(250px, 1fr));
+		grid-template-rows: auto;
+	}
+}

@@ -14,7 +14,8 @@
 					"include",
 					"content",
 					"at-root",
-					"function"
+					"function",
+					"return"
 				]
 			}
 		],

@@ -1,46 +1,43 @@
-header {
+#header {
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: coat(header-nav-padding);
 	nav {
-		position: fixed;
-		left: 50%;
 		z-index: 2;
-		display: inline-flex;
 		justify-content: center;
-		width: 100%;
-		transform: translateX(-50%);
-		@media #{$mobile} {
-			top: 0;
-		}
+		border: coat(header-nav-border);
+		border-radius: coat(header-nav-border-radius);
+		background-color: coat(header-nav-background-color);
+		color: coat(header-nav-font-color);
+
+		margin: 0;
 	}
 	nav a {
 		display: block;
-		border-radius: var(--coat-border-radius);
-		background-color: var(--coat-color-background);
-		color: var(--coat-color-foreground);
+		border-radius: coat(header-nav-border-radius);
+		background-color: coat(header-nav-font-background-color);
+		color: coat(header-nav-font-color);
 		white-space: nowrap;
-		padding: calc(var(--coat-padding) / 2) calc(var(--coat-padding) / 3);
 		text-decoration: none;
+		padding: coat(header-nav-padding);
 		&:hover {
-			background-color: var(--coat-color-primary);
-			color: var(--coat-color-foreground);
+			background-color: coat(header-nav-font-background-color-hover);
+			color: coat(header-nav-font-color-hover);
 		}
 	}
 
 	nav a + a {
 		margin: 0;
-		margin-left: calc(var(--coat-padding) / 2);
+		margin-left: calc(coat(padding) / 2);
 	}
 	nav > ul {
 		display: flex;
 		justify-content: center;
-		border-radius: var(--coat-border-radius);
-		background-color: var(--coat-color-background);
+		border-radius: coat(header-nav-border-radius);
+		background-color: coat(header-nav-background-color);
 		padding: 0;
-		// @media #{$mobile} {
-		// 	flex-direction: column;
-		// 	align-items: center;
-		// 	width: 100%;
-		// 	height: 100vh;
-		// }
 	}
 	nav > ul li {
 		position: relative;
@@ -49,21 +46,27 @@ header {
 			border-radius: 0;
 		}
 		&:first-child > a {
-			border-radius: var(--coat-border-radius) 0 0 var(--coat-border-radius);
+			border-radius: coat(header-nav-border-radius) 0 0
+				coat(header-nav-border-radius);
 		}
 		&:last-child > a {
-			border-radius: 0 var(--coat-border-radius) var(--coat-border-radius) 0;
+			border-radius: 0 coat(header-nav-border-radius)
+				coat(header-nav-border-radius) 0;
 		}
 		&:first-child:last-child > a {
-			border-radius: var(--coat-border-radius);
+			border-radius: coat(header-nav-border-radius);
 		}
 		&::before {
 			content: none;
 		}
 		&:hover {
 			ul {
-				transform: translateY(0em);
+				transform: translateY(0em) translateX(-50%);
 				opacity: 1;
+			}
+			> a {
+				background-color: coat(header-nav-background-color-hover);
+				color: coat(header-nav-font-color-hover);
 			}
 		}
 	}
@@ -71,35 +74,60 @@ header {
 	nav > ul ul {
 		position: absolute;
 		top: 100%;
-		left: 0;
+		left: 50%;
+
+		z-index: 2;
 		display: flex;
 		flex-direction: column;
-		transform: translateY(1em);
+		transform: translateY(1em) translateX(-50%);
 		opacity: 0;
-		transition: transform var(--coat-transition);
+		transition: transform coat(transition);
 		margin: 0;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 50%;
+			z-index: 2;
+			display: block;
+			width: 0.75em;
+			height: 0.75em;
+			border-radius: coat(border-radius) 0 0 0;
+			background-color: coat(header-nav-sub-font-background-color);
+			transform: translateY(-50%) translateX(-50%) rotate(45deg);
+		}
+		li {
+			position: relative;
+			z-index: 2;
+		}
 	}
 	nav > ul ul li {
 		a {
 			border-radius: 0;
-			background-color: var(--coat-color-foreground);
-			color: var(--coat-color-background);
+			background-color: coat(header-nav-sub-font-background-color);
+			color: coat(header-nav-sub-font-color);
+			&:hover {
+				background-color: coat(header-nav-sub-font-background-color-hover);
+				color: coat(header-nav-sub-font-color-hover);
+			}
 		}
 		&:first-child a {
-			border-radius: var(--coat-border-radius) var(--coat-border-radius) 0 0;
+			border-radius: coat(header-nav-border-radius)
+				coat(header-nav-border-radius) 0 0;
 		}
 		&:last-child a {
-			border-radius: 0 0 var(--coat-border-radius) var(--coat-border-radius);
+			border-radius: 0 0 coat(header-nav-border-radius)
+				coat(header-nav-border-radius);
 		}
 		&:first-child:last-child a {
-			border-radius: var(--coat-border-radius);
+			border-radius: coat(header-nav-border-radius);
 		}
 	}
 	/* Spacing */
 	nav li {
+		padding: 0;
 		& + li {
 			margin: 0;
-			margin-left: calc(var(--coat-padding) / 2);
 		}
 		li + li {
 			margin: 0;

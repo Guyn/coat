@@ -5,10 +5,10 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: var(--coat-code-font-color);
+	color: coat(code-block-font-color);
 	font-size: 1em;
-	font-family: var(--coat-code-font-family);
-	line-height: var(--coat-code-line-height);
+	font-family: coat(code-block-font-family);
+	line-height: coat(code-block-line-height);
 	white-space: pre;
 	direction: ltr;
 	text-align: left;
@@ -26,7 +26,7 @@ pre[class*="language-"] {
 }
 
 pre > code[class*="language-"] {
-	font-size: var(--coat-code-font-size);
+	font-size: coat(code-font-size);
 }
 
 pre[class*="language-"]::-moz-selection,
@@ -37,25 +37,23 @@ pre[class*="language-"]::selection,
 pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
-	background: var(--coat-code-selection);
+	background: coat(code-selection);
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	border: 1px solid var(--coat-code-border-color);
-	background: var(--coat-code-code-background-color);
+	border: 1px solid coat(code-block-border-color);
+	background: coat(code-block-background-color);
 	overflow: auto;
 	padding: 1em;
-	margin: 0.5em 0;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	border: 1px solid var(--coat-code-border-color);
-	background: var(--coat-code-background-color);
-	padding: 0.2em;
-	padding-top: 1px;
-	padding-bottom: 1px;
+	border: 1px solid coat(code-border-color);
+	background: coat(code-background-color);
+
+	font-size: coat(code-font-size);
 }
 @mixin setTokenValues($token) {
 	@if nth($token, 1) !=

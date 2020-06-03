@@ -6,12 +6,11 @@
 	"scripts": {
 		"test": "npm run test",
 		"build": "sass src/theme:theme",
-		"dev:build": "npx dokkie --copy=theme,code",
 		"dev:sass": "sass src:. --watch --style=compressed",
 		"dev:copy:theme": "copy-and-watch theme/* docs/theme --watch",
 		"dev:copy:code": "copy-and-watch code/* docs/code --watch",
 		"dev:serve": "serve -l 3000 docs",
-		"dev": "npm run build && concurrently \"npm run dev:sass\" \"npm run dev:copy:theme\" \"npm run dev:copy:code\" \"npm run dev:serve\"",
+		"dev": "npx dokkie && concurrently \"npm run dev:sass\" \"npm run dev:copy:theme\" \"npm run dev:copy:code\" \"npm run dev:serve\"",
 		"stylelint": "stylelint 'src/*.scss' 'src/**/*.scss'",
 		"stylelint:fix": "stylelint 'src/*.scss' 'src/**/*.scss' --fix"
 	},

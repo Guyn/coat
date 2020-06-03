@@ -2,7 +2,7 @@
  * GHColors theme by Avi Aryan (http://aviaryan.in)
  * Inspired by Github syntax coloring
  */
-
+@import "../partials/defaults";
 // Colors
 $tokens: (
 	comment: #999988 italic 1,
@@ -12,7 +12,7 @@ $tokens: (
 	namespace: inherit normal 0.7,
 	string: #e3116c normal 1,
 	attr-value: #e3116c normal 1,
-	punctuation: #ffffff normal 0.8,
+	punctuation: #333333 normal 0.8,
 	operator: #cccccc normal 1,
 	entity: #36acaa normal 1,
 	url: #36acaa normal 1,
@@ -39,16 +39,4 @@ $language-autohotkey: (
 	tag: #9a050f normal 1,
 	keyword: #00009f normal 1,
 );
-:root {
-	--coat-code-font-color: var(--coat-color-);
-	--coat-code-font-size: 1em;
-	--coat-code-font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New",
-		Courier, monospace;
-	--coat-code-line-height: 1.2em;
-	--coat-code-background-color: var(--coat-color-foreground);
-	--coat-code-selection: #b3d4fc;
-	--coat-code-border-color: transparent;
-	--coat-code-code-background-color: var(--coat-color-foreground);
-}
-
 @import "prism";
