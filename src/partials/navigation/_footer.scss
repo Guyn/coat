@@ -1,0 +1,105 @@
+#footer {
+	position: relative;
+	border: coat(footer-nav-border);
+	border-radius: coat(header-nav-border-radius);
+	background-color: coat(footer-nav-background-color);
+	color: coat(footer-nav-font-color);
+	@media #{$desktop} {
+		padding: coat(footer-nav-padding);
+	}
+	nav {
+		z-index: 2;
+		display: inline-flex;
+		justify-content: center;
+		width: 100%;
+		margin: 0;
+	}
+	nav a {
+		display: block;
+		border-radius: coat(footer-nav-border-radius);
+		background-color: coat(footer-nav-font-background-color);
+		color: coat(footer-nav-font-color);
+		white-space: nowrap;
+		text-decoration: none;
+		padding: coat(footer-nav-padding) coat(footer-nav-padding);
+
+		&:hover {
+			background-color: coat(footer-nav-font-background-color-hover);
+			color: coat(footer-nav-font-color-hover);
+		}
+	}
+
+	nav > ul {
+		width: 100%;
+		max-width: coat(footer-nav-max-width);
+		border-radius: coat(footer-nav-border-radius);
+		background-color: coat(footer-nav-color-background);
+		@media #{$desktop} {
+			padding: coat(footer-nav-padding);
+			display: flex;
+			justify-content: center;
+		}
+	}
+	// nav > ul > li {
+	// 	padding: coat(footer-nav-padding) coat(footer-nav-padding);
+	// }
+	nav > ul li {
+		position: relative;
+		margin: 0;
+		a {
+			border-radius: 0;
+		}
+		&:first-child > a {
+			border-radius: coat(footer-nav-border-radius) 0 0
+				coat(footer-nav-border-radius);
+		}
+		&:last-child > a {
+			border-radius: 0 coat(footer-nav-border-radius)
+				coat(footer-nav-border-radius) 0;
+		}
+		&:first-child:last-child > a {
+			border-radius: coat(footer-nav-border-radius);
+		}
+		&::before {
+			content: none;
+		}
+	}
+
+	nav > ul ul li {
+		a {
+			border-radius: 0;
+			background-color: coat(footer-nav-sub-font-background-color);
+			color: coat(footer-nav-sub-font-color);
+			opacity: coat(footer-nav-sub-font-opacity);
+			padding: calc(coat(footer-nav-padding) / 3)
+				calc(coat(footer-nav-padding) / 3);
+
+			&:hover {
+				background-color: coat(footer-nav-sub-font-background-color-hover);
+				color: coat(footer-nav-sub-font-color-hover);
+				opacity: coat(footer-nav-sub-font-opacity);
+			}
+		}
+		&:first-child a {
+			border-radius: coat(footer-nav-border-radius)
+				coat(footer-nav-border-radius) 0 0;
+		}
+		&:last-child a {
+			border-radius: 0 0 coat(footer-nav-border-radius)
+				coat(footer-nav-border-radius);
+		}
+		&:first-child:last-child a {
+			border-radius: coat(footer-nav-border-radius);
+		}
+	}
+	/* Spacing */
+	nav li {
+		padding: 0;
+		& + li {
+			margin: 0;
+		}
+		li + li {
+			margin: 0;
+		}
+	}
+}

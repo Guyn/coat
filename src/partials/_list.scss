@@ -1,0 +1,56 @@
+/*
+    List
+*/
+ul:not([class]),
+ol:not([class]) {
+	padding: 0;
+	li {
+		list-style-type: none;
+	}
+	ol,
+	ul {
+		padding-left: 1em;
+	}
+}
+
+/*
+    Unordered List
+*/
+
+ul:not([class]) {
+	li {
+		position: relative;
+		padding-left: 2em;
+		&::before {
+			content: "—";
+			position: absolute;
+			top: 0.5em;
+			left: 0;
+			display: inline-block;
+			color: coat(color-primary);
+		}
+	}
+}
+
+/*
+    Ordered List
+*/
+
+ol:not([class]) {
+	counter-reset: list;
+	li {
+		position: relative;
+		padding-left: 2em;
+		counter-increment: list;
+		&::before {
+			content: counter(list) "";
+			position: absolute;
+			top: 0.5em;
+			left: 0;
+			border-radius: var(--coat-border-radius);
+			background: var(--coat-color-primary);
+			font-size: 0.75em;
+			margin-right: -0.25em;
+		}
+	}
+}
