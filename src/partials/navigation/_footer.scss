@@ -21,7 +21,7 @@
 		color: coat(footer-nav-font-color);
 		white-space: nowrap;
 		text-decoration: none;
-		padding: coat(footer-nav-padding) coat(footer-nav-padding);
+		padding: coat(footer-nav-padding);
 
 		&:hover {
 			background-color: coat(footer-nav-font-background-color-hover);
@@ -71,9 +71,7 @@
 			background-color: coat(footer-nav-sub-font-background-color);
 			color: coat(footer-nav-sub-font-color);
 			opacity: coat(footer-nav-sub-font-opacity);
-			padding: calc(coat(footer-nav-padding) / 3)
-				calc(coat(footer-nav-padding) / 3);
-
+			padding: 0 coat(footer-nav-padding);
 			&:hover {
 				background-color: coat(footer-nav-sub-font-background-color-hover);
 				color: coat(footer-nav-sub-font-color-hover);
