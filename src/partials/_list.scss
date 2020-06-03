@@ -5,8 +5,18 @@ ul:not([class]),
 ol:not([class]) {
 	padding: 0;
 	li {
+		position: relative;
+		padding-left: 2em;
 		list-style-type: none;
 		line-height: 2;
+		& + li {
+			margin-top: coat(margin);
+		}
+		&::before {
+			position: absolute;
+			top: 0.5em;
+			left: 0;
+		}
 	}
 	ol,
 	ul {
@@ -20,13 +30,8 @@ ol:not([class]) {
 
 ul:not([class]) {
 	li {
-		position: relative;
-		padding-left: 2em;
 		&::before {
 			content: "—";
-			position: absolute;
-			top: 0.5em;
-			left: 0;
 			display: inline-block;
 			color: coat(color-primary);
 		}
@@ -40,21 +45,13 @@ ul:not([class]) {
 ol:not([class]) {
 	counter-reset: list;
 	li {
-		position: relative;
-		padding-left: 2em;
 		counter-increment: list;
 		&::before {
 			content: counter(list) "";
-			position: absolute;
-			top: 0.5em;
-			left: 0;
 			border-radius: coat(border-radius);
 			background: coat(color-primary);
 			font-size: 0.75em;
 			margin-right: -0.25em;
-		}
-		& + li {
-			margin-top: coat(margin);
 		}
 	}
 }
