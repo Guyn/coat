@@ -14,6 +14,9 @@
 		"stylelint": "stylelint 'src/*.scss' 'src/**/*.scss'",
 		"stylelint:fix": "stylelint 'src/*.scss' 'src/**/*.scss' --fix"
 	},
+	"precommit": [
+		"npm run build"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Guyn/coat.git"
@@ -39,6 +42,7 @@
 		"@guyn/color": "0.0.2",
 		"autoprefixer": "^9.8.0",
 		"postcss": "^7.0.31",
+		"precommit": "^1.2.2",
 		"rollup": "^2.12.0",
 		"rollup-plugin-livereload": "^1.3.0",
 		"rollup-plugin-sass": "^1.2.2",
