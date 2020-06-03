@@ -10,7 +10,15 @@ $color-white: white;
 $color-black: black;
 
 $coat: (
-	padding: 2rem,
+	// Colors
+		color-primary: $color-primary,
+	color-secondary: $color-secondary,
+	color-dark: $color-dark,
+	color-light: $color-light,
+	color-white: $color-white,
+	color-black: $color-black,
+	// Basics
+		padding: 2rem,
 	margin: 1em,
 	transition-time: 0.3s,
 	transition-bezier: ease-in-out,
@@ -37,7 +45,7 @@ $coat: (
 	code-font-color: $color-dark,
 	code-font-size: 1em,
 	code-selection: $color-primary,
-	code-line-height: 1.2,
+	code-line-height: 1,
 	code-border-color: $color-light,
 	code-padding: 0.5em 1em,
 	code-background-color: rgba($color-primary, 0.25),
@@ -48,7 +56,7 @@ $coat: (
 	code-block-font-color: $color-dark,
 	code-block-font-size: 1em,
 	code-block-selection: $color-primary,
-	code-block-line-height: 1.2,
+	code-block-line-height: 2,
 	code-block-border-color: $color-light,
 	code-block-padding: 0.5em 1em,
 	code-block-background-color: #f7f7f7,
@@ -108,7 +116,7 @@ $coat: (
 	sidebar-nav-sub-font-color: currentColor,
 	sidebar-nav-sub-font-color-hover: $color-primary,
 	sidebar-nav-border-radius: 0.25em,
-	sidebar-nav-padding: 1em,
+	sidebar-nav-padding: 1em
 );
 @mixin setCustomProperty($setting) {
 	:root {

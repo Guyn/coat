@@ -52,8 +52,8 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"] {
 	border: 1px solid coat(code-border-color);
 	background: coat(code-background-color);
-
 	font-size: coat(code-font-size);
+	line-height: coat(code-line-height);
 }
 @mixin setTokenValues($token) {
 	@if nth($token, 1) !=

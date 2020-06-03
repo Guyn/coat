@@ -47,10 +47,13 @@ ol:not([class]) {
 			position: absolute;
 			top: 0.5em;
 			left: 0;
-			border-radius: var(--coat-border-radius);
-			background: var(--coat-color-primary);
+			border-radius: coat(border-radius);
+			background: coat(color-primary);
 			font-size: 0.75em;
 			margin-right: -0.25em;
+		}
+		& + li {
+			margin-top: coat(margin);
 		}
 	}
 }
