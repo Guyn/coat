@@ -14,9 +14,11 @@
 		"stylelint": "stylelint 'src/*.scss' 'src/**/*.scss'",
 		"stylelint:fix": "stylelint 'src/*.scss' 'src/**/*.scss' --fix"
 	},
-	"precommit": [
-		"npm run build"
-	],
+	"precommit": {
+		"tasks": [
+			"npm run build"
+		]
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Guyn/coat.git"
