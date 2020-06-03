@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "npm run test",
-		"build": "sass src/theme:theme",
-		"dev:sass": "sass src:. --watch --style=compressed",
+		"build": "sass src:. --style=compressed",
+		"dev:sass": "sass src:. --watch",
 		"dev:copy:theme": "copy-and-watch theme/* docs/theme --watch",
 		"dev:copy:code": "copy-and-watch code/* docs/code --watch",
 		"dev:serve": "serve -l 3000 docs",
