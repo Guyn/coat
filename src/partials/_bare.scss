@@ -1,0 +1,27 @@
+@import "../../node_modules/@guyn/color/dist/colors.scss";
+@import "../partials/defaults";
+/*
+    Settings
+*/
+
+$primary-color: $ice;
+$secondary-color: $blue;
+
+:root {
+	--coat-padding: 1rem;
+	/* 
+		Colors
+	*/
+	--coat-color-primary: #{$primary-color};
+	--coat-color-secondary: #{$secondary-color};
+	--coat-color-foreground: rgba(30, 30, 30, 1);
+	--coat-color-background: #{lighten($primary-color, 10%)};
+	/* 
+		Base
+	*/
+	--coat-background-color: rgba(255, 255, 255, 1);
+	--coat-content-background-color: rgba(255, 255, 255, 1);
+
+	--coat-border-color: #{$primary-color};
+}
+@import "../partials/base";

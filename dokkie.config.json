@@ -1,0 +1,6 @@
+{
+	"overrule": {
+		"stylesheets": ["/theme/coat-ext.css", "/code/coat.css"]
+	},
+	"copy": ["theme", "code"]
+}
