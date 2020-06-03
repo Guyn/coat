@@ -133,4 +133,10 @@
 			margin: 0;
 		}
 	}
+
+	@media #{$mobile} {
+		& + #sidebar {
+			display: none;
+		}
+	}
 }
