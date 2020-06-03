@@ -1,19 +1,19 @@
 #sidebar {
-	// position: absolute;
-	// right: 50%;
-	border-radius: coat(hesidebarader-nav-border-radius);
+	border-radius: coat(sidebar-nav-border-radius);
 	background-color: coat(sidebar-nav-background-color);
 	color: coat(sidebar-nav-font-color);
-	// margin-right: calc(#{coat(max-width)} / 2);
-	padding: coat(padding);
-	// margin-top: coat(margin);
 
+	@media #{$desktop} {
+		padding: coat(padding);
+	}
 	nav {
 		z-index: 2;
 		display: inline-flex;
-		justify-content: center;
 		width: 100%;
 		margin: 0;
+		@media #{$desktop} {
+			justify-content: center;
+		}
 	}
 	nav a {
 		display: block;
