@@ -15,7 +15,8 @@
 					"content",
 					"at-root",
 					"function",
-					"return"
+					"return",
+					"use"
 				]
 			}
 		],

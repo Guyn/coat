@@ -11,9 +11,6 @@
 		display: inline-flex;
 		width: 100%;
 		margin: 0;
-		@media #{$desktop} {
-			justify-content: center;
-		}
 	}
 	nav a {
 		display: block;

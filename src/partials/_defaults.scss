@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $mobile: "screen and (max-width: 750px)";
 $desktop: "screen and (min-width: 751px)";
 
@@ -8,8 +10,9 @@ $color-light: #f7f7f7;
 
 $color-white: white;
 $color-black: black;
+$coat: () !default;
 
-$coat: (
+$coat-default: (
 	// Colors
 		color-primary: $color-primary,
 	color-secondary: $color-secondary,
@@ -124,12 +127,17 @@ $coat: (
 	sidebar-nav-sub-font-color-hover: $color-primary,
 	sidebar-nav-border-radius: 0.25em,
 	sidebar-nav-padding: 1em
-);
+) !default;
+
+$coat-settings: map.merge($coat, $coat-default);
+
 @mixin setCustomProperty($setting) {
 	:root {
 		--coat-#{$setting}: #{map-get($coat, $setting)};
 	}
 }
 @function coat($setting) {
-	@return unquote("var(--coat-#{$setting},#{map-get($coat,$setting)})");
+	@return unquote(
+		"var(--coat-#{$setting},#{map-get($coat-settings,$setting)})"
+	);
 }

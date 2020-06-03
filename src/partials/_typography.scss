@@ -91,7 +91,7 @@ main {
 			transform: translateX(-75%) translateY(0%) scale(0.85);
 			opacity: 0;
 			transition: coat(transition-time);
-			padding: calc(coat(padding) / 12) calc(coat(padding) / 4);
+			padding: calc(#{coat(padding)} / 12) calc(#{coat(padding)} / 4);
 		}
 	}
 	p a[aria-label]::before {

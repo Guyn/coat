@@ -8,19 +8,8 @@ body {
 	font-family: coat(font-family);
 }
 body {
-	// display: flex;
-	// flex-wrap: wrap;
-	// justify-content: center;
 	padding: calc(#{coat(padding)} / 2);
 }
-// #main {
-// 	width: 100%;
-// 	max-width: coat(max-width);
-// 	border-radius: coat(border-radius);
-// 	padding: coat(padding);
-// 	background-color: coat(content-background-color);
-// }
-
 #header {
 	grid-area: header;
 }
