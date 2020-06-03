@@ -3,26 +3,26 @@
 */
 code {
 	display: inline-block;
+}
+pre > code {
+	border-radius: coat(code-block-border-radius);
+	background-color: coat(code-block-background-color);
+	color: coat(code-block-font-color);
+	padding: coat(code-block-padding);
+	font-size: coat(code-block-font-size);
+	font-family: coat(code-block-font-family);
+	line-height: code(code-block-line-height);
+}
+:not(pre) > code {
 	border-radius: coat(code-border-radius);
 	background-color: coat(code-background-color);
 	color: coat(code-font-color);
-	font-size: coat(code-font-size);
 	padding: coat(code-padding);
-}
-code,
-pre {
+	font-size: coat(code-font-size);
 	font-family: coat(code-font-family);
+	line-height: code(code-line-height);
 }
-code,
-pre > code,
-pre > code > xmp {
-	font-size: coat(code-font-size);
-	line-height: 2;
-}
-pre > code {
-	background-color: transparent;
-	padding: coat(code-padding);
-}
+
 pre {
 	width: 100%;
 	border-radius: var(--coat-border-radius);
