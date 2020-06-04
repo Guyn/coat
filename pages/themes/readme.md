@@ -22,4 +22,4 @@ A lightweight version of the Coat theme without any external fonts.
 
 Nightsky is a dark blue nightlike theme.
 
-<a href="#nightsky" onClick="setTheme('nightsky-ext')">Try Feather</a>
+<a href="#nightsky" onClick="setTheme('nightsky-ext')">Try Nightsky</a>
