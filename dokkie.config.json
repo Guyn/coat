@@ -1,6 +1,8 @@
 {
+	"projectTitle": "Coat",
 	"overrule": {
 		"stylesheets": ["/theme/coat-ext.css", "/code/coat.css"]
 	},
-	"copy": ["theme", "code"]
+	"copy": ["theme", "code"],
+	"showNavigation": ["header", "footer", "sidebar"]
 }

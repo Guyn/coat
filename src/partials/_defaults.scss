@@ -79,7 +79,7 @@ $coat-default: (
 	table-border: 1px solid $color-primary,
 	// Header navigation
 		header-nav-border: 1px solid rgba($color-black, 0.25),
-	header-nav-background-color: transparent,
+	header-nav-background-color: $color-white,
 	header-nav-background-color-hover: transparent,
 	header-nav-font-background-color: transparent,
 	header-nav-font-background-color-hover: transparent,

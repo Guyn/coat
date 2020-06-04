@@ -9,8 +9,15 @@
 	nav {
 		z-index: 2;
 		display: inline-flex;
-		width: 100%;
 		margin: 0;
+		@media #{$desktop} {
+			width: 100%;
+		}
+		@media #{$mobile} {
+			position: fixed;
+			top: 3em;
+			left: 3em;
+		}
 	}
 	nav a {
 		display: block;
