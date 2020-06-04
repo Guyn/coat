@@ -46,6 +46,10 @@
 			color: coat(header-nav-font-color-hover);
 		}
 	}
+	nav li.active > a {
+		background-color: coat(header-nav-active-background-color);
+		color: coat(header-nav-active-font-color);
+	}
 
 	nav a + a {
 		margin: 0;

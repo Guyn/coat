@@ -1,4 +1,16 @@
 @use "sass:map";
+@import "../../node_modules/@guyn/color/dist/colors.scss";
+
+@function contra($color, $black: black, $white: white) {
+	@if lightness($color) > 60 {
+		@return $black;
+	} @else {
+		@return $white;
+	}
+}
+@function to-lightness($color, $lightness) {
+	@return hsla(hue($color), saturation($color), $lightness, alpha($color));
+}
 
 $mobile: "screen and (max-width: 750px)";
 $desktop: "screen and (min-width: 751px)";
@@ -16,6 +28,8 @@ $coat-default: (
 	// Colors
 		color-primary: $color-primary,
 	color-secondary: $color-secondary,
+	color-primary-contra: contra($color-primary),
+	color-secondary-contra: contra($color-secondary),
 	color-dark: $color-dark,
 	color-light: $color-light,
 	color-white: $color-white,
@@ -31,6 +45,7 @@ $coat-default: (
 	border-radius: 0.25em,
 	border-color: $color-light,
 	border-width: 1px,
+	border: 1px solid $color-light,
 	font-family:
 		"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif'",
 	font-color: $color-dark,
@@ -47,18 +62,17 @@ $coat-default: (
 		list-prefix-border-radius: 0,
 	list-prefix-background-color: transparent,
 	list-prefix-width: auto,
-	list-prefix-symbol: "--",
 	list-prefix-font-color: $color-primary,
 	// Code Examples
 		code-font-family:
 		"'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
-	code-font-color: $color-dark,
+	code-font-color: contra(to-lightness($color-primary, 80)),
 	code-font-size: 1em,
 	code-selection: $color-primary,
 	code-line-height: 1,
 	code-border-color: $color-light,
 	code-padding: 0.5em,
-	code-background-color: rgba($color-primary, 0.25),
+	code-background-color: to-lightness($color-primary, 80),
 	code-border-radius: 0.25em,
 	// Code Block
 		code-block-font-family:
@@ -95,6 +109,8 @@ $coat-default: (
 	header-nav-sub-font-color-hover: $color-white,
 	header-nav-border-radius: 0.25em,
 	header-nav-padding: 1em,
+	header-nav-active-background-color: $color-primary,
+	header-nav-active-font-color: contra($color-primary),
 	// Footer navigation
 		footer-nav-border: 1px 0 0 0 solid rgba($color-black, 0.25),
 	footer-nav-background-color: transparent,
@@ -111,7 +127,9 @@ $coat-default: (
 	footer-nav-sub-font-color: currentColor,
 	footer-nav-sub-font-color-hover: $color-primary,
 	footer-nav-border-radius: 0.25em,
-	footer-nav-padding: 1em,
+	footer-nav-padding: 0.5em 1em,
+	footer-nav-active-background-color: $color-primary,
+	footer-nav-active-font-color: contra($color-primary),
 	// Sidebar navigation
 		sidebar-nav-background-color: $color-white,
 	sidebar-nav-font-color: $color-dark,
@@ -126,7 +144,9 @@ $coat-default: (
 	sidebar-nav-sub-font-color: currentColor,
 	sidebar-nav-sub-font-color-hover: $color-primary,
 	sidebar-nav-border-radius: 0.25em,
-	sidebar-nav-padding: 1em
+	sidebar-nav-padding: 0.5em 1em,
+	sidebar-nav-active-background-color: $color-primary,
+	sidebar-nav-active-font-color: contra($color-primary)
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

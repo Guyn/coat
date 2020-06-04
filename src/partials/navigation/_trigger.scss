@@ -19,7 +19,6 @@
 		&#header-nav-trigger {
 			& ~ nav {
 				transform-origin: 100% 0%;
-
 				transition: transform coat(transition), opacity coat(transition);
 				@media #{$mobile} {
 					transform: scale(0.5);
@@ -37,9 +36,9 @@
 		display: block;
 		width: 2.5em;
 		height: 2.5em;
-		background-color: $color-primary;
+		background-color: coat(color-primary);
 		&:hover {
-			background-color: $color-black;
+			background-color: coat(color-black);
 		}
 		&[for="sidebar-nav-trigger"] {
 			position: fixed;

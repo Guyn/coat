@@ -33,9 +33,10 @@ ol:not([class]) {
 ul:not([class]) {
 	li {
 		&::before {
-			content: "#{coat(list-prefix-symbol)}";
+			content: "—";
 			display: inline-block;
 			color: coat(list-prefix-font-color);
+			counter-reset: variable coat(list-prefix-font-color);
 		}
 	}
 }

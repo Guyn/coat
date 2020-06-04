@@ -7,12 +7,12 @@ table {
 	border-collapse: collapse;
 	padding: 0;
 	tr {
-		background-color: $color-white;
+		background-color: coat(color-white);
 		margin: 0;
 		padding: 0;
 
 		&:nth-child(2n) {
-			background-color: $color-light;
+			background-color: coat(color-light);
 		}
 		th {
 			font-weight: bold;
@@ -21,7 +21,7 @@ table {
 			padding: coat(table-cell-padding);
 		}
 		td {
-			border: 1px solid rgba($color-primary, 0.25);
+			border: coat(border);
 			text-align: left;
 			margin: 0;
 			padding: coat(table-cell-padding);
