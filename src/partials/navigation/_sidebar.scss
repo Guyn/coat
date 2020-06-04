@@ -6,6 +6,11 @@
 	@media #{$desktop} {
 		padding: coat(padding);
 	}
+	@media #{$mobile} {
+		border-radius: coat(sidebar-nav-mobile-background-color);
+		background-color: coat(sidebar-nav-mobile-background-color);
+		color: coat(sidebar-nav-mobile-background-color);
+	}
 	nav {
 		z-index: 2;
 		display: inline-flex;

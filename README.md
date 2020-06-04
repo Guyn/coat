@@ -1,3 +1,7 @@
+---
+menu:
+---
+
 # Coat
 
 Coat is a tiny css file, which you can include to make pages look nice.
@@ -19,5 +23,9 @@ You can either add it in your `html > head` as
 or import it directly in your stylesheet;
 
 ```css
-@import "https://coat.guyn.nl/theme/default.css";
+@import "https://coat.guyn.nl/theme/coat.css";
 ```
+
+### Extended version
+
+The default version of every theme includes the basic styling for a markdown page directly in the body. If you want to use headers, footers, sidebar and footnote (like [https://dokkie.dev](dokkie) uses), you can add `-ext` to every theme like `https://coat.guyn.nl/theme/coat-ext.css`.

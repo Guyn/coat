@@ -1,3 +1,7 @@
+---
+menu: footer
+---
+
 # License
 
 #### The MIT License (MIT)

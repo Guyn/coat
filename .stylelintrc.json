@@ -16,7 +16,8 @@
 					"at-root",
 					"function",
 					"return",
-					"use"
+					"use",
+					"warn"
 				]
 			}
 		],

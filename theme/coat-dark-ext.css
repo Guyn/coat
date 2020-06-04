@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
 /*
     Settings
 */
@@ -6,9 +8,9 @@
 */
 html,
 body {
-  background-color: var(--coat-background-color,white);
-  color: var(--coat-font-color,#333333);
-  font-family: var(--coat-font-family,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif');
+  background-color: var(--coat-background-color,#111111);
+  color: var(--coat-font-color,#f7f7f7);
+  font-family: var(--coat-font-family,Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif');
 }
 
 body {
@@ -195,12 +197,12 @@ table {
   padding: 0;
 }
 table tr {
-  background-color: white;
+  background-color: #111111;
   margin: 0;
   padding: 0;
 }
 table tr:nth-child(2n) {
-  background-color: #f7f7f7;
+  background-color: #222222;
 }
 table tr th {
   font-weight: bold;
@@ -232,21 +234,21 @@ code {
 
 pre > code {
   border-radius: var(--coat-code-block-border-radius,0.25em);
-  background-color: var(--coat-code-block-background-color,#f7f7f7);
-  color: var(--coat-code-block-font-color,#333333);
+  background-color: var(--coat-code-block-background-color,#222222);
+  color: var(--coat-code-block-font-color,#f7f7f7);
   padding: var(--coat-code-block-padding,0.5em 1em);
   font-size: var(--coat-code-block-font-size,1em);
-  font-family: var(--coat-code-block-font-family,'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace);
+  font-family: var(--coat-code-block-font-family,'IBM Plex', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace);
   line-height: code(code-block-line-height);
 }
 
 :not(pre) > code {
   border-radius: var(--coat-code-border-radius,0.25em);
   background-color: var(--coat-code-background-color,rgba(0, 164, 219, 0.25));
-  color: var(--coat-code-font-color,#333333);
+  color: var(--coat-code-font-color,#f7f7f7);
   padding: var(--coat-code-padding,0.5em);
   font-size: var(--coat-code-font-size,1em);
-  font-family: var(--coat-code-font-family,'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace);
+  font-family: var(--coat-code-font-family,'IBM Plex', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace);
   line-height: code(code-line-height);
 }
 
@@ -350,10 +352,10 @@ dl dd > :last-child {
 
 #footer {
   position: relative;
-  border: var(--coat-footer-nav-border,1px 0 0 0 solid rgba(0, 0, 0, 0.25));
+  border: var(--coat-footer-nav-border,1px 0 0 0 solid rgba(255, 255, 255, 0.25));
   border-radius: var(--coat-header-nav-border-radius,0.25em);
   background-color: var(--coat-footer-nav-background-color,transparent);
-  color: var(--coat-footer-nav-font-color,#333333);
+  color: var(--coat-footer-nav-font-color,#f7f7f7);
   /* Spacing */
 }
 @media screen and (min-width: 751px) {
@@ -372,7 +374,7 @@ dl dd > :last-child {
   display: block;
   border-radius: var(--coat-footer-nav-border-radius,0.25em);
   background-color: var(--coat-footer-nav-font-background-color,transparent);
-  color: var(--coat-footer-nav-font-color,#333333);
+  color: var(--coat-footer-nav-font-color,#f7f7f7);
   white-space: nowrap;
   text-decoration: none;
   padding: var(--coat-footer-nav-padding,1em);
@@ -479,10 +481,10 @@ dl dd > :last-child {
 #header nav {
   z-index: 2;
   justify-content: center;
-  border: var(--coat-header-nav-border,1px solid rgba(0, 0, 0, 0.25));
+  border: var(--coat-header-nav-border,1px solid rgba(255, 255, 255, 0.25));
   border-radius: var(--coat-header-nav-border-radius,0.25em);
-  background-color: var(--coat-header-nav-background-color,white);
-  color: var(--coat-header-nav-font-color,#333333);
+  background-color: var(--coat-header-nav-background-color,#111111);
+  color: var(--coat-header-nav-font-color,#f7f7f7);
   margin: 0;
 }
 @media screen and (max-width: 750px) {
@@ -496,7 +498,7 @@ dl dd > :last-child {
   display: block;
   border-radius: var(--coat-header-nav-border-radius,0.25em);
   background-color: var(--coat-header-nav-font-background-color,transparent);
-  color: var(--coat-header-nav-font-color,#333333);
+  color: var(--coat-header-nav-font-color,#f7f7f7);
   white-space: nowrap;
   text-decoration: none;
   padding: var(--coat-header-nav-padding,1em);
@@ -513,7 +515,7 @@ dl dd > :last-child {
   display: flex;
   justify-content: center;
   border-radius: var(--coat-header-nav-border-radius,0.25em);
-  background-color: var(--coat-header-nav-background-color,white);
+  background-color: var(--coat-header-nav-background-color,#111111);
   padding: 0;
 }
 @media screen and (max-width: 750px) {
@@ -580,11 +582,11 @@ dl dd > :last-child {
 #header nav > ul ul li a {
   border-radius: 0;
   background-color: var(--coat-header-nav-sub-font-background-color,#e3116c);
-  color: var(--coat-header-nav-sub-font-color,white);
+  color: var(--coat-header-nav-sub-font-color,#111111);
 }
 #header nav > ul ul li a:hover {
-  background-color: var(--coat-header-nav-sub-font-background-color-hover,black);
-  color: var(--coat-header-nav-sub-font-color-hover,white);
+  background-color: var(--coat-header-nav-sub-font-background-color-hover,white);
+  color: var(--coat-header-nav-sub-font-color-hover,#111111);
 }
 #header nav > ul ul li:first-child a {
   border-radius: var(--coat-header-nav-border-radius,0.25em) var(--coat-header-nav-border-radius,0.25em) 0 0;
@@ -607,8 +609,8 @@ dl dd > :last-child {
 
 #sidebar {
   border-radius: var(--coat-sidebar-nav-border-radius,0.25em);
-  background-color: var(--coat-sidebar-nav-background-color,white);
-  color: var(--coat-sidebar-nav-font-color,#333333);
+  background-color: var(--coat-sidebar-nav-background-color,#111111);
+  color: var(--coat-sidebar-nav-font-color,#f7f7f7);
   /* Spacing */
 }
 @media screen and (min-width: 751px) {
@@ -642,8 +644,8 @@ dl dd > :last-child {
 }
 #sidebar nav a {
   display: block;
-  background-color: var(--coat-sidebar-nav-font-background-color,white);
-  color: var(--coat-sidebar-nav-font-color,#333333);
+  background-color: var(--coat-sidebar-nav-font-background-color,#111111);
+  color: var(--coat-sidebar-nav-font-color,#f7f7f7);
   white-space: nowrap;
   text-decoration: none;
   padding: calc(var(--coat-sidebar-nav-padding,1em) / 2) calc(var(--coat-sidebar-nav-padding,1em) / 3);
@@ -689,7 +691,7 @@ dl dd > :last-child {
 }
 #sidebar nav > ul ul li a {
   border-radius: 0;
-  background-color: var(--coat-sidebar-nav-sub-font-background-color,white);
+  background-color: var(--coat-sidebar-nav-sub-font-background-color,#111111);
   color: var(--coat-sidebar-nav-sub-font-color,currentColor);
   opacity: var(--coat-sidebar-nav-sub-font-opacity,0.5);
 }
@@ -757,7 +759,7 @@ dl dd > :last-child {
   background-color: #00a4db;
 }
 .nav-trigger__label:hover {
-  background-color: black;
+  background-color: white;
 }
 .nav-trigger__label[for=sidebar-nav-trigger] {
   position: fixed;
@@ -817,9 +819,9 @@ footnote {
  */
 code[class*=language-],
 pre[class*=language-] {
-  color: var(--coat-code-block-font-color,#333333);
+  color: var(--coat-code-block-font-color,#f7f7f7);
   font-size: 1em;
-  font-family: var(--coat-code-block-font-family,'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace);
+  font-family: var(--coat-code-block-font-family,'IBM Plex', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace);
   line-height: var(--coat-code-block-line-height,2);
   white-space: pre;
   direction: ltr;
@@ -852,8 +854,8 @@ code[class*=language-] ::selection {
 
 /* Code blocks */
 pre[class*=language-] {
-  border: 1px solid var(--coat-code-block-border-color,#f7f7f7);
-  background: var(--coat-code-block-background-color,#f7f7f7);
+  border: 1px solid var(--coat-code-block-border-color,#222222);
+  background: var(--coat-code-block-background-color,#222222);
   overflow: auto;
   padding: 1em;
 }
@@ -861,7 +863,7 @@ pre[class*=language-] {
 /* Inline code */
 :not(pre) > code,
 :not(pre) > code[class*=language-] {
-  border: 1px solid var(--coat-code-border-color,#f7f7f7);
+  border: 1px solid var(--coat-code-border-color,#222222);
   background: var(--coat-code-background-color,rgba(0, 164, 219, 0.25));
   font-size: var(--coat-code-font-size,1em);
   line-height: var(--coat-code-line-height,1);
@@ -1009,4 +1011,4 @@ pre[class*=language-] {
   color: #00009f;
 }
 
-/*# sourceMappingURL=feather-ext.css.map */
+/*# sourceMappingURL=coat-dark-ext.css.map */

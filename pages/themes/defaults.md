@@ -1,4 +1,4 @@
-# Theme
+# Defaults
 
 There are a few you things you can edit, like the colors and borders.
 
