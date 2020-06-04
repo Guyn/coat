@@ -1,0 +1,12 @@
+/*
+    Html & Body
+*/
+html,
+body {
+	background-color: coat(background-color);
+	color: coat(font-color);
+	font-family: coat(font-family);
+}
+body {
+	padding: calc(#{coat(padding)} / 2);
+}
