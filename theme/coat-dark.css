@@ -4,6 +4,41 @@
 /*
     Settings
 */
+body * {
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+ul[class],
+ul[class] li,
+ol[class],
+ol[class] li {
+  list-style-type: none;
+}
+
+/* prettier-ignore */
 /*
     Html & Body
 */

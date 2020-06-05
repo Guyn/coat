@@ -2,6 +2,41 @@
 /*
     Settings
 */
+body * {
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+ul[class],
+ul[class] li,
+ol[class],
+ol[class] li {
+  list-style-type: none;
+}
+
+/* prettier-ignore */
 /*
     Html & Body
 */
@@ -696,44 +731,41 @@ dl dd > :last-child {
   margin: 0;
 }
 
-.nav-trigger__input {
-  position: absolute;
-  opacity: 0;
-}
-.nav-trigger__input#sidebar-nav-trigger ~ nav {
-  transform-origin: 0 0%;
-  transition: transform var(--coat-transition,0.3s ease-in-out), opacity var(--coat-transition,0.3s ease-in-out);
-}
-@media screen and (max-width: 750px) {
-  .nav-trigger__input#sidebar-nav-trigger ~ nav {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-}
-.nav-trigger__input#sidebar-nav-trigger:checked ~ nav {
-  transform: scale(1);
-  opacity: 1;
-}
-.nav-trigger__input#header-nav-trigger ~ nav {
-  transform-origin: 100% 0%;
-  transition: transform var(--coat-transition,0.3s ease-in-out), opacity var(--coat-transition,0.3s ease-in-out);
-}
-@media screen and (max-width: 750px) {
-  .nav-trigger__input#header-nav-trigger ~ nav {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-}
-.nav-trigger__input#header-nav-trigger:checked ~ nav {
-  transform: scale(1);
-  opacity: 1;
-}
 .nav-trigger__label {
   z-index: 10;
   display: block;
   width: 2.5em;
   height: 2.5em;
+  border-radius: var(--coat-border-radius,0.25em);
   background-color: var(--coat-color-primary,#00a4db);
+}
+.nav-trigger__label span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-indent: -999em;
+  transform: translateY(-0.175rem);
+  cursor: pointer;
+  user-select: none;
+  margin: calc(0.175rem / 2) auto calc(0.175rem + 0.33rem) calc(calc(1.5rem / 2) * -1);
+}
+.nav-trigger__label span, .nav-trigger__label span::before, .nav-trigger__label span::after {
+  display: block;
+  width: 1.5rem;
+  height: 0.175rem;
+  background-color: white;
+  opacity: 1;
+  transition: 0.3s;
+}
+.nav-trigger__label span::before, .nav-trigger__label span::after {
+  content: "";
+  position: absolute;
+}
+.nav-trigger__label span::before {
+  top: calc(calc(0.175rem + 0.33rem) * -1);
+}
+.nav-trigger__label span::after {
+  top: calc(0.175rem + 0.33rem);
 }
 .nav-trigger__label:hover {
   background-color: var(--coat-color-black,black);
@@ -752,6 +784,44 @@ dl dd > :last-child {
   .nav-trigger__label {
     transform: scale(0);
   }
+}
+.nav-trigger__input {
+  position: absolute;
+  opacity: 0;
+}
+.nav-trigger__input#sidebar-nav-trigger ~ nav {
+  transform-origin: 0 0%;
+}
+.nav-trigger__input#header-nav-trigger ~ nav {
+  transform-origin: 100% 0%;
+}
+.nav-trigger__input#header-nav-trigger ~ nav, .nav-trigger__input#sidebar-nav-trigger ~ nav {
+  transition: transform var(--coat-transition,0.3s ease-in-out), opacity var(--coat-transition,0.3s ease-in-out);
+}
+@media screen and (max-width: 750px) {
+  .nav-trigger__input#header-nav-trigger ~ nav, .nav-trigger__input#sidebar-nav-trigger ~ nav {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+.nav-trigger__input#header-nav-trigger:checked + label span::before, .nav-trigger__input#header-nav-trigger:checked + label span::after, .nav-trigger__input#sidebar-nav-trigger:checked + label span::before, .nav-trigger__input#sidebar-nav-trigger:checked + label span::after {
+  top: 0px;
+  margin-top: calc( 				(0.175rem / 2) + (0.33rem + 0.175rem) * -1 			);
+}
+.nav-trigger__input#header-nav-trigger:checked + label span, .nav-trigger__input#sidebar-nav-trigger:checked + label span {
+  background-color: transparent;
+  margin-top: -calc(0.175rem / 2);
+  transform: translateY(calc((0.175rem * -1) / 2));
+}
+.nav-trigger__input#header-nav-trigger:checked + label span::before, .nav-trigger__input#sidebar-nav-trigger:checked + label span::before {
+  transform: translateY(calc(0.33rem + 0.175rem)) rotate(45deg);
+}
+.nav-trigger__input#header-nav-trigger:checked + label span::after, .nav-trigger__input#sidebar-nav-trigger:checked + label span::after {
+  transform: translateY(calc(0.33rem + 0.175rem)) rotate(-45deg);
+}
+.nav-trigger__input#header-nav-trigger:checked ~ nav, .nav-trigger__input#sidebar-nav-trigger:checked ~ nav {
+  transform: scale(1);
+  opacity: 1;
 }
 
 footnote {

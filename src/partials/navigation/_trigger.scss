@@ -1,42 +1,14 @@
 .nav-trigger {
-	&__input {
-		position: absolute;
-		opacity: 0;
-		&#sidebar-nav-trigger {
-			& ~ nav {
-				transform-origin: 0 0%;
-				transition: transform coat(transition), opacity coat(transition);
-				@media #{$mobile} {
-					transform: scale(0.5);
-					opacity: 0;
-				}
-			}
-			&:checked ~ nav {
-				transform: scale(1);
-				opacity: 1;
-			}
-		}
-		&#header-nav-trigger {
-			& ~ nav {
-				transform-origin: 100% 0%;
-				transition: transform coat(transition), opacity coat(transition);
-				@media #{$mobile} {
-					transform: scale(0.5);
-					opacity: 0;
-				}
-			}
-			&:checked ~ nav {
-				transform: scale(1);
-				opacity: 1;
-			}
-		}
-	}
 	&__label {
 		z-index: 10;
 		display: block;
 		width: 2.5em;
 		height: 2.5em;
+		border-radius: coat(border-radius);
 		background-color: coat(color-primary);
+		span {
+			@include menu(1.5rem, 0.175rem, 0.33rem, white);
+		}
 		&:hover {
 			background-color: coat(color-black);
 		}
@@ -52,6 +24,33 @@
 		}
 		@media #{$desktop} {
 			transform: scale(0);
+		}
+	}
+	&__input {
+		position: absolute;
+		opacity: 0;
+		&#sidebar-nav-trigger ~ nav {
+			transform-origin: 0 0%;
+		}
+		&#header-nav-trigger ~ nav {
+			transform-origin: 100% 0%;
+		}
+		&#header-nav-trigger,
+		&#sidebar-nav-trigger {
+			& ~ nav {
+				transition: transform coat(transition), opacity coat(transition);
+				@media #{$mobile} {
+					transform: scale(0.5);
+					opacity: 0;
+				}
+			}
+			&:checked + label span {
+				@include menu-close();
+			}
+			&:checked ~ nav {
+				transform: scale(1);
+				opacity: 1;
+			}
 		}
 	}
 }
