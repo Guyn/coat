@@ -114,6 +114,7 @@ $coat-default: (
 	// Footer navigation
 		footer-nav-border: 1px 0 0 0 solid rgba($color-black, 0.25),
 	footer-nav-background-color: transparent,
+	footer-nav-background-color-mobile: $color-light,
 	footer-nav-font-background-color: transparent,
 	footer-nav-font-background-color-hover: transparent,
 	footer-nav-font-color: $color-dark,
@@ -127,11 +128,14 @@ $coat-default: (
 	footer-nav-sub-font-color: currentColor,
 	footer-nav-sub-font-color-hover: $color-primary,
 	footer-nav-border-radius: 0.25em,
+	footer-nav-border-radius-mobile: 0.25em,
 	footer-nav-padding: 0.5em 1em,
+	footer-nav-padding-mobile: 1em,
 	footer-nav-active-background-color: $color-primary,
 	footer-nav-active-font-color: contra($color-primary),
 	// Sidebar navigation
 		sidebar-nav-background-color: $color-white,
+	sidebar-nav-mobile-background-color: $color-white,
 	sidebar-nav-font-color: $color-dark,
 	sidebar-nav-font-color-hover: $color-primary,
 	sidebar-nav-font-opacity: 1,
@@ -144,6 +148,7 @@ $coat-default: (
 	sidebar-nav-sub-font-color: currentColor,
 	sidebar-nav-sub-font-color-hover: $color-primary,
 	sidebar-nav-border-radius: 0.25em,
+	sidebar-nav-mobile-border-radius: 0.25em,
 	sidebar-nav-padding: 0.5em 1em,
 	sidebar-nav-active-background-color: $color-primary,
 	sidebar-nav-active-font-color: contra($color-primary),
@@ -153,7 +158,10 @@ $coat-default: (
 	footnote-font-size: 0.85em,
 	footnote-text-align: center,
 	footnote-font-color: currentColor,
-	footnote-padding: 2em
+	footnote-padding: 2em,
+	// Main section
+		main-padding: 0,
+	main-padding-mobile: 2em 0
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

@@ -1,0 +1,6 @@
+#main {
+	padding: coat(main-padding);
+	@media #{$mobile} {
+		padding: coat(main-padding-mobile);
+	}
+}

@@ -385,4 +385,10 @@ dl dd > :last-child {
   margin-bottom: 0;
 }
 
+@media screen and (max-width: 750px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
 /*# sourceMappingURL=feather.css.map */

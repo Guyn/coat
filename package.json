@@ -11,7 +11,7 @@
 		"dev:copy:theme": "copy-and-watch theme/* docs/theme --watch",
 		"dev:copy:code": "copy-and-watch code/* docs/code --watch",
 		"dev:serve": "serve -l 3000 docs",
-		"dev": "npx dokkie && concurrently \"npm run dev:sass\" \"npm run dev:copy:theme\" \"npm run dev:copy:code\" \"npm run dev:serve\"",
+		"dev": "npx dokkie --skip=favicons && concurrently \"npm run dev:sass\" \"npm run dev:copy:theme\" \"npm run dev:copy:code\" \"npm run dev:serve\"",
 		"stylelint": "stylelint 'src/*.scss' 'src/**/*.scss'",
 		"stylelint:fix": "stylelint 'src/*.scss' 'src/**/*.scss' --fix"
 	},
