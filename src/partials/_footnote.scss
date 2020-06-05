@@ -1,6 +1,9 @@
 footnote {
 	display: block;
-	font-size: 0.85em;
-	text-align: center;
-	opacity: 0.5;
+	border: coat(footnote-border);
+	color: coat(footnote-font-color);
+	font-size: coat(footnote-font-size);
+	text-align: coat(footnote-text-align);
+	opacity: coat(footnote-opacity);
+	padding: coat(footnote-padding);
 }

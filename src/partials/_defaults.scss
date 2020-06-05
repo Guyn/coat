@@ -19,9 +19,9 @@ $color-primary: #00a4db !default;
 $color-secondary: #e3116c !default;
 $color-dark: #333333 !default;
 $color-light: #f7f7f7 !default;
-
 $color-white: white !default;
 $color-black: black !default;
+
 $coat: () !default;
 
 $coat-default: (
@@ -146,7 +146,14 @@ $coat-default: (
 	sidebar-nav-border-radius: 0.25em,
 	sidebar-nav-padding: 0.5em 1em,
 	sidebar-nav-active-background-color: $color-primary,
-	sidebar-nav-active-font-color: contra($color-primary)
+	sidebar-nav-active-font-color: contra($color-primary),
+	// Sidebar navigation
+		footnote-border: 1px 0 0 0 solid $color-dark,
+	footnote-opacity: 0.25,
+	footnote-font-size: 0.85em,
+	footnote-text-align: center,
+	footnote-font-color: currentColor,
+	footnote-padding: 2em
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

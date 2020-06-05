@@ -8,5 +8,5 @@ body {
 	font-family: coat(font-family);
 }
 body {
-	padding: calc(#{coat(padding)} / 2);
+	padding: coat(padding);
 }
