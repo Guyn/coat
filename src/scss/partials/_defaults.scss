@@ -113,6 +113,7 @@ $coat-default: (
 	header-nav-active-font-color: contra($color-primary),
 	// Footer navigation
 		footer-nav-border: 1px 0 0 0 solid rgba($color-black, 0.25),
+	footer-nav-margin: 4em 0 0 0,
 	footer-nav-background-color: transparent,
 	footer-nav-background-color-mobile: $color-light,
 	footer-nav-font-background-color: transparent,
@@ -161,7 +162,16 @@ $coat-default: (
 	footnote-padding: 2em,
 	// Main section
 		main-padding: 0,
-	main-padding-mobile: 2em 0
+	main-padding-mobile: 2em 0,
+	// Overview section
+		overview-margin: 4em 0 0 0,
+	// Overview section
+		article-max-width: 75ch,
+	article-margin: 4em auto 0 auto 0,
+	article-padding: 2em auto,
+	article-paragraph-line-height: 1.75,
+	article-paragraph-first-font-size: 1.25em,
+	article-paragraph-first-line-height: 1.5
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

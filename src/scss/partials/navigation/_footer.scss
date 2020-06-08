@@ -4,6 +4,7 @@
 	border-radius: coat(header-nav-border-radius);
 	background-color: coat(footer-nav-background-color);
 	color: coat(footer-nav-font-color);
+	margin-top: coat(footer-nav-margin);
 	@media #{$desktop} {
 		padding: coat(footer-nav-padding);
 	}

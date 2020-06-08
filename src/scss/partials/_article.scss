@@ -1,12 +1,13 @@
 article {
-	max-width: 75ch;
-	margin: auto;
+	max-width: coat(article-max-width);
+	margin: coat(article-margin);
+	padding: coat(article-padding);
 
 	p {
-		line-height: 1.75;
+		line-height: coat(article-paragraph-line-height);
 		&:first-of-type {
-			font-size: 1.25em;
-			line-height: 1.5;
+			font-size: coat(article-paragraph-first-font-size);
+			line-height: coat(article-paragraph-first-line-height);
 		}
 	}
 }
