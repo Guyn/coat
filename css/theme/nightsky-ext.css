@@ -869,7 +869,7 @@ footnote {
 }
 
 #blog-footer {
-  grid-area: blog-footer;
+  grid-area: overview;
 }
 
 #article {
@@ -879,7 +879,7 @@ footnote {
 @media screen and (min-width: 751px) {
   body {
     display: grid;
-    grid-template-areas: "header header header header" ". article article ." "sidebar main main ." ". blog-footer blog-footer ." "footer footer";
+    grid-template-areas: "header header header header" ". article article ." "sidebar main main ." ". overview overview ." "footer footer footer footer";
     grid-template-columns: repeat(4, minmax(250px, 1fr));
     grid-template-rows: auto;
   }
@@ -895,10 +895,15 @@ footnote {
 }
 
 article {
-  border: 1px solid red;
+  max-width: 75ch;
+  margin: auto;
 }
 article p {
   line-height: 1.75;
+}
+article p:first-of-type {
+  font-size: 1.25em;
+  line-height: 1.5;
 }
 
 /**

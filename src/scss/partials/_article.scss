@@ -1,6 +1,12 @@
 article {
-	border: 1px solid red;
+	max-width: 75ch;
+	margin: auto;
+
 	p {
 		line-height: 1.75;
+		&:first-of-type {
+			font-size: 1.25em;
+			line-height: 1.5;
+		}
 	}
 }

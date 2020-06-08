@@ -8,7 +8,7 @@
 		"build": "sass src/scss:css --style=compressed",
 		"precommit": "npm run build",
 		"dev:sass": "sass src/scss:css --watch",
-		"dev:copy:css": "copy-and-watch css/* docs/* --watch",
+		"dev:copy:css": "copy-and-watch css/* docs/css/ --watch",
 		"dev:serve": "serve -l 4444 docs",
 		"dev": "concurrently \"npm run dev:sass\"  \"npm run dev:copy:css\" \"npm run dev:serve\"",
 		"dev:docs": "npx dokkie --skip=favicons && npm run dev",

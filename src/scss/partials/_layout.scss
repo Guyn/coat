@@ -11,7 +11,7 @@
 	grid-area: footer;
 }
 #blog-footer {
-	grid-area: blog-footer;
+	grid-area: overview;
 }
 #article {
 	grid-area: article;
@@ -23,8 +23,8 @@ body {
 			"header header header header"
 			". article article ."
 			"sidebar main main ."
-			". blog-footer blog-footer ."
-			"footer footer";
+			". overview overview ."
+			"footer footer footer footer";
 		grid-template-columns: repeat(4, minmax(250px, 1fr));
 		grid-template-rows: auto;
 	}
