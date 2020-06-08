@@ -1,0 +1,31 @@
+#header {
+	grid-area: header;
+}
+#sidebar {
+	grid-area: sidebar;
+}
+#main {
+	grid-area: main;
+}
+#footer {
+	grid-area: footer;
+}
+#blog-footer {
+	grid-area: blog-footer;
+}
+#article {
+	grid-area: article;
+}
+body {
+	@media #{$desktop} {
+		display: grid;
+		grid-template-areas:
+			"header header header header"
+			". article article ."
+			"sidebar main main ."
+			". blog-footer blog-footer ."
+			"footer footer";
+		grid-template-columns: repeat(4, minmax(250px, 1fr));
+		grid-template-rows: auto;
+	}
+}

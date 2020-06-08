@@ -1,0 +1,182 @@
+@use "sass:map";
+@import "../../../node_modules/@guyn/color/dist/colors.scss";
+
+@function contra($color, $black: black, $white: white) {
+	@if lightness($color) > 60 {
+		@return $black;
+	} @else {
+		@return $white;
+	}
+}
+@function to-lightness($color, $lightness) {
+	@return hsla(hue($color), saturation($color), $lightness, alpha($color));
+}
+
+$mobile: "screen and (max-width: 750px)";
+$desktop: "screen and (min-width: 751px)";
+
+$color-primary: #00a4db !default;
+$color-secondary: #e3116c !default;
+$color-dark: #333333 !default;
+$color-light: #f7f7f7 !default;
+$color-white: white !default;
+$color-black: black !default;
+
+$coat: () !default;
+
+$coat-default: (
+	// Colors
+		color-primary: $color-primary,
+	color-secondary: $color-secondary,
+	color-primary-contra: contra($color-primary),
+	color-secondary-contra: contra($color-secondary),
+	color-dark: $color-dark,
+	color-light: $color-light,
+	color-white: $color-white,
+	color-black: $color-black,
+	// Basics
+		padding: 2rem,
+	margin: 1em,
+	transition-time: 0.3s,
+	transition-bezier: ease-in-out,
+	transition: 0.3s ease-in-out,
+	background-color: $color-white,
+	max-width: 960px,
+	border-radius: 0.25em,
+	border-color: $color-light,
+	border-width: 1px,
+	border: 1px solid $color-light,
+	font-family:
+		"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif'",
+	font-color: $color-dark,
+	// Heading
+		heading-step: 0.5,
+	heading-font-family: inherit,
+	// Content Links
+		link-font-color: $color-primary,
+	link-background-color: transparent,
+	link-font-color-hover: $color-primary,
+	link-background-color-hover: $color-black,
+	link-border-bottom: 2px solid rgba($color-primary, 0.25),
+	// List
+		list-prefix-border-radius: 0,
+	list-prefix-background-color: transparent,
+	list-prefix-width: auto,
+	list-prefix-font-color: $color-primary,
+	// Code Examples
+		code-font-family:
+		"'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
+	code-font-color: contra(to-lightness($color-primary, 80)),
+	code-font-size: 1em,
+	code-selection: $color-primary,
+	code-line-height: 1,
+	code-border-color: $color-light,
+	code-padding: 0.5em,
+	code-background-color: to-lightness($color-primary, 80),
+	code-border-radius: 0.25em,
+	// Code Block
+		code-block-font-family:
+		"'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
+	code-block-font-color: $color-dark,
+	code-block-font-size: 1em,
+	code-block-selection: $color-primary,
+	code-block-line-height: 2,
+	code-block-border-color: $color-light,
+	code-block-padding: 0.5em 1em,
+	code-block-background-color: $color-light,
+	code-block-border-radius: 0.25em,
+	// Tables
+		table-border-radius: 0.2em,
+	table-background-color: transparent,
+	table-text-color: currentColor,
+	table-cell-padding: 0.5em 1em,
+	table-border: 1px solid $color-primary,
+	// Header navigation
+		header-nav-border: 1px solid rgba($color-black, 0.25),
+	header-nav-background-color: $color-white,
+	header-nav-background-color-hover: transparent,
+	header-nav-font-background-color: transparent,
+	header-nav-font-background-color-hover: transparent,
+	header-nav-font-color: $color-dark,
+	header-nav-font-color-hover: $color-primary,
+	header-nav-font-opacity: 1,
+	header-nav-font-opacity-hover: 1,
+	header-nav-sub-font-background-color: $color-secondary,
+	header-nav-sub-font-background-color-hover: $color-black,
+	header-nav-sub-font-opacity: 1,
+	header-nav-sub-font-opacity-hover: 1,
+	header-nav-sub-font-color: $color-white,
+	header-nav-sub-font-color-hover: $color-white,
+	header-nav-border-radius: 0.25em,
+	header-nav-padding: 1em,
+	header-nav-active-background-color: $color-primary,
+	header-nav-active-font-color: contra($color-primary),
+	// Footer navigation
+		footer-nav-border: 1px 0 0 0 solid rgba($color-black, 0.25),
+	footer-nav-background-color: transparent,
+	footer-nav-background-color-mobile: $color-light,
+	footer-nav-font-background-color: transparent,
+	footer-nav-font-background-color-hover: transparent,
+	footer-nav-font-color: $color-dark,
+	footer-nav-font-color-hover: $color-primary,
+	footer-nav-font-opacity: 1,
+	footer-nav-font-opacity-hover: 1,
+	footer-nav-sub-font-background-color: transparent,
+	footer-nav-sub-font-background-color-hover: transparent,
+	footer-nav-sub-font-opacity: 0.5,
+	footer-nav-sub-font-opacity-hover: 1,
+	footer-nav-sub-font-color: currentColor,
+	footer-nav-sub-font-color-hover: $color-primary,
+	footer-nav-border-radius: 0.25em,
+	footer-nav-border-radius-mobile: 0.25em,
+	footer-nav-padding: 0.5em 1em,
+	footer-nav-padding-mobile: 1em,
+	footer-nav-active-background-color: $color-primary,
+	footer-nav-active-font-color: contra($color-primary),
+	// Sidebar navigation
+		sidebar-nav-background-color: $color-white,
+	sidebar-nav-mobile-background-color: $color-white,
+	sidebar-nav-font-color: $color-dark,
+	sidebar-nav-font-color-hover: $color-primary,
+	sidebar-nav-font-opacity: 1,
+	sidebar-nav-font-opacity-hover: 1,
+	sidebar-nav-font-background-color: $color-white,
+	sidebar-nav-sub-font-background-color: $color-white,
+	sidebar-nav-sub-font-background-color-hover: inherit,
+	sidebar-nav-sub-font-opacity: 0.5,
+	sidebar-nav-sub-font-opacity-hover: 1,
+	sidebar-nav-sub-font-color: currentColor,
+	sidebar-nav-sub-font-color-hover: $color-primary,
+	sidebar-nav-border-radius: 0.25em,
+	sidebar-nav-mobile-border-radius: 0.25em,
+	sidebar-nav-padding: 0.5em 1em,
+	sidebar-nav-active-background-color: $color-primary,
+	sidebar-nav-active-font-color: contra($color-primary),
+	// Sidebar navigation
+		footnote-border: 1px 0 0 0 solid $color-dark,
+	footnote-opacity: 0.25,
+	footnote-font-size: 0.85em,
+	footnote-text-align: center,
+	footnote-font-color: currentColor,
+	footnote-padding: 2em,
+	// Main section
+		main-padding: 0,
+	main-padding-mobile: 2em 0
+) !default;
+
+$coat-settings: map.merge($coat-default, $coat);
+
+@mixin setCustomProperty($setting) {
+	:root {
+		--coat-#{$setting}: #{map-get($coat, $setting)};
+	}
+}
+@function coat($setting) {
+	@if (null != index($coat-settings, $setting)) {
+		@warn '#{$setting} doesn\'t exit in the defaults, only a custom property will be places';
+		@return unquote("var(--coat-#{$setting})");
+	}
+	@return unquote(
+		"var(--coat-#{$setting},#{map-get($coat-settings,$setting)})"
+	);
+}

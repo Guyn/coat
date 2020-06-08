@@ -5,15 +5,16 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "npm run test",
-		"build": "sass src:. --style=compressed",
+		"build": "sass src/scss:css --style=compressed",
 		"precommit": "npm run build",
-		"dev:sass": "sass src:. --watch",
-		"dev:copy:theme": "copy-and-watch theme/* docs/theme --watch",
-		"dev:copy:code": "copy-and-watch code/* docs/code --watch",
-		"dev:serve": "serve -l 3000 docs",
-		"dev": "npx dokkie --skip=favicons && concurrently \"npm run dev:sass\" \"npm run dev:copy:theme\" \"npm run dev:copy:code\" \"npm run dev:serve\"",
-		"stylelint": "stylelint 'src/*.scss' 'src/**/*.scss'",
-		"stylelint:fix": "stylelint 'src/*.scss' 'src/**/*.scss' --fix"
+		"dev:sass": "sass src/scss:css --watch",
+		"dev:copy:css": "copy-and-watch css/* docs/* --watch",
+		"dev:serve": "serve -l 4444 docs",
+		"dev": "concurrently \"npm run dev:sass\"  \"npm run dev:copy:css\" \"npm run dev:serve\"",
+		"dev:docs": "npx dokkie --skip=favicons && npm run dev",
+		"dev:blog": "npx dokkie --type=blog --input=./articles --output=docs --skip=favicons && npm run dev",
+		"stylelint": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss'",
+		"stylelint:fix": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss' --fix"
 	},
 	"repository": {
 		"type": "git",

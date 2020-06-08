@@ -4,9 +4,9 @@
 		"js": ["/script/app.js"]
 	},
 	"overrule": {
-		"css": ["/theme/coat-ext.css"]
+		"css": ["/css/theme/coat-ext.css"]
 	},
-	"copy": ["theme", "code", "src/script"],
+	"copy": ["css", "src/script"],
 	"showNavigation": [
 		"header",
 		"footer",

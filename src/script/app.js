@@ -8,7 +8,7 @@ const setTheme = (file) => {
 
 	document
 		.querySelector("link[type='text/css']")
-		.setAttribute("href", "/theme/" + file + ".css");
+		.setAttribute("href", "/css/theme/" + file + ".css");
 	localStorage.setItem("coat-theme", file);
 };
 
