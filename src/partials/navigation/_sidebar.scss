@@ -48,6 +48,9 @@
 		margin: 0;
 		margin-left: calc(#{coat(sidebar-nav-padding)} / 2);
 	}
+	nav a + ul {
+		margin-top: 0;
+	}
 	nav > ul {
 		display: flex;
 		flex-direction: column;
