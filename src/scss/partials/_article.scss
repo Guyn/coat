@@ -2,6 +2,10 @@ article {
 	max-width: coat(article-max-width);
 	margin: coat(article-margin);
 	padding: coat(article-padding);
+	font-size: coat(article-font-size-mobile);
+	@media #{$desktop} {
+		font-size: coat(article-font-size-mobile);
+	}
 
 	p {
 		line-height: coat(article-paragraph-line-height);
