@@ -228,7 +228,6 @@ $coat-settings: map.merge($coat-default, $coat);
 @mixin coat($props, $setting) {
 	@each $prop in $props {
 		$key: #{$setting}-#{$prop};
-		@debug "#{$key} ::: #{coat-setting-exists($key)} ::: #{coat($key)}";
 		@if coat-setting-exists($key) {
 			#{$prop}: coat($key);
 		}
