@@ -952,7 +952,7 @@ iframe {
   #header nav ul ul a,
 #sidebar nav ul ul a {
     background-color: var(--coat-mobile-nav-link-sub-background-color,#051425);
-    padding: var(--coat-mobile-nav-link-sub-padding,0.5em 1em);
+    padding: var(--coat-mobile-nav-link-sub-padding,0.25em 1em);
     font-size: var(--coat-mobile-nav-link-sub-font-size,0.85em);
     opacity: var(--coat-mobile-nav-link-sub-opacity,0.5);
   }
