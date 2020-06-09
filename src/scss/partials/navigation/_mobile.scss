@@ -1,0 +1,106 @@
+@media #{$mobile} {
+	#header,
+	#sidebar {
+		position: relative;
+		z-index: 3;
+	}
+	#header nav,
+	#sidebar nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		width: 100%;
+		height: 100vh;
+		background-color: coat(mobile-nav-background-color);
+		overflow: scroll;
+		padding: coat(mobile-nav-padding);
+		& > ul {
+			height: auto;
+			border-radius: coat(mobile-nav-list-border-radius);
+			background-color: coat(mobile-nav-list-background-color);
+			padding: coat(mobile-nav-list-padding);
+		}
+
+		a {
+			display: block;
+			white-space: nowrap;
+			text-decoration: none;
+			@include coat(
+				(border-radius, background-color, color, padding, font-size, opacity),
+				"mobile-nav-link"
+			);
+			&:hover {
+				@include coat(
+					(border-radius, background-color, color, padding, font-size, opacity),
+					"mobile-nav-link-hover"
+				);
+			}
+		}
+		.active > a {
+			@include coat(
+				(border-radius, background-color, color, padding, font-size, opacity),
+				"mobile-nav-link-active"
+			);
+			&:hover {
+				@include coat(
+					(border-radius, background-color, color, padding, font-size, opacity),
+					"mobile-nav-link-active-hover"
+				);
+			}
+		}
+		ul ul {
+			a {
+				@include coat(
+					(border-radius, background-color, color, padding, font-size, opacity),
+					"mobile-nav-link-sub"
+				);
+				&:hover {
+					@include coat(
+						(
+							border-radius,
+							background-color,
+							color,
+							padding,
+							font-size,
+							opacity
+						),
+						"mobile-nav-link-sub-hover"
+					);
+				}
+			}
+			.active > a {
+				@include coat(
+					(border-radius, background-color, color, padding, font-size, opacity),
+					"mobile-nav-link-sub-active"
+				);
+				&:hover {
+					@include coat(
+						(
+							border-radius,
+							background-color,
+							color,
+							padding,
+							font-size,
+							opacity
+						),
+						"mobile-nav-link-sub-active-hover"
+					);
+				}
+			}
+		}
+
+		/* Reset*/
+		li {
+			padding-left: 0;
+		}
+		li::before {
+			content: none;
+		}
+		ul {
+			margin-top: 0;
+		}
+	}
+}

@@ -9,4 +9,7 @@ body {
 }
 body {
 	padding: coat(padding);
+	@media #{$mobile} {
+		padding: coat(padding-mobile);
+	}
 }

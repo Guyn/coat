@@ -35,21 +35,31 @@
 		&#header-nav-trigger ~ nav {
 			transform-origin: 100% 0%;
 		}
-		&#header-nav-trigger,
-		&#sidebar-nav-trigger {
-			& ~ nav {
-				transition: transform coat(transition), opacity coat(transition);
-				@media #{$mobile} {
-					transform: scale(0.5);
+		@media #{$mobile} {
+			&#header-nav-trigger,
+			&#sidebar-nav-trigger {
+				& ~ nav {
 					opacity: 0;
+					transition: transform coat(transition), opacity coat(transition);
+					pointer-events: none;
+					& > ul {
+						transform: scale(0.5);
+						opacity: 0;
+						transition: transform coat(transition), opacity coat(transition);
+					}
 				}
-			}
-			&:checked + label span {
-				@include menu-close();
-			}
-			&:checked ~ nav {
-				transform: scale(1);
-				opacity: 1;
+
+				&:checked + label span {
+					@include menu-close();
+				}
+				&:checked ~ nav {
+					opacity: 1;
+					pointer-events: all;
+					& > ul {
+						transform: scale(1);
+						opacity: 1;
+					}
+				}
 			}
 		}
 	}
