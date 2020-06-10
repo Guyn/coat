@@ -1,6 +1,9 @@
 #main {
-	padding: coat(main-padding);
+	@include coat-auto(main);
 	@media #{$mobile} {
-		padding: coat(main-padding-mobile);
+		@include coat-auto(main, mobile);
+	}
+	@media #{$desktop} {
+		@include coat-auto(main, desktop);
 	}
 }
