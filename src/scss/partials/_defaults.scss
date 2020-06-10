@@ -65,6 +65,7 @@ $coat-default: (
 	link__padding: 0.25em 0.125em,
 	link__background-color--hover: $color-black,
 	link__text-decoration: none,
+	link__line-height: 1,
 	link__box-shadow: 0 -2px 0 0px rgba($color-primary, 0.25) inset,
 	link-preview__background-color: to-lightness($color-primary, 90),
 	link-preview__color: to-lightness($color-primary, 20),
@@ -85,7 +86,7 @@ $coat-default: (
 	code__line-height: 1,
 	code__border-color: $color-light,
 	code__padding: 0.5em,
-	code__background-color: to-lightness($color-primary, 80),
+	code__background-color: to-lightness($color-primary, 90),
 	code__border-radius: $border-radius,
 	// Code Block
 		code-block__font-family:
@@ -163,7 +164,7 @@ $coat-default: (
 	overview-link__margin--mobile: 0,
 	// Overview section
 		article__max-width: 75ch,
-	article__margin: 4em auto 0 auto 0,
+	article__margin: 4em auto 0 auto,
 	article__font-size: 1em,
 	article__font-size--mobile: 1.25em,
 	article__padding: 2em auto,
@@ -194,7 +195,12 @@ $coat-default: (
 	alert__color--success: #{to-lightness($green, 12.5)},
 	alert__background-color--success: #{to-lightness($blue, 90)},
 	alert__color--info: #{to-lightness($skyblue, 12.5)},
-	alert__background-color--info: #{to-lightness($skyblue, 90)}
+	alert__background-color--info: #{to-lightness($skyblue, 90)},
+	// Blockquote
+		blockquote__padding: 1em,
+	blockquote__font-size: 1em,
+	blockquote__font-style: italic,
+	blockquote__opacity: 0.66
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

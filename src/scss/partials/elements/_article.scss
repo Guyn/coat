@@ -9,9 +9,9 @@ article {
 
 	p {
 		@include coat-auto(article-paragraph);
-		&:first-of-type {
-			@include coat-auto(article-paragraph, first);
-		}
+	}
+	& > p:first-of-type {
+		@include coat-auto(article-paragraph, first);
 	}
 	h1 {
 		@include coat-auto(article-title);

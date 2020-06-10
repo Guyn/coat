@@ -1,7 +1,8 @@
 /*
     Title
 */
-main {
+main,
+article {
 	h1,
 	h2,
 	h3,
@@ -65,8 +66,9 @@ main {
 		font-size: 1em;
 		line-height: 1.75;
 	}
+
 	article a,
-	ul a,
+	li a,
 	p > a {
 		position: relative;
 		z-index: 1;
