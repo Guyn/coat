@@ -15,26 +15,31 @@ main {
 		font-size: calc(1em * (#{coat(heading-step)} * 6));
 		font-family: coat(heading-font-family);
 		line-height: 1;
+		@include coat-auto(heading, h1);
 	}
 	h2 {
 		font-size: calc(1em * (#{coat(heading-step)} * 5));
 		font-family: coat(heading-font-family);
 		line-height: 1.25;
+		@include coat-auto(heading, h2);
 	}
 	h3 {
 		font-size: calc(1em * (#{coat(heading-step)} * 4));
 		font-family: coat(heading-font-family);
 		line-height: 1.25;
+		@include coat-auto(heading, h3);
 	}
 	h4 {
 		font-size: calc(1em * (#{coat(heading-step)} * 3));
 		font-family: coat(heading-font-family);
 		line-height: 1.5;
+		@include coat-auto(heading, h4);
 	}
 	h5 {
 		font-size: calc(1em * (#{coat(heading-step)} * 2));
 		font-family: coat(heading-font-family);
 		line-height: 1.75;
+		@include coat-auto(heading, h5);
 	}
 
 	h6 {
@@ -44,17 +49,14 @@ main {
 		line-height: 1;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
+		@include coat-auto(heading, h6);
 	}
 
 	.header-anchor {
 		position: absolute;
 		right: 100%;
-		border-radius: coat(border-radius);
-		background-color: coat(color-secondary);
-		color: currentColor;
-		font-size: 0.5em;
 		text-decoration: none;
-		padding: coat(padding);
+		@include coat-auto(header-anchor);
 	}
 	/*
 	Paragraphs
@@ -68,9 +70,7 @@ main {
 		position: relative;
 		z-index: 1;
 		display: inline-block;
-		border-bottom: coat(link-border-bottom);
-		color: coat(link-font-color);
-		text-decoration: none;
+		@include coat-auto(link);
 	}
 
 	ul a,
@@ -82,16 +82,12 @@ main {
 			top: 100%;
 			left: 50%;
 			z-index: 2;
-			border-radius: inherit;
-			background-color: coat(color-background);
-			color: coat(color-foreground);
-			font-size: 0.75em;
-			font-family: coat(code-font);
+			display: block;
 			white-space: nowrap;
 			transform: translateX(-75%) translateY(0%) scale(0.85);
 			opacity: 0;
 			transition: coat(transition-time);
-			padding: calc(#{coat(padding)} / 12) calc(#{coat(padding)} / 4);
+			@include coat-auto(link-preview);
 		}
 	}
 	p a[aria-label]::before {

@@ -8,8 +8,11 @@ body {
 	font-family: coat(font-family);
 }
 body {
-	padding: coat(padding);
+	@include coat-auto(body);
 	@media #{$mobile} {
-		padding: coat(padding, mobile);
+		@include coat-auto(body, mobile);
+	}
+	@media #{$desktop} {
+		@include coat-auto(body, desktop);
 	}
 }

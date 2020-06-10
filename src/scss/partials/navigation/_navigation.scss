@@ -4,3 +4,36 @@
 @import "trigger";
 @import "overview";
 @import "mobile";
+
+#header,
+#footer,
+#sidebar {
+	nav {
+		a {
+			@include coat-auto(standard-nav-link);
+			&:hover {
+				@include coat-auto(standard-nav-link, hover);
+			}
+		}
+		.active > a {
+			@include coat-auto(standard-nav-link, active);
+			&:hover {
+				@include coat-auto(standard-nav-link, active-hover);
+			}
+		}
+		ul ul {
+			a {
+				@include coat-auto(standard-nav-link-sub);
+				&:hover {
+					@include coat-auto(standard-nav-link-sub, hover);
+				}
+			}
+			.active a {
+				@include coat-auto(standard-nav-link-sub, active);
+				&:hover {
+					@include coat-auto(standard-nav-link-sub, active-hover);
+				}
+			}
+		}
+	}
+}
