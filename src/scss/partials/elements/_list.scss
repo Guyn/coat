@@ -10,7 +10,7 @@ ol:not([class]) {
 		list-style-type: none;
 		line-height: 2;
 		& + li {
-			margin-top: coat(list, margin);
+			margin-top: 1em;
 		}
 		&::before {
 			position: absolute;
