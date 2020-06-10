@@ -414,23 +414,23 @@ iframe {
 .alert-info {
   content: "kudt";
   color: var(--coat-alert__color--info,#042a3c);
-  background-color: var(--coat-alert__background-color--info,#a0dcf8);
+  background-color: var(--coat-alert__background-color--info,#cfeefc);
 }
 .alert-success {
   color: var(--coat-alert__color--success,#223c04);
-  background-color: var(--coat-alert__background-color--success,#adcaeb);
+  background-color: var(--coat-alert__background-color--success,#d6e4f5);
 }
 .alert-warning {
   color: var(--coat-alert__color--warning,#402500);
-  background-color: var(--coat-alert__background-color--warning,#ffd499);
+  background-color: var(--coat-alert__background-color--warning,#ffe9cc);
 }
 .alert-danger {
   color: var(--coat-alert__color--danger,#402f00);
-  background-color: var(--coat-alert__background-color--danger,#ffe599);
+  background-color: var(--coat-alert__background-color--danger,#fff2cc);
 }
 .alert-tip {
   color: var(--coat-alert__color--tip,#0c1f33);
-  background-color: var(--coat-alert__background-color--tip,#cff8a0);
+  background-color: var(--coat-alert__background-color--tip,#e7fccf);
 }
 
 /*# sourceMappingURL=coat-dark.css.map */

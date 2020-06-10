@@ -1,17 +1,19 @@
 article {
-	max-width: coat(article, max-width);
-	margin: coat(article, margin);
-	padding: coat(article, padding);
-	font-size: coat(article, font-size, mobile);
+	@include coat-auto(article);
 	@media #{$desktop} {
-		font-size: coat(article, font-size, mobile);
+		@include coat-auto(article, desktop);
+	}
+	@media #{$mobile} {
+		@include coat-auto(article, mobile);
 	}
 
 	p {
-		line-height: coat(article-paragraph, line-height);
+		@include coat-auto(article-paragraph);
 		&:first-of-type {
-			font-size: coat(article-paragraph, font-size, first);
-			line-height: coat(article-paragraph, line-height, first);
+			@include coat-auto(article-paragraph, first);
 		}
+	}
+	h1 {
+		@include coat-auto(article-title);
 	}
 }

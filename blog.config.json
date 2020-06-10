@@ -1,0 +1,10 @@
+{
+	"projectTitle": "Coat",
+	"add": {
+		"js": ["/script/app.js"]
+	},
+	"overrule": {
+		"css": ["/css/theme/coat-ext.css"]
+	},
+	"copy": ["css", "src/script"]
+}

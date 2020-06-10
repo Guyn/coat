@@ -12,7 +12,7 @@
 		"dev:serve": "serve -l 4444 docs",
 		"dev": "concurrently \"npm run dev:sass\"  \"npm run dev:copy:css\" \"npm run dev:serve\"",
 		"dev:docs": "npx dokkie --skip=favicons && npm run dev",
-		"dev:blog": "npx dokkie --type=blog --input=./articles --output=docs --skip=favicons && npm run dev",
+		"dev:blog": "npx dokkie --type=blog --input=posts --output=docs --config=blog.config.json --skip=favicons && npm run dev",
 		"stylelint": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss'",
 		"stylelint:fix": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss' --fix"
 	},

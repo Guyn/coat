@@ -1,3 +1,20 @@
 #blog-footer {
-	margin: coat(overview-margin);
+	@include coat-auto(overview);
+
+	li:before {
+		content: none;
+	}
+	ul {
+		@include coat-auto(overview-list);
+	}
+	li {
+		display: flex;
+		@include coat-auto(overview-item);
+	}
+	a {
+		@include coat-auto(overview-link);
+	}
+	time {
+		@include coat-auto(overview-time);
+	}
 }

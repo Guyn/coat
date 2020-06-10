@@ -41,8 +41,8 @@ $coat-default: (
 	padding--mobile: 1em 2em,
 	margin: 1em,
 	transition-time: 0.25s,
-	transition-bezier: ease-in-out,
-	transition: 0.25s ease-in-out,
+	transition-bezier: cubic-bezier(0.15, 0.65, 0.65, 1.25),
+	transition: 0.25s cubic-bezier(0.15, 0.65, 0.65, 1.25),
 	background-color: $color-white,
 	max-width: 960px,
 	border-radius: $border-radius,
@@ -107,6 +107,7 @@ $coat-default: (
 	// Link
 		standard-nav-link__color: $color-dark,
 	standard-nav-link__font-size: 1em,
+	standard-nav-link__text-decoration: none,
 	standard-nav-link__color--hover: to-lightness($color-primary, 20),
 	standard-nav-link__color--active: to-lightness($color-primary, 20),
 	standard-nav-link__background-color--before: to-lightness($color-primary, 95),
@@ -150,15 +151,25 @@ $coat-default: (
 	main__padding--mobile: 2em 0,
 	// Overview section
 		overview__margin: 4em 0 0 0,
+	overview__padding: 0em,
+	overview-time__display: block,
+	overview-time__opacity: 0.5,
+	overview-time__font-size: 0.75em,
+	overview-time__font-weight: bold,
+	overview-time__line-height: 4,
+	overview-list__padding: 0,
+	overview-item__padding: 0,
+	overview-link__margin: 0 0 0 1em,
 	// Overview section
 		article__max-width: 75ch,
 	article__margin: 4em auto 0 auto 0,
 	article__font-size: 1em,
-	article__font-size-mobile: 1.25em,
+	article__font-size--mobile: 1.25em,
 	article__padding: 2em auto,
 	article-paragraph__line-height: 1.75,
 	article-paragraph__font-size--first: 1.25em,
 	article-paragraph__line-height--first: 1.5,
+	article-title__font-size: 4em,
 	// Mobile
 		mobile-nav__background-color: rgba(0, 0, 0, 0.25),
 	mobile-nav__padding: 2em,
@@ -171,17 +182,17 @@ $coat-default: (
 	alert__color: $color-dark,
 	alert__background-color: $color-light,
 	alert__color--error: #{to-lightness($red, 12.5)},
-	alert__background-color--error: #{to-lightness($red, 80)},
+	alert__background-color--error: #{to-lightness($red, 90)},
 	alert__color--warning: #{to-lightness($orange, 12.5)},
-	alert__background-color--warning: #{to-lightness($orange, 80)},
+	alert__background-color--warning: #{to-lightness($orange, 90)},
 	alert__color--danger: #{to-lightness($yellow, 12.5)},
-	alert__background-color--danger: #{to-lightness($yellow, 80)},
+	alert__background-color--danger: #{to-lightness($yellow, 90)},
 	alert__color--tip: #{to-lightness($blue, 12.5)},
-	alert__background-color--tip: #{to-lightness($green, 80)},
+	alert__background-color--tip: #{to-lightness($green, 90)},
 	alert__color--success: #{to-lightness($green, 12.5)},
-	alert__background-color--success: #{to-lightness($blue, 80)},
+	alert__background-color--success: #{to-lightness($blue, 90)},
 	alert__color--info: #{to-lightness($skyblue, 12.5)},
-	alert__background-color--info: #{to-lightness($skyblue, 80)}
+	alert__background-color--info: #{to-lightness($skyblue, 90)}
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);
@@ -251,6 +262,7 @@ $coat-settings: map.merge($coat-default, $coat);
 	}
 }
 
+// Is the modifier correct?
 @function modifier-is($setting, $modifier) {
 	@if $modifier == "" {
 		@if str-index($setting, "--") {
@@ -264,6 +276,7 @@ $coat-settings: map.merge($coat-default, $coat);
 		@return false;
 	}
 }
+// Get the property from a string.
 @function get-prop($setting) {
 	@if str-index($setting, "__") {
 		$start: str-index($setting, "__");
@@ -277,6 +290,8 @@ $coat-settings: map.merge($coat-default, $coat);
 	}
 }
 
+// Mixin Coat-Auto
+// Automatically find all properties link to a key and use them.
 @mixin coat-auto($setting, $modifier: "") {
 	@each $setting-key, $setting-value in $coat-settings {
 		@if modifier-is($setting-key, $modifier) and
