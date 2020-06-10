@@ -10,14 +10,14 @@ ol:not([class]) {
 		list-style-type: none;
 		line-height: 2;
 		& + li {
-			margin-top: coat(list-margin);
+			margin-top: coat(list, margin);
 		}
 		&::before {
 			position: absolute;
 			left: 0;
-			width: coat(list-prefix-width);
-			border-radius: coat(list-prefix-border-radius);
-			background: coat(list-prefix-background-color);
+			width: coat(list-prefix, width);
+			border-radius: coat(list-prefix, border-radius);
+			background: coat(list-prefix, background-color);
 		}
 	}
 	ol,
@@ -35,8 +35,8 @@ ul:not([class]) {
 		&::before {
 			content: "—";
 			display: inline-block;
-			color: coat(list-prefix-font-color);
-			counter-reset: variable coat(list-prefix-font-color);
+			color: coat(list-prefix, color);
+			counter-reset: variable coat(list-prefix, color);
 		}
 	}
 }
@@ -51,10 +51,10 @@ ol:not([class]) {
 		counter-increment: list;
 		&::before {
 			content: counter(list) "";
-			width: coat(list-prefix-width);
-			border-radius: coat(list-prefix-border-radius);
-			background: coat(list-prefix-background-color);
-			color: coat(list-prefix-font-color);
+			width: coat(list-prefix, width);
+			border-radius: coat(list-prefix, border-radius);
+			background: coat(list-prefix, background-color);
+			color: coat(list-prefix, color);
 			font-size: 0.75em;
 			margin-right: -0.25em;
 		}

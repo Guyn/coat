@@ -10,6 +10,6 @@ body {
 body {
 	padding: coat(padding);
 	@media #{$mobile} {
-		padding: coat(padding-mobile);
+		padding: coat(padding, mobile);
 	}
 }

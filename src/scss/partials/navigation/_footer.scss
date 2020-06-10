@@ -1,17 +1,17 @@
 #footer {
 	position: relative;
-	border: coat(footer-nav-border);
-	border-radius: coat(header-nav-border-radius);
-	background-color: coat(footer-nav-background-color);
-	color: coat(footer-nav-font-color);
-	margin: coat(footer-nav-margin);
+	border: coat(footer-nav, border);
+	border-radius: coat(header-nav, border-radius);
+	background-color: coat(footer-nav, background-color);
+	color: coat(footer-nav, color);
+	margin: coat(footer-nav, margin);
 	@media #{$desktop} {
-		padding: coat(footer-nav-padding);
+		padding: coat(footer-nav, padding);
 	}
 	@media #{$mobile} {
-		border-radius: coat(header-nav-border-radius-mobile);
-		background-color: coat(footer-nav-background-color-mobile);
-		padding: coat(footer-nav-padding-mobile);
+		border-radius: coat(header-nav, border-radius, mobile);
+		background-color: coat(footer-nav, background-color, mobile);
+		padding: coat(footer-nav, padding, mobile);
 	}
 	nav {
 		z-index: 2;
@@ -22,31 +22,52 @@
 	}
 	nav a {
 		display: block;
-		border-radius: coat(footer-nav-border-radius);
-		background-color: coat(footer-nav-font-background-color);
-		color: coat(footer-nav-font-color);
+		@include coat-auto(footer-nav-link);
 		white-space: nowrap;
 		text-decoration: none;
-		padding: coat(footer-nav-padding);
 
 		&:hover {
-			background-color: coat(footer-nav-font-background-color-hover);
-			color: coat(footer-nav-font-color-hover);
+			@include coat-auto(footer-nav-link, hover);
+		}
+		@media #{$mobile} {
+			@include coat-auto(footer-nav-link, mobile);
+			&:hover {
+				@include coat-auto(footer-nav-link, mobile-hover);
+			}
+		}
+		@media #{$desktop} {
+			@include coat-auto(footer-nav-link, desktop);
+			&:hover {
+				@include coat-auto(footer-nav-link, desktop-hover);
+			}
 		}
 	}
 	nav li.active > a {
-		background-color: coat(footer-nav-active-background-color);
-		color: coat(footer-nav-active-font-color);
-		opacity: 1;
+		@include coat-auto(footer-nav-link, active);
+		&:hover {
+			@include coat-auto(footer-nav-link, active-hover);
+		}
+		@media #{$mobile} {
+			@include coat-auto(footer-nav-link, mobile-active);
+			&:hover {
+				@include coat-auto(footer-nav-link, mobile-active-hover);
+			}
+		}
+		@media #{$desktop} {
+			@include coat-auto(footer-nav-link, desktop-active);
+			&:hover {
+				@include coat-auto(footer-nav-link, desktop-active-hover);
+			}
+		}
 	}
 
 	nav > ul {
 		width: 100%;
-		max-width: coat(footer-nav-max-width);
-		border-radius: coat(footer-nav-border-radius);
-		background-color: coat(footer-nav-color-background);
+		max-width: coat(footer-nav, max-width);
+		border-radius: coat(footer-nav-list, border-radius);
+		background-color: coat(footer-nav-list, background-color);
 		@media #{$desktop} {
-			padding: coat(footer-nav-padding);
+			padding: coat(footer-nav, padding);
 			display: flex;
 			justify-content: center;
 		}
@@ -55,13 +76,13 @@
 		}
 	}
 	// nav > ul > li {
-	// 	padding: coat(footer-nav-padding) coat(footer-nav-padding);
+	// 	padding: coat(footer-nav,padding) coat(footer-nav,padding);
 	// }
 	nav > ul li {
 		position: relative;
 		margin: 0;
 		a {
-			border-radius: coat(footer-nav-border-radius);
+			border-radius: coat(footer-nav, border-radius);
 		}
 
 		&::before {
@@ -74,14 +95,39 @@
 	}
 	nav > ul ul li {
 		a {
-			border-radius: coat(footer-nav-border-radius);
-			background-color: coat(footer-nav-sub-font-background-color);
-			color: coat(footer-nav-sub-font-color);
-			opacity: coat(footer-nav-sub-font-opacity);
+			@include coat-auto(footer-nav-link-sub);
 			&:hover {
-				background-color: coat(footer-nav-sub-font-background-color-hover);
-				color: coat(footer-nav-sub-font-color-hover);
-				opacity: coat(footer-nav-sub-font-opacity);
+				@include coat-auto(footer-nav-link-sub, hover);
+			}
+			@media #{$mobile} {
+				@include coat-auto(footer-nav-link-sub, mobile);
+				&:hover {
+					@include coat-auto(footer-nav-link-sub, mobile-hover);
+				}
+			}
+			@media #{$desktop} {
+				@include coat-auto(footer-nav-link-sub, desktop);
+				&:hover {
+					@include coat-auto(footer-nav-link-sub, desktop-hover);
+				}
+			}
+		}
+		&.active a {
+			@include coat-auto(footer-nav-link-sub, active);
+			&:hover {
+				@include coat-auto(footer-nav-link-sub, active-hover);
+			}
+			@media #{$mobile} {
+				@include coat-auto(footer-nav-link-sub, mobile-active);
+				&:hover {
+					@include coat-auto(footer-nav-link-sub, mobile-active-hover);
+				}
+			}
+			@media #{$desktop} {
+				@include coat-auto(footer-nav-link-sub, desktop-active);
+				&:hover {
+					@include coat-auto(footer-nav-link-sub, desktop-active-hover);
+				}
 			}
 		}
 	}

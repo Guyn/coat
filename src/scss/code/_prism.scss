@@ -5,10 +5,11 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: coat(code-block-font-color);
+	color: coat(code-block, color);
+	font-weight: 400;
 	font-size: 1em;
-	font-family: coat(code-block-font-family);
-	line-height: coat(code-block-line-height);
+	font-family: coat(code-block, font-family);
+	line-height: coat(code-block, line-height);
 	white-space: pre;
 	direction: ltr;
 	text-align: left;
@@ -24,9 +25,11 @@ pre[class*="language-"] {
 	-ms-hyphens: none;
 	hyphens: none;
 }
-
+pre > code {
+	width: 100%;
+}
 pre > code[class*="language-"] {
-	font-size: coat(code-font-size);
+	font-size: coat(code, font-size);
 }
 
 pre[class*="language-"]::-moz-selection,
@@ -42,8 +45,8 @@ code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	border: 1px solid coat(code-block-border-color);
-	background: coat(code-block-background-color);
+	border: 1px solid coat(code-block, border-color);
+	background: coat(code-block, background-color);
 	overflow: auto;
 	padding: 1em;
 }
@@ -51,10 +54,10 @@ pre[class*="language-"] {
 /* Inline code */
 :not(pre) > code,
 :not(pre) > code[class*="language-"] {
-	border: 1px solid coat(code-border-color);
-	background: coat(code-background-color);
-	font-size: coat(code-font-size);
-	line-height: coat(code-line-height);
+	border: 1px solid coat(code, border-color);
+	background: coat(code, background-color);
+	font-size: coat(code, font-size);
+	line-height: coat(code, line-height);
 }
 @mixin setTokenValues($token) {
 	@if nth($token, 1) !=

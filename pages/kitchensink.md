@@ -376,24 +376,46 @@ This line is only separated by a single newline, so it's a separate line in the 
 
 (Technical note: _Markdown Here_ uses GFM line breaks, so there's no need to use MD's two-space line breaks.)
 
-<a name="videos"></a>
+## Alert
 
-## YouTube Videos
+::: tip
+Did you know...
+:::
 
-They can't be added directly but you can add an image with a link to the video like this:
+::: warning
+Watch out, this might be something to check on to.
+:::
 
+::: error
+This is going completely wrong.
+:::
+
+::: success
+Oh yeah, that went well!
+:::
+
+::: info
+This is done like..
+:::
+
+```markdown
+::: tip
+Did you know...
+:::
+
+::: warning
+Watch out, this might be something to check on to.
+:::
+
+::: error
+This is going completely wrong.
+:::
+
+::: success
+Oh yeah, that went well!
+:::
+
+::: info
+This is done like..
+:::
 ```
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg"
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-```
-
-Or, in pure Markdown, but losing the image sizing and border:
-
-```
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
-```
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
-
-![text](video.mp4)

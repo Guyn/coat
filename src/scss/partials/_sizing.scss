@@ -6,7 +6,23 @@
 	margin: 0;
 }
 
-$elements: (h1, h2, h3, h4, h5, h6, p, blockquote, img, a, table, pre, ul, ol);
+$elements: (
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	blockquote,
+	img,
+	a,
+	table,
+	pre,
+	ul,
+	ol,
+	".alert"
+);
 
 @each $el in $elements {
 	* + #{$el} {

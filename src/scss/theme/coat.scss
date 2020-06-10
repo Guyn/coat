@@ -9,12 +9,9 @@
 $coat: (
 	font-family:
 		"Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif'",
-	code-font-family:
-		"'IBM Plex', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
-	code-block-font-family:
-		"'IBM Plex', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
+	code__font-family: "IBM Plex Mono",
+	code-block__font-family: "IBM Plex Mono",
 );
 
 @import "../partials/defaults";
-
 @import "../partials/base";

@@ -15,15 +15,14 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-bottom: coat(header-nav-padding);
 		padding: coat(header-nav-padding);
 		nav {
 			z-index: 2;
 			justify-content: center;
-			border: coat(header-nav-border);
-			border-radius: coat(header-nav-border-radius);
-			background-color: coat(header-nav-background-color);
-			color: coat(header-nav-font-color);
+			border: coat(header-nav, border);
+			border-radius: coat(header-nav, border-radius);
+			background-color: coat(header-nav, background-color);
+			color: coat(header-nav, color);
 			margin: 0;
 			@media #{$mobile} {
 				position: fixed;
@@ -32,21 +31,19 @@
 			}
 		}
 		nav a {
+			@include coat-auto(header-nav-link);
 			display: block;
-			border-radius: coat(header-nav-border-radius);
-			background-color: coat(header-nav-font-background-color);
-			color: coat(header-nav-font-colaeror);
 			white-space: nowrap;
 			text-decoration: none;
-			padding: coat(header-nav-padding);
 			&:hover {
-				background-color: coat(header-nav-font-background-color-hover);
-				color: coat(header-nav-font-color-hover);
+				@include coat-auto(header-nav-link, hover);
 			}
 		}
 		nav li.active > a {
-			background-color: coat(header-nav-active-background-color);
-			color: coat(header-nav-active-font-color);
+			@include coat-auto(header-nav-link, active);
+			&:hover {
+				@include coat-auto(header-nav-link, active-hover);
+			}
 		}
 
 		nav a + a {
@@ -56,8 +53,8 @@
 		nav > ul {
 			display: flex;
 			justify-content: center;
-			border-radius: coat(header-nav-border-radius);
-			background-color: coat(header-nav-background-color);
+			border-radius: coat(header-nav, border-radius);
+			background-color: coat(header-nav, background-color);
 			padding: 0;
 			@media #{$mobile} {
 				flex-direction: column;
@@ -70,15 +67,15 @@
 				border-radius: 0;
 			}
 			&:first-child > a {
-				border-radius: coat(header-nav-border-radius) 0 0
-					coat(header-nav-border-radius);
+				border-radius: coat(header-nav, border-radius) 0 0
+					coat(header-nav-border, radius);
 			}
 			&:last-child > a {
-				border-radius: 0 coat(header-nav-border-radius)
-					coat(header-nav-border-radius) 0;
+				border-radius: 0 coat(header-nav, border-radius)
+					coat(header-nav, border-radius) 0;
 			}
 			&:first-child:last-child > a {
-				border-radius: coat(header-nav-border-radius);
+				border-radius: coat(header-nav, border-radius);
 			}
 			&::before {
 				content: none;
@@ -89,8 +86,8 @@
 					opacity: 1;
 				}
 				> a {
-					background-color: coat(header-nav-background-color-hover);
-					color: coat(header-nav-font-color-hover);
+					background-color: coat(header-nav, background-color, hover);
+					color: coat(header-nav, color, hover);
 				}
 			}
 		}
@@ -117,7 +114,7 @@
 				width: 0.75em;
 				height: 0.75em;
 				border-radius: coat(border-radius) 0 0 0;
-				background-color: coat(header-nav-sub-font-background-color);
+				background-color: coat(header-nav-link-sub, background-color);
 				transform: translateY(-50%) translateX(-50%) rotate(45deg);
 			}
 			li {
@@ -127,14 +124,18 @@
 		}
 		nav > ul ul li {
 			a {
-				border-radius: 0;
-				background-color: coat(header-nav-sub-font-background-color);
-				color: coat(header-nav-sub-font-color);
+				@include coat-auto(header-nav-link-sub);
 				&:hover {
-					background-color: coat(header-nav-sub-font-background-color-hover);
-					color: coat(header-nav-sub-font-color-hover);
+					@include coat-auto(header-nav-link-sub, hover);
 				}
 			}
+			&.active a {
+				@include coat-auto(header-nav-link-sub, active);
+				&:hover {
+					@include coat-auto(header-nav-link-sub, active-hover);
+				}
+			}
+
 			&:first-child a {
 				border-radius: coat(header-nav-border-radius)
 					coat(header-nav-border-radius) 0 0;

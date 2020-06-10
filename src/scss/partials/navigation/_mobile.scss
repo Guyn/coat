@@ -28,37 +28,39 @@
 			display: block;
 			white-space: nowrap;
 			text-decoration: none;
-			@include coat(
+			@include coats(
 				(border-radius, background-color, color, padding, font-size, opacity),
-				"mobile-nav-link"
+				mobile-nav-link
 			);
 			&:hover {
 				@include coat(
 					(border-radius, background-color, color, padding, font-size, opacity),
-					"mobile-nav-link-hover"
+					mobile-nav-link,
+					hover
 				);
 			}
 		}
 		.active > a {
-			@include coat(
+			@include coats(
 				(border-radius, background-color, color, padding, font-size, opacity),
-				"mobile-nav-link-active"
+				mobile-nav-link-active
 			);
 			&:hover {
 				@include coat(
 					(border-radius, background-color, color, padding, font-size, opacity),
-					"mobile-nav-link-active-hover"
+					mobile-nav-link,
+					active-hover
 				);
 			}
 		}
 		ul ul {
 			a {
-				@include coat(
+				@include coats(
 					(border-radius, background-color, color, padding, font-size, opacity),
-					"mobile-nav-link-sub"
+					mobile-nav-link-sub
 				);
 				&:hover {
-					@include coat(
+					@include coats(
 						(
 							border-radius,
 							background-color,
@@ -67,17 +69,19 @@
 							font-size,
 							opacity
 						),
-						"mobile-nav-link-sub-hover"
+						mobile-nav-link-sub,
+						hover
 					);
 				}
 			}
 			.active > a {
-				@include coat(
+				@include coats(
 					(border-radius, background-color, color, padding, font-size, opacity),
-					"mobile-nav-link-sub-active"
+					mobile-nav-link-sub,
+					active
 				);
 				&:hover {
-					@include coat(
+					@include coats(
 						(
 							border-radius,
 							background-color,
@@ -86,7 +90,8 @@
 							font-size,
 							opacity
 						),
-						"mobile-nav-link-sub-active-hover"
+						mobile-nav-link-sub,
+						active-hover
 					);
 				}
 			}

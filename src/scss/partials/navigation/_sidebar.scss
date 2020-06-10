@@ -1,15 +1,10 @@
 #sidebar {
-	border-radius: coat(sidebar-nav-border-radius);
-	background-color: coat(sidebar-nav-background-color);
-	color: coat(sidebar-nav-font-color);
-
+	@include coat-auto(sidebar-nav);
 	@media #{$desktop} {
-		padding: coat(padding);
+		@include coat-auto(sidebar-nav, desktop);
 	}
 	@media #{$mobile} {
-		border-radius: coat(sidebar-nav-mobile-background-color);
-		background-color: coat(sidebar-nav-mobile-background-color);
-		color: coat(sidebar-nav-mobile-background-color);
+		@include coat-auto(sidebar-nav, mobile);
 	}
 	@media #{$desktop} {
 		nav {
@@ -22,27 +17,23 @@
 		}
 		nav a {
 			display: inline-block;
-			background-color: coat(sidebar-nav-font-background-color);
-			color: coat(sidebar-nav-font-color);
 			white-space: nowrap;
 			text-decoration: none;
-			padding: coat(sidebar-nav-padding);
-			opacity: coat(sidebar-nav-font-opacity);
+			@include coat-auto(sidebar-nav-link);
 			&:hover {
-				background-color: coat(sidebar-nav-font-background-color-hover);
-				color: coat(sidebar-nav-font-color-hover);
-				opacity: coat(sidebar-nav-font-opacity-hover);
+				@include coat-auto(sidebar-nav-link, hover);
 			}
 		}
 
 		nav li.active > a {
-			background-color: coat(sidebar-nav-active-background-color);
-			color: coat(sidebar-nav-active-font-color);
-			opacity: 1;
+			@include coat-auto(sidebar-nav-link, active);
+			&:hover {
+				@include coat-auto(sidebar-nav-link, active-hover);
+			}
 		}
 		nav a + a {
 			margin: 0;
-			margin-left: calc(#{coat(sidebar-nav-padding)} / 2);
+			margin-left: calc(#{coat(sidebar-nav, padding)} / 2);
 		}
 		nav a + ul {
 			margin-top: 0;
@@ -50,17 +41,11 @@
 		nav > ul {
 			display: flex;
 			flex-direction: column;
-			border-radius: coat(sidebar-nav-border-radius);
-			background-color: coat(sidebar-nav-color-background);
-			padding: 0;
+			@include coat-auto(sidebar-nav);
 		}
 		nav > ul li {
 			position: relative;
 			margin: 0;
-			a {
-				border-radius: coat(sidebar-nav-border-radius);
-			}
-
 			&::before {
 				content: none;
 			}
@@ -71,14 +56,15 @@
 		}
 		nav > ul ul li {
 			a {
-				border-radius: coat(sidebar-nav-border-radius);
-				background-color: coat(sidebar-nav-sub-font-background-color);
-				color: coat(sidebar-nav-sub-font-color);
-				opacity: coat(sidebar-nav-sub-font-opacity);
+				@include coat-auto(sidebar-nav-link-sub);
 				&:hover {
-					background-color: coat(sidebar-nav-sub-font-background-color-hover);
-					color: coat(sidebar-nav-sub-font-color-hover);
-					opacity: coat(sidebar-nav-sub-font-opacity-hover);
+					@include coat-auto(sidebar-nav-link-sub, hover);
+				}
+			}
+			&.active > a {
+				@include coat-auto(sidebar-nav-link-sub, active);
+				&:hover {
+					@include coat-auto(sidebar-nav-link-sub, active-hover);
 				}
 			}
 		}
