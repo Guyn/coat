@@ -223,11 +223,11 @@ main p a[href]::before {
   white-space: nowrap;
   transform: translateX(-75%) translateY(0%) scale(0.85);
   opacity: 0;
-  transition: var(--coat-transition-time,0.3s);
-  background-color: var(--coat-link-preview__background-color,#a0dcf8);
+  transition: var(--coat-transition-time,0.25s);
+  background-color: var(--coat-link-preview__background-color,#cfeefc);
   color: var(--coat-link-preview__color,#07435f);
   padding: var(--coat-link-preview__padding,0.25em 0.5em);
-  borde-radius: var(--coat-link-preview__borde-radius,0.5em);
+  border-radius: var(--coat-link-preview__border-radius,0.5em);
   font-size: var(--coat-link-preview__font-size,0.75em);
 }
 main p a[aria-label]::before {
@@ -291,7 +291,7 @@ pre > code {
 
 :not(pre) > code {
   border-radius: var(--coat-code__border-radius,0.5em);
-  background-color: var(--coat-code__background-color,rgba(73, 189, 242, 0.25));
+  background-color: var(--coat-code__background-color,#a0dcf8);
   color: var(--coat-code__color,#053347);
   padding: var(--coat-code__padding,0.5em);
   font-size: var(--coat-code__font-size,1em);
@@ -302,7 +302,7 @@ pre > code {
 pre {
   width: 100%;
   border-radius: var(--coat-code__border-radius,0.5em);
-  background-color: var(--coat-code__background-color,rgba(73, 189, 242, 0.25));
+  background-color: var(--coat-code__background-color,#a0dcf8);
   overflow-x: auto;
 }
 

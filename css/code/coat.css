@@ -58,7 +58,7 @@ pre[class*=language-] {
 :not(pre) > code,
 :not(pre) > code[class*=language-] {
   border: 1px solid var(--coat-code__border-color,#FFF9EB);
-  background: var(--coat-code__background-color,rgba(73, 189, 242, 0.25));
+  background: var(--coat-code__background-color,#a0dcf8);
   font-size: var(--coat-code__font-size,1em);
   line-height: var(--coat-code__line-height,1);
 }

@@ -10,15 +10,43 @@
 #sidebar {
 	nav {
 		a {
+			position: relative;
 			@include coat-auto(standard-nav-link);
+			z-index: 1;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				transform: translate(-50%, -50%) scale(0.5);
+				opacity: 0;
+				transition: coat(transition);
+				@include coat-auto(standard-nav-link, before);
+			}
 			&:hover {
 				@include coat-auto(standard-nav-link, hover);
+				&::before {
+					transform: translate(-50%, -50%) scale(1);
+					opacity: 1;
+					@include coat-auto(standard-nav-link, before-hover);
+				}
 			}
 		}
 		.active > a {
 			@include coat-auto(standard-nav-link, active);
 			&:hover {
 				@include coat-auto(standard-nav-link, active-hover);
+				&::before {
+					@include coat-auto(standard-nav-link, before-active-hover);
+				}
+			}
+			&::before {
+				transform: translate(-50%, -50%) scale(1);
+				opacity: 1;
+				@include coat-auto(standard-nav-link, before-active);
 			}
 		}
 		ul ul {

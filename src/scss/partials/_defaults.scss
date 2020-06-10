@@ -40,9 +40,9 @@ $coat-default: (
 		padding: 2em,
 	padding--mobile: 1em 2em,
 	margin: 1em,
-	transition-time: 0.3s,
+	transition-time: 0.25s,
 	transition-bezier: ease-in-out,
-	transition: 0.3s ease-in-out,
+	transition: 0.25s ease-in-out,
 	background-color: $color-white,
 	max-width: 960px,
 	border-radius: $border-radius,
@@ -66,10 +66,10 @@ $coat-default: (
 	link__background-color--hover: $color-black,
 	link__text-decoration: none,
 	link__box-shadow: 0 -2px 0 0px rgba($color-primary, 0.25) inset,
-	link-preview__background-color: to-lightness($color-primary, 80),
+	link-preview__background-color: to-lightness($color-primary, 90),
 	link-preview__color: to-lightness($color-primary, 20),
 	link-preview__padding: 0.25em 0.5em,
-	link-preview__borde-radius: $border-radius,
+	link-preview__border-radius: $border-radius,
 	link-preview__font-size: 0.75em,
 	// List
 		list-prefix__border-radius: 0,
@@ -85,7 +85,7 @@ $coat-default: (
 	code__line-height: 1,
 	code__border-color: $color-light,
 	code__padding: 0.5em,
-	code__background-color: rgba($color-primary, 0.25),
+	code__background-color: to-lightness($color-primary, 80),
 	code__border-radius: $border-radius,
 	// Code Block
 		code-block__font-family:
@@ -109,10 +109,13 @@ $coat-default: (
 	standard-nav-link__font-size: 1em,
 	standard-nav-link__color--hover: to-lightness($color-primary, 20),
 	standard-nav-link__color--active: to-lightness($color-primary, 20),
-	standard-nav-link__background-color--hover: to-lightness($color-primary, 95),
-	standard-nav-link__background-color--active: to-lightness($color-primary, 90),
+	standard-nav-link__background-color--before: to-lightness($color-primary, 95),
+	standard-nav-link__background-color--before-hover:
+		to-lightness($color-primary, 95),
+	standard-nav-link__background-color--before-active:
+		to-lightness($color-primary, 90),
 	standard-nav-link__padding: 0.5em 1em,
-	standard-nav-link__border-radius: $border-radius,
+	standard-nav-link__border-radius--before: $border-radius,
 	standard-nav-link-sub__opacity: 0.66,
 	standard-nav-link-sub__font-size: 0.9em,
 	standard-nav-link-sub__opacity--hover: 1,
@@ -120,23 +123,21 @@ $coat-default: (
 	standard-nav-link-sub__border-radius: $border-radius,
 	standard-nav-link-sub__color--hover: to-lightness($color-primary, 20),
 	standard-nav-link-sub__color--active: to-lightness($color-primary, 20),
-	standard-nav-link-sub__background-color--hover:
+	standard-nav-link-sub__background-color--before-hover:
 		to-lightness($color-primary, 90),
-	standard-nav-link-sub__background-color--active:
+	standard-nav-link-sub__background-color--before-active:
 		to-lightness($color-primary, 90),
 	// Footer navigation
 		footer-nav__border: 1px 0 0 0 solid rgba($color-black, 0.25),
 	footer-nav__margin: 4em 0 0 0,
 	footer-nav__border-radius: $border-radius,
 	footer-nav__border-radius-mobile: $border-radius,
+	footer-nav__padding--mobile: 2em,
 	footer-nav__background-color: transparent,
 	footer-nav__background-color--mobile: $color-light,
 	// Sidebar navigation
 		sidebar-nav__border-radius: $border-radius,
-	sidebar-nav__border-radius--mobile: $border-radius,
-	sidebar-nav__background-color: $color-white,
 	sidebar-nav__padding--desktop: 1em,
-	sidebar-nav-mobile__background-color: $color-white,
 	// Sidebar navigation
 		footnote__border: 1px 0 0 0 solid $color-dark,
 	footnote__opacity: 0.5,

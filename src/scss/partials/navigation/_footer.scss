@@ -1,17 +1,11 @@
 #footer {
 	position: relative;
-	border: coat(footer-nav, border);
-	border-radius: coat(header-nav, border-radius);
-	background-color: coat(footer-nav, background-color);
-	color: coat(footer-nav, color);
-	margin: coat(footer-nav, margin);
+	@include coat-auto(footer-nav);
 	@media #{$desktop} {
-		padding: coat(footer-nav, padding);
+		@include coat-auto(footer-nav, desktop);
 	}
 	@media #{$mobile} {
-		border-radius: coat(header-nav, border-radius, mobile);
-		background-color: coat(footer-nav, background-color, mobile);
-		padding: coat(footer-nav, padding, mobile);
+		@include coat-auto(footer-nav, mobile);
 	}
 	nav {
 		z-index: 2;
