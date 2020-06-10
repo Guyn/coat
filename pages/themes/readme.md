@@ -1,4 +1,4 @@
-# Themes
+# All Themes
 
 Coat has a few themes to offer
 
