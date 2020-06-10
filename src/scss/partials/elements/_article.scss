@@ -15,5 +15,11 @@ article {
 	}
 	h1 {
 		@include coat-auto(article-title);
+		@media #{$desktop} {
+			@include coat-auto(article-title, desktop);
+		}
+		@media #{$mobile} {
+			@include coat-auto(article-title, mobile);
+		}
 	}
 }

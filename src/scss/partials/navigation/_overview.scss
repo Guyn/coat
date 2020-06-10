@@ -10,11 +10,31 @@
 	li {
 		display: flex;
 		@include coat-auto(overview-item);
+		@media #{$mobile} {
+			flex-direction: column;
+			@include coat-auto(overview-item, mobile);
+		}
+		@media #{$desktop} {
+			@include coat-auto(overview-item, desktop);
+		}
 	}
 	a {
 		@include coat-auto(overview-link);
+		@media #{$mobile} {
+			@include coat-auto(overview-link, mobile);
+		}
+		@media #{$desktop} {
+			@include coat-auto(overview-link, desktop);
+		}
 	}
 	time {
+		white-space: nowrap;
 		@include coat-auto(overview-time);
+		@media #{$mobile} {
+			@include coat-auto(overview-time, mobile);
+		}
+		@media #{$desktop} {
+			@include coat-auto(overview-time, desktop);
+		}
 	}
 }
