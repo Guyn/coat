@@ -834,7 +834,9 @@ blockquote {
 }
 
 #blog-footer {
-  margin: var(--coat-overview__margin,4em 0 0 0);
+  max-width: var(--coat-overview__max-width,75ch);
+  width: var(--coat-overview__width,100%);
+  margin: var(--coat-overview__margin,4em auto 0 auto);
   padding: var(--coat-overview__padding,0em);
 }
 #blog-footer li:before {

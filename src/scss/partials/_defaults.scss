@@ -151,7 +151,9 @@ $coat-default: (
 		main__padding: 0,
 	main__padding--mobile: 2em 0,
 	// Overview section
-		overview__margin: 4em 0 0 0,
+		overview__max-width: 75ch,
+	overview__width: 100%,
+	overview__margin: 4em auto 0 auto,
 	overview__padding: 0em,
 	overview-time__display: block,
 	overview-time__opacity: 0.5,

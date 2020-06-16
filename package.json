@@ -11,9 +11,9 @@
 		"dev:copy:css": "copy-and-watch css/* dokkie/css/ --watch",
 		"dev:serve": "serve -l 4444 dokkie",
 		"dev": "concurrently \"npm run dev:sass\"  \"npm run dev:copy:css\" \"npm run dev:serve\"",
-		"dev:local": "npx dokkie@latest --skip=favicons",
+		"dev:build": "npx dokkie@latest --skip=favicons",
 		"dev:docs": "npx dokkie@latest --skip=favicons && npm run dev",
-		"dev:blog": "npx dokkie@latest --type=blog --input=posts --output=docs --config=blog.config.json --skip=favicons && npm run dev",
+		"dev:blog": "npx dokkie@latest --type=blog --input=posts --config=blog.config.json --skip=favicons && npm run dev",
 		"stylelint": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss'",
 		"stylelint:fix": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss' --fix"
 	},
