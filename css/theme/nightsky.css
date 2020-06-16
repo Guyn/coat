@@ -214,9 +214,11 @@ article p {
   font-size: 1em;
   line-height: 1.75;
 }
+main .blog-meta a,
 main article a,
 main li a,
 main p > a,
+article .blog-meta a,
 article article a,
 article li a,
 article p > a {

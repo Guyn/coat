@@ -214,9 +214,11 @@ article p {
   font-size: 1em;
   line-height: 1.75;
 }
+main .blog-meta a,
 main article a,
 main li a,
 main p > a,
+article .blog-meta a,
 article article a,
 article li a,
 article p > a {
@@ -728,7 +730,7 @@ blockquote {
   background-color: var(--coat-trigger__background-color,#051425);
   color: var(--coat-trigger__color,#042a3c);
   border-radius: var(--coat-trigger__border-radius,0.5em);
-  box-shadow: var(--coat-trigger__box-shadow,0 0.2em 0.25em 0 #cfeefc);
+  box-shadow: var(--coat-trigger__box-shadow,0 0.2em 0.25em 0 #fccfdb);
   width: var(--coat-trigger__width,2.5em);
   height: var(--coat-trigger__height,2.5em);
 }
@@ -1086,6 +1088,14 @@ article h1 {
   article h1 {
     font-size: var(--coat-article-title__font-size--mobile,2em);
   }
+}
+
+.blog-meta {
+  border-top: var(--coat-blog-meta__border-top,2px solid #fccfdb);
+  border-bottom: var(--coat-blog-meta__border-bottom,2px solid #fccfdb);
+  margin-top: var(--coat-blog-meta__margin-top,2em);
+  padding: var(--coat-blog-meta__padding,1em);
+  display: var(--coat-blog-meta__display,flex);
 }
 
 /**

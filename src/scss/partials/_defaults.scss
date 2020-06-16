@@ -208,7 +208,7 @@ $coat-default: (
 	trigger__background-color--hover: #{to-lightness($skyblue, 90)},
 	trigger__color: #{to-lightness($skyblue, 12.5)},
 	trigger__border-radius: $border-radius,
-	trigger__box-shadow: 0 0.2em 0.25em 0 #{to-lightness($skyblue, 90)},
+	trigger__box-shadow: 0 0.2em 0.25em 0 #{to-lightness($color-primary, 90)},
 	trigger__width: 2.5em,
 	trigger__height: 2.5em,
 	trigger__top--sidebar: 1em,
@@ -216,7 +216,13 @@ $coat-default: (
 	trigger__top--header: 1em,
 	trigger__right--header: 1em,
 	// Header
-		header-title__text-align: left
+		header-title__text-align: left,
+	// Blog
+		blog-meta__border-top: 2px solid #{to-lightness($color-primary, 90)},
+	blog-meta__border-bottom: 2px solid #{to-lightness($color-primary, 90)},
+	blog-meta__margin-top: 2em,
+	blog-meta__padding: 1em,
+	blog-meta__display: flex
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

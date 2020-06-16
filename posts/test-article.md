@@ -1,8 +1,12 @@
 ---
 title: Test Article
+author: Henkie
+authorLink: https://henkie.com
+tags: henk, peter, youssef
+home: true
 ---
 
-# Duis imperdiet pretium lorem, vel tristique dui rutrum vel. 
+# Duis imperdiet pretium lorem, vel tristique dui rutrum vel.
 
 Pellentesque eleifend mauris ex, vel tincidunt ipsum hendrerit at. Praesent vel orci purus. Phasellus laoreet faucibus elementum. Morbi metus diam, tempor non facilisis vel, varius vel mauris. Quisque efficitur laoreet nisi, sed bibendum ipsum placerat non. Duis euismod pulvinar nibh, nec laoreet nibh consequat vitae. Suspendisse vel mi tincidunt, dictum risus sed, sodales augue. Proin bibendum varius quam, a euismod mauris vehicula at. Nulla tortor tellus, vestibulum quis metus at, pellentesque vulputate sem. In a vehicula diam. In sodales interdum metus, quis dictum magna pharetra non. Mauris vitae augue id lectus aliquam pulvinar vitae non nulla. Nullam felis quam, vulputate sed pretium at, sagittis aliquet nibh. Pellentesque fringilla risus ac mauris aliquam, id posuere nunc aliquam. Maecenas tortor neque, venenatis ac ligula nec, feugiat rhoncus augue.
 

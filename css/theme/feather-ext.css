@@ -213,9 +213,11 @@ article p {
   font-size: 1em;
   line-height: 1.75;
 }
+main .blog-meta a,
 main article a,
 main li a,
 main p > a,
+article .blog-meta a,
 article article a,
 article li a,
 article p > a {
@@ -1085,6 +1087,14 @@ article h1 {
   article h1 {
     font-size: var(--coat-article-title__font-size--mobile,2em);
   }
+}
+
+.blog-meta {
+  border-top: var(--coat-blog-meta__border-top,2px solid #cfeefc);
+  border-bottom: var(--coat-blog-meta__border-bottom,2px solid #cfeefc);
+  margin-top: var(--coat-blog-meta__margin-top,2em);
+  padding: var(--coat-blog-meta__padding,1em);
+  display: var(--coat-blog-meta__display,flex);
 }
 
 /**
