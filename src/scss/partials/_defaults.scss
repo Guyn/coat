@@ -79,7 +79,7 @@ $coat-default: (
 	list-prefix__color: to-lightness($color-primary, 30),
 	// Code Examples
 		code__font-family:
-		"'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
+		"Menlo, 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
 	code__color: to-lightness($color-primary, 15),
 	code__font-size: 1em,
 	code__selection: $color-primary,
@@ -90,7 +90,7 @@ $coat-default: (
 	code__border-radius: $border-radius,
 	// Code Block
 		code-block__font-family:
-		"'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
+		"Menlo, 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace",
 	code-block__color: $color-dark,
 	code-block__font-size: 1em,
 	code-block__selection: $color-primary,
@@ -191,9 +191,9 @@ $coat-default: (
 	alert__color--danger: #{to-lightness($yellow, 12.5)},
 	alert__background-color--danger: #{to-lightness($yellow, 90)},
 	alert__color--tip: #{to-lightness($blue, 12.5)},
-	alert__background-color--tip: #{to-lightness($green, 90)},
+	alert__background-color--tip: #{to-lightness($blue, 90)},
 	alert__color--success: #{to-lightness($green, 12.5)},
-	alert__background-color--success: #{to-lightness($blue, 90)},
+	alert__background-color--success: #{to-lightness($green, 90)},
 	alert__color--info: #{to-lightness($skyblue, 12.5)},
 	alert__background-color--info: #{to-lightness($skyblue, 90)},
 	// Blockquote

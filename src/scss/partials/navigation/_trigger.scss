@@ -23,6 +23,7 @@
 	}
 	&__input {
 		position: absolute;
+		display: none;
 		opacity: 0;
 		&#sidebar-nav-trigger ~ nav {
 			transform-origin: 0 0%;

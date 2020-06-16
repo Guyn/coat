@@ -6,7 +6,6 @@
 	);
 
 	&-info {
-		content: "kudt";
 		@include coats(
 			(border, color, padding, border-radius, background-color),
 			alert,
@@ -39,6 +38,13 @@
 			(border, color, padding, border-radius, background-color),
 			alert,
 			tip
+		);
+	}
+	&-error {
+		@include coats(
+			(border, color, padding, border-radius, background-color),
+			alert,
+			error
 		);
 	}
 }

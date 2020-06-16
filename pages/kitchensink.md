@@ -379,43 +379,53 @@ This line is only separated by a single newline, so it's a separate line in the 
 ## Alert
 
 ::: tip
+**tip**
 Did you know...
 :::
 
 ::: warning
+**warning**
 Watch out, this might be something to check on to.
 :::
 
 ::: error
+**error**
 This is going completely wrong.
 :::
 
 ::: success
+**Success**
 Oh yeah, that went well!
 :::
 
 ::: info
+**info**
 This is done like..
 :::
 
 ```markdown
 ::: tip
+**tip**
 Did you know...
 :::
 
 ::: warning
+**warning**
 Watch out, this might be something to check on to.
 :::
 
 ::: error
+**error**
 This is going completely wrong.
 :::
 
 ::: success
+**Success**
 Oh yeah, that went well!
 :::
 
 ::: info
+**info**
 This is done like..
 :::
 ```
