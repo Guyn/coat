@@ -1,5 +1,5 @@
 ---
-menu:
+menu: footer
 ---
 
 # Coat

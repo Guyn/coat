@@ -1,7 +1,8 @@
 {
 	"projectTitle": "Coat",
 	"add": {
-		"js": ["/script/app.js"]
+		"js": ["/script/app.js"],
+		"excludeFolders": ["pages"]
 	},
 	"overrule": {
 		"css": ["/css/theme/coat-ext.css"]

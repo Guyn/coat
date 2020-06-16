@@ -55,6 +55,9 @@
 		/* Reset*/
 		li {
 			padding-left: 0;
+			& + li {
+				margin-top: 0;
+			}
 		}
 		li::before {
 			content: none;

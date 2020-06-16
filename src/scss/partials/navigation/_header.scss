@@ -1,10 +1,6 @@
 #header {
 	h1 {
 		width: 100%;
-		text-align: center;
-		@media #{$desktop} {
-			text-align: left;
-		}
 		a {
 			color: inherit;
 			text-decoration: none;
@@ -12,6 +8,13 @@
 		img,
 		a img {
 			max-height: 1.5em;
+		}
+		@include coat-auto(header-title);
+		@media #{$desktop} {
+			@include coat-auto(header-title, desktop);
+		}
+		@media #{$mobile} {
+			@include coat-auto(header-title, mobile);
 		}
 	}
 	@media #{$desktop} {

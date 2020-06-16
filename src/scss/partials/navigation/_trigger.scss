@@ -2,25 +2,20 @@
 	&__label {
 		z-index: 10;
 		display: block;
-		width: 2.5em;
-		height: 2.5em;
-		border-radius: coat(border-radius);
-		background-color: coat(color-primary);
+		@include coat-auto(trigger);
 		span {
-			@include menu(1.5rem, 0.175rem, 0.33rem, white);
+			@include menu(1.5rem, 0.175rem, 0.33rem, currentColor);
 		}
 		&:hover {
-			background-color: coat(color-black);
+			@include coat-auto(trigger, hover);
 		}
 		&[for="sidebar-nav-trigger"] {
 			position: fixed;
-			top: 1em;
-			left: 1em;
+			@include coat-auto(trigger, sidebar);
 		}
 		&[for="header-nav-trigger"] {
 			position: fixed;
-			top: 1em;
-			right: 1em;
+			@include coat-auto(trigger, header);
 		}
 		@media #{$desktop} {
 			transform: scale(0);
@@ -46,6 +41,12 @@
 						transform: scale(0.5);
 						opacity: 0;
 						transition: transform coat(transition), opacity coat(transition);
+						li {
+							transform: translateX(-50%);
+							opacity: 0;
+							transition: transform coat(transition) 0.1s,
+								opacity coat(transition);
+						}
 					}
 				}
 
@@ -58,6 +59,10 @@
 					& > ul {
 						transform: scale(1);
 						opacity: 1;
+						li {
+							transform: translateX(0);
+							opacity: 1;
+						}
 					}
 				}
 			}

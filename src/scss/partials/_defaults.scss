@@ -18,7 +18,7 @@ $desktop: "screen and (min-width: 751px)";
 $color-primary: $skyblue !default;
 $color-secondary: $orange !default;
 $color-dark: $dark-dark !default;
-$color-light: $beige-light !default;
+$color-light: to-lightness($gray, 98) !default;
 $color-white: white !default;
 $color-black: black !default;
 
@@ -200,7 +200,21 @@ $coat-default: (
 		blockquote__padding: 1em,
 	blockquote__font-size: 1em,
 	blockquote__font-style: italic,
-	blockquote__opacity: 0.66
+	blockquote__opacity: 0.66,
+	// Trigger
+		trigger__background-color: $color-white,
+	trigger__background-color--hover: #{to-lightness($skyblue, 90)},
+	trigger__color: #{to-lightness($skyblue, 12.5)},
+	trigger__border-radius: $border-radius,
+	trigger__box-shadow: 0 0.2em 0.25em 0 #{to-lightness($skyblue, 90)},
+	trigger__width: 2.5em,
+	trigger__height: 2.5em,
+	trigger__top--sidebar: 1em,
+	trigger__left--sidebar: 1em,
+	trigger__top--header: 1em,
+	trigger__right--header: 1em,
+	// Header
+		header-title__text-align: left
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);
