@@ -218,11 +218,24 @@ $coat-default: (
 	// Header
 		header-title__text-align: left,
 	// Blog
-		blog-meta__border-top: 2px solid #{to-lightness($color-primary, 90)},
-	blog-meta__border-bottom: 2px solid #{to-lightness($color-primary, 90)},
-	blog-meta__margin-top: 2em,
+		// 	blog-meta__border-top: 2px solid #{to-lightness($color-primary, 90)},
+		// blog-meta__border-bottom: 2px solid #{to-lightness($color-primary, 90)},
+		blog-meta__margin-top: 2em,
+	blog-meta__background-color: $color-light,
+	blog-meta__border-radius: $border-radius,
 	blog-meta__padding: 1em,
-	blog-meta__display: flex
+	blog-meta__display: flex,
+	blog-meta__justify-content: space-between,
+	blog-tags__display: flex,
+	blog-tags__margin: 0,
+	blog-tag__background-color: #{to-lightness($color-primary, 90)},
+	blog-tag__padding: 0.5em 1em,
+	blog-tag__line-height: 1,
+	blog-tag__font-size: 0.85em,
+	blog-tag__border-radius: 1.5em,
+	blog-tag__margin: 0.2em,
+	blog-tag__opacity--before: 0.25,
+	blog-author__line-height: 1
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);
