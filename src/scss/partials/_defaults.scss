@@ -12,8 +12,10 @@
 	@return hsla(hue($color), saturation($color), $lightness, alpha($color));
 }
 
-$mobile: "screen and (max-width: 750px)";
-$desktop: "screen and (min-width: 751px)";
+$mobile-width: 750px;
+
+$mobile: "screen and (max-width: #{$mobile-width})";
+$desktop: "screen and (min-width: #{$mobile-width + 1})";
 
 $color-primary: $skyblue !default;
 $color-secondary: $orange !default;
@@ -216,10 +218,9 @@ $coat-default: (
 	trigger__top--header: 1em,
 	trigger__right--header: 1em,
 	// Header
-		header-title__text-align: left,
+		header__display--mobile: flex,
+	header-title__text-align: left,
 	// Blog
-		// 	blog-meta__border-top: 2px solid #{to-lightness($color-primary, 90)},
-		// blog-meta__border-bottom: 2px solid #{to-lightness($color-primary, 90)},
 		blog-meta__margin-top: 2em,
 	blog-meta__background-color: $color-light,
 	blog-meta__border-radius: $border-radius,
@@ -232,10 +233,51 @@ $coat-default: (
 	blog-tag__padding: 0.5em 1em,
 	blog-tag__line-height: 1,
 	blog-tag__font-size: 0.85em,
+	blog-tag__color: #{to-lightness($color-primary, 20)},
 	blog-tag__border-radius: 1.5em,
 	blog-tag__margin: 0.2em,
-	blog-tag__opacity--before: 0.25,
-	blog-author__line-height: 1
+	blog-tag__color--before: #{to-lightness($color-primary, 70)},
+	blog-author__line-height: 1,
+	// Search
+		search__height: 2em,
+	search__position: relative,
+	search__position--before: absolute,
+	search__right--before: 0.33em,
+	search__bottom--before: 0.33em,
+	search__width--before: 0.5em,
+	search__height--before: 2px,
+	search__background-color--before: #{to-lightness($color-primary, 50)},
+	search__transform--before: translateY(100%) rotate(45deg),
+	search__transform-origin--before: 100% 100%,
+	search-input__position: absolute,
+	search-input__width: 1em,
+	search-input__width--focus: 10em,
+	search-input__height: 1em,
+	search-input__height--focus: 2em,
+	search-input__margin: 0.5em,
+	search-input__margin--focus: 0,
+	search-input__padding: 0 0em,
+	search-input__padding--focus: 0 1em,
+	search-input__right: 0,
+	search-input__border: 2px solid #{to-lightness($color-primary, 50)},
+	search-input__border--focus: 2px solid #{to-lightness($color-primary, 80)},
+	search-input__border-radius: 1em,
+	search-input__transition: all 0.3s ease-in-out,
+	search-label__display: none,
+	search-results__position: absolute,
+	search-results__top: 100%,
+	search-results__right: 0,
+	search-results__margin: 0,
+	search-results__opacity: 0.5,
+	search-results__opacity--focus: 1,
+	search-results__border: 2px solid #{to-lightness($color-primary, 80)},
+	search-results__border-radius: $border-radius,
+	search-result__padding: 1em,
+	search-results__transform: scale(0),
+	search-results__animation: popOut 0.3s ease-in-out forwards,
+	search-results__animation--focus: popIn 0.3s ease-in-out forwards,
+	search-result__min-width: 10em,
+	search-result__max-width: $mobile-width
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

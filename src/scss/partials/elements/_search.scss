@@ -1,0 +1,55 @@
+.search {
+	@include coat-auto(search);
+
+	&::before {
+		content: "";
+		@include coat-auto(search, before);
+	}
+
+	label {
+		@include coat-auto(search-label);
+	}
+	input {
+		@include coat-auto(search-input);
+		&:focus {
+			@include coat-auto(search-input, focus);
+			outline: none;
+			& ~ .search__results--has-values {
+				@include coat-auto(search-results, filled);
+			}
+			& ~ .search__results {
+				@include coat-auto(search-results, focus);
+				.search__result {
+					@include coat-auto(search-result, focus);
+
+					@at-root {
+						@keyframes popIn {
+							from {
+								transform: scale(0);
+							}
+							to {
+								transform: scale(1);
+							}
+						}
+					}
+				}
+			}
+		}
+		& ~ .search__results {
+			@include coat-auto(search-results);
+		}
+	}
+	&__result {
+		@include coat-auto(search-result);
+		&:hover {
+			@include coat-auto(search-result, hover);
+		}
+	}
+	&__link {
+		@include coat-auto(link);
+		@include coat-auto(search-link);
+		&:hover {
+			@include coat-auto(search-link, hover);
+		}
+	}
+}

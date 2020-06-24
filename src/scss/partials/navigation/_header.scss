@@ -1,4 +1,12 @@
 #header {
+	@include coat-auto(header);
+	@media #{$desktop} {
+		@include coat-auto(header, desktop);
+	}
+	@media #{$mobile} {
+		@include coat-auto(header, mobile);
+	}
+
 	h1 {
 		width: 100%;
 		a {
