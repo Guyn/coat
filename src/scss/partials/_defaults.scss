@@ -23,8 +23,10 @@ $color-dark: $dark-dark !default;
 $color-light: to-lightness($gray, 98) !default;
 $color-white: white !default;
 $color-black: black !default;
-
 $border-radius: 0.5em !default;
+$transition-time: 0.25s !default;
+$transition-bezier: cubic-bezier(0.15, 0.65, 0.65, 1.25) !default;
+$transition: #{$transition-time} #{$transition-bezier};
 
 $coat: () !default;
 
@@ -42,9 +44,9 @@ $coat-default: (
 		padding: 2em,
 	padding--mobile: 1em 2em,
 	margin: 1em,
-	transition-time: 0.25s,
-	transition-bezier: cubic-bezier(0.15, 0.65, 0.65, 1.25),
-	transition: 0.25s cubic-bezier(0.15, 0.65, 0.65, 1.25),
+	transition-time: $transition-time,
+	transition-bezier: $transition-bezier,
+	transition: $transition,
 	background-color: $color-white,
 	max-width: 960px,
 	border-radius: $border-radius,
@@ -239,32 +241,39 @@ $coat-default: (
 	blog-tag__color--before: #{to-lightness($color-primary, 70)},
 	blog-author__line-height: 1,
 	// Search
-		search__height: 2em,
+		search__height: 3em,
 	search__position: relative,
 	search__position--before: absolute,
-	search__right--before: 0.33em,
-	search__bottom--before: 0.33em,
+	search__background-color: transparent,
+	search__right--before: 0.75em,
+	search__bottom--before: 0.75em,
 	search__width--before: 0.5em,
 	search__height--before: 2px,
+	search__transition--before: transform $transition,
 	search__background-color--before: #{to-lightness($color-primary, 50)},
-	search__transform--before: translateY(100%) rotate(45deg),
-	search__transform-origin--before: 100% 100%,
-	search-input__position: absolute,
+	search__transform--before-focus: translateY(150%) translateX(150%)
+		rotate(45deg),
+	search__transform--before: translateY(-100%) translateX(0) rotate(45deg),
+	// search__transform-origin--before: 100% 100%,
+		search-input__position: relative,
 	search-input__width: 1em,
 	search-input__width--focus: 10em,
 	search-input__height: 1em,
 	search-input__height--focus: 2em,
-	search-input__margin: 0.5em,
-	search-input__margin--focus: 0,
 	search-input__padding: 0 0em,
 	search-input__padding--focus: 0 1em,
 	search-input__right: 0,
 	search-input__border: 2px solid #{to-lightness($color-primary, 50)},
 	search-input__border--focus: 2px solid #{to-lightness($color-primary, 80)},
 	search-input__border-radius: 1em,
-	search-input__transition: all 0.3s ease-in-out,
-	search-label__display: none,
+	search-input__transition: all $transition,
+	search-label__display: inline-flex,
+	search-label__align-items: center,
+	search-label__justify-content: center,
+	search-label__min-width: 3em,
+	search-label__height: 3em,
 	search-results__position: absolute,
+	search-results__background-color: $color-white,
 	search-results__top: 100%,
 	search-results__right: 0,
 	search-results__margin: 0,
@@ -272,11 +281,11 @@ $coat-default: (
 	search-results__opacity--focus: 1,
 	search-results__border: 2px solid #{to-lightness($color-primary, 80)},
 	search-results__border-radius: $border-radius,
-	search-result__padding: 1em,
 	search-results__transform: scale(0),
-	search-results__animation: popOut 0.3s ease-in-out forwards,
-	search-results__animation--focus: popIn 0.3s ease-in-out forwards,
+	search-results__animation: popOut $transition forwards,
+	search-results__animation--focus: popIn $transition forwards,
 	search-result__min-width: 10em,
+	search-result__padding: 1em,
 	search-result__max-width: $mobile-width
 ) !default;
 

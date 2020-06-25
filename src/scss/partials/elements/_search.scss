@@ -5,15 +5,13 @@
 		content: "";
 		@include coat-auto(search, before);
 	}
+	&:focus-within::before {
+		@include coat-auto(search, before-focus);
+	}
 
 	label {
 		@include coat-auto(search-label);
-	}
-	input {
-		@include coat-auto(search-input);
-		&:focus {
-			@include coat-auto(search-input, focus);
-			outline: none;
+		&:focus-within {
 			& ~ .search__results--has-values {
 				@include coat-auto(search-results, filled);
 			}
@@ -21,22 +19,18 @@
 				@include coat-auto(search-results, focus);
 				.search__result {
 					@include coat-auto(search-result, focus);
-
-					@at-root {
-						@keyframes popIn {
-							from {
-								transform: scale(0);
-							}
-							to {
-								transform: scale(1);
-							}
-						}
-					}
 				}
 			}
 		}
 		& ~ .search__results {
 			@include coat-auto(search-results);
+		}
+	}
+	input {
+		@include coat-auto(search-input);
+		&:focus {
+			@include coat-auto(search-input, focus);
+			outline: none;
 		}
 	}
 	&__result {
