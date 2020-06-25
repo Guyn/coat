@@ -1,11 +1,6 @@
 #sidebar {
-	@include coat-auto(sidebar-nav);
-	@media #{$desktop} {
-		@include coat-auto(sidebar-nav, desktop);
-	}
-	@media #{$mobile} {
-		@include coat-auto(sidebar-nav, mobile);
-	}
+	@include coat-auto-responsive(sidebar-nav);
+
 	@media #{$desktop} {
 		nav {
 			z-index: 2;
@@ -19,16 +14,16 @@
 			display: inline-block;
 			white-space: nowrap;
 			text-decoration: none;
-			@include coat-auto(sidebar-nav-link);
+			@include coat-auto-responsive(sidebar-nav-link);
 			&:hover {
-				@include coat-auto(sidebar-nav-link, hover);
+				@include coat-auto-responsive(sidebar-nav-link, hover);
 			}
 		}
 
 		nav li.active > a {
-			@include coat-auto(sidebar-nav-link, active);
+			@include coat-auto-responsive(sidebar-nav-link, active);
 			&:hover {
-				@include coat-auto(sidebar-nav-link, active-hover);
+				@include coat-auto-responsive(sidebar-nav-link, active-hover);
 			}
 		}
 		nav a + a {
@@ -41,7 +36,7 @@
 		nav > ul {
 			display: flex;
 			flex-direction: column;
-			@include coat-auto(sidebar-nav);
+			@include coat-auto-responsive(sidebar-nav);
 		}
 		nav > ul li {
 			position: relative;
@@ -56,15 +51,15 @@
 		}
 		nav > ul ul li {
 			a {
-				@include coat-auto(sidebar-nav-link-sub);
+				@include coat-auto-responsive(sidebar-nav-link-sub);
 				&:hover {
-					@include coat-auto(sidebar-nav-link-sub, hover);
+					@include coat-auto-responsive(sidebar-nav-link-sub, hover);
 				}
 			}
 			&.active > a {
-				@include coat-auto(sidebar-nav-link-sub, active);
+				@include coat-auto-responsive(sidebar-nav-link-sub, active);
 				&:hover {
-					@include coat-auto(sidebar-nav-link-sub, active-hover);
+					@include coat-auto-responsive(sidebar-nav-link-sub, active-hover);
 				}
 			}
 		}

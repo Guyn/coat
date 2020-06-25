@@ -1,40 +1,24 @@
 #blog-footer {
-	@include coat-auto(overview);
+	@include coat-auto-responsive(overview);
 
 	li:before {
 		content: none;
 	}
 	ul {
-		@include coat-auto(overview-list);
+		@include coat-auto-responsive(overview-list);
 	}
 	li {
 		display: flex;
-		@include coat-auto(overview-item);
+		@include coat-auto-responsive(overview-item);
 		@media #{$mobile} {
 			flex-direction: column;
-			@include coat-auto(overview-item, mobile);
-		}
-		@media #{$desktop} {
-			@include coat-auto(overview-item, desktop);
 		}
 	}
 	a {
-		@include coat-auto(overview-link);
-		@media #{$mobile} {
-			@include coat-auto(overview-link, mobile);
-		}
-		@media #{$desktop} {
-			@include coat-auto(overview-link, desktop);
-		}
+		@include coat-auto-responsive(overview-link);
 	}
 	time {
 		white-space: nowrap;
-		@include coat-auto(overview-time);
-		@media #{$mobile} {
-			@include coat-auto(overview-time, mobile);
-		}
-		@media #{$desktop} {
-			@include coat-auto(overview-time, desktop);
-		}
+		@include coat-auto-responsive(overview-time);
 	}
 }

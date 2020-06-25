@@ -11,6 +11,9 @@
 
 	label {
 		@include coat-auto(search-label);
+		& ~ .search__results {
+			@include coat-auto(search-results);
+		}
 		&:focus-within {
 			& ~ .search__results--has-values {
 				@include coat-auto(search-results, filled);
@@ -21,9 +24,6 @@
 					@include coat-auto(search-result, focus);
 				}
 			}
-		}
-		& ~ .search__results {
-			@include coat-auto(search-results);
 		}
 	}
 	input {
@@ -40,10 +40,29 @@
 		}
 	}
 	&__link {
-		@include coat-auto(link);
 		@include coat-auto(search-link);
+
 		&:hover {
 			@include coat-auto(search-link, hover);
 		}
+		@media #{$mobile} {
+			@include coat-auto(search-link, mobile);
+			&:hover {
+				@include coat-auto(search-link, mobile-hover);
+			}
+		}
+		@media #{$desktop} {
+			@include coat-auto(search-link, desktop);
+			&:hover {
+				@include coat-auto(search-link, desktop-hover);
+			}
+		}
+	}
+}
+
+@media #{$mobile} {
+	nav + #search {
+		position: absolute;
+		right: 2em;
 	}
 }

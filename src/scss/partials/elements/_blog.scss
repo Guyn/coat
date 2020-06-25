@@ -1,21 +1,21 @@
 .blog {
 	&-meta {
-		@include coat-auto(blog-meta);
+		@include coat-auto-responsive(blog-meta);
 		.author {
-			@include coat-auto(blog-author);
+			@include coat-auto-responsive(blog-author);
 		}
 	}
 	&-author {
-		@include coat-auto(blog-author);
+		@include coat-auto-responsive(blog-author);
 	}
 	&-tags {
-		@include coat-auto(blog-tags);
+		@include coat-auto-responsive(blog-tags);
 	}
 	&-tag {
-		@include coat-auto(blog-tag);
+		@include coat-auto-responsive(blog-tag);
 		&::before {
 			content: "#";
-			@include coat-auto(blog-tag, before);
+			@include coat-auto-responsive(blog-tag, before);
 		}
 	}
 }

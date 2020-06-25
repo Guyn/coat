@@ -1,12 +1,7 @@
 #footer {
 	position: relative;
-	@include coat-auto(footer-nav);
-	@media #{$desktop} {
-		@include coat-auto(footer-nav, desktop);
-	}
-	@media #{$mobile} {
-		@include coat-auto(footer-nav, mobile);
-	}
+	@include coat-auto-responsive(footer-nav);
+
 	nav {
 		z-index: 2;
 		display: inline-flex;
@@ -16,42 +11,18 @@
 	}
 	nav a {
 		display: block;
-		@include coat-auto(footer-nav-link);
+		@include coat-auto-responsive(footer-nav-link);
 		white-space: nowrap;
 		text-decoration: none;
 
 		&:hover {
-			@include coat-auto(footer-nav-link, hover);
-		}
-		@media #{$mobile} {
-			@include coat-auto(footer-nav-link, mobile);
-			&:hover {
-				@include coat-auto(footer-nav-link, mobile-hover);
-			}
-		}
-		@media #{$desktop} {
-			@include coat-auto(footer-nav-link, desktop);
-			&:hover {
-				@include coat-auto(footer-nav-link, desktop-hover);
-			}
+			@include coat-auto-responsive(footer-nav-link, hover);
 		}
 	}
 	nav li.active > a {
-		@include coat-auto(footer-nav-link, active);
+		@include coat-auto-responsive(footer-nav-link, active);
 		&:hover {
-			@include coat-auto(footer-nav-link, active-hover);
-		}
-		@media #{$mobile} {
-			@include coat-auto(footer-nav-link, mobile-active);
-			&:hover {
-				@include coat-auto(footer-nav-link, mobile-active-hover);
-			}
-		}
-		@media #{$desktop} {
-			@include coat-auto(footer-nav-link, desktop-active);
-			&:hover {
-				@include coat-auto(footer-nav-link, desktop-active-hover);
-			}
+			@include coat-auto-responsive(footer-nav-link, active-hover);
 		}
 	}
 
@@ -89,36 +60,17 @@
 	}
 	nav > ul ul li {
 		a {
-			@include coat-auto(footer-nav-link-sub);
+			@include coat-auto-responsive(footer-nav-link-sub);
 			&:hover {
-				@include coat-auto(footer-nav-link-sub, hover);
-			}
-			@media #{$mobile} {
-				@include coat-auto(footer-nav-link-sub, mobile);
-				&:hover {
-					@include coat-auto(footer-nav-link-sub, mobile-hover);
-				}
-			}
-			@media #{$desktop} {
-				@include coat-auto(footer-nav-link-sub, desktop);
-				&:hover {
-					@include coat-auto(footer-nav-link-sub, desktop-hover);
-				}
+				@include coat-auto-responsive(footer-nav-link-sub, hover);
 			}
 		}
 		&.active a {
-			@include coat-auto(footer-nav-link-sub, active);
+			@include coat-auto-responsive(footer-nav-link-sub, active);
 			&:hover {
-				@include coat-auto(footer-nav-link-sub, active-hover);
-			}
-			@media #{$mobile} {
-				@include coat-auto(footer-nav-link-sub, mobile-active);
-				&:hover {
-					@include coat-auto(footer-nav-link-sub, mobile-active-hover);
-				}
+				@include coat-auto-responsive(footer-nav-link-sub, active-hover);
 			}
 			@media #{$desktop} {
-				@include coat-auto(footer-nav-link-sub, desktop-active);
 				&:hover {
 					@include coat-auto(footer-nav-link-sub, desktop-active-hover);
 				}

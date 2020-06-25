@@ -5,63 +5,47 @@
 @import "overview";
 @import "mobile";
 
-#header,
-#footer,
-#sidebar,
-#blog-footer {
-	nav {
+#header nav,
+#footer nav,
+#sidebar nav,
+#blog-footer nav,
+#search {
+	a {
+		@include coat-auto-responsive(standard-nav-link);
+		&::before {
+			content: "" !important;
+			@include coat-auto-responsive(standard-nav-link, before);
+		}
+		&:hover {
+			@include coat-auto-responsive(standard-nav-link, hover);
+			&::before {
+				@include coat-auto-responsive(standard-nav-link, before-hover);
+			}
+		}
+	}
+	.active > a {
+		@include coat-auto-responsive(standard-nav-link, active);
+		&:hover {
+			@include coat-auto-responsive(standard-nav-link, active-hover);
+			&::before {
+				@include coat-auto-responsive(standard-nav-link, before-active-hover);
+			}
+		}
+		&::before {
+			@include coat-auto-responsive(standard-nav-link, before-active);
+		}
+	}
+	ul ul {
 		a {
-			position: relative;
-			@include coat-auto(standard-nav-link);
-			z-index: 1;
-			&::before {
-				content: "";
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				z-index: -1;
-				width: 100%;
-				height: 100%;
-				transform: translate(-50%, -50%) scale(0.75);
-				opacity: 0;
-				transition: coat(transition);
-				@include coat-auto(standard-nav-link, before);
-			}
+			@include coat-auto-responsive(standard-nav-link-sub);
 			&:hover {
-				@include coat-auto(standard-nav-link, hover);
-				&::before {
-					transform: translate(-50%, -50%) scale(1);
-					opacity: 1;
-					@include coat-auto(standard-nav-link, before-hover);
-				}
+				@include coat-auto-responsive(standard-nav-link-sub, hover);
 			}
 		}
-		.active > a {
-			@include coat-auto(standard-nav-link, active);
+		.active a {
+			@include coat-auto-responsive(standard-nav-link-sub, active);
 			&:hover {
-				@include coat-auto(standard-nav-link, active-hover);
-				&::before {
-					@include coat-auto(standard-nav-link, before-active-hover);
-				}
-			}
-			&::before {
-				transform: translate(-50%, -50%) scale(1);
-				opacity: 1;
-				@include coat-auto(standard-nav-link, before-active);
-			}
-		}
-		ul ul {
-			a {
-				@include coat-auto(standard-nav-link-sub);
-				&:hover {
-					@include coat-auto(standard-nav-link-sub, hover);
-				}
-			}
-			.active a {
-				@include coat-auto(standard-nav-link-sub, active);
-				&:hover {
-					@include coat-auto(standard-nav-link-sub, active-hover);
-				}
+				@include coat-auto-responsive(standard-nav-link-sub, active-hover);
 			}
 		}
 	}

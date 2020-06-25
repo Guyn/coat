@@ -113,6 +113,8 @@ $coat-default: (
 		standard-nav-link__color: $color-dark,
 	standard-nav-link__font-size: 1em,
 	standard-nav-link__text-decoration: none,
+	standard-nav-link__z-index: 1,
+	standard-nav-link__position: relative,
 	standard-nav-link__color--hover: to-lightness($color-primary, 20),
 	standard-nav-link__color--active: to-lightness($color-primary, 20),
 	standard-nav-link__background-color--before: to-lightness($color-primary, 95),
@@ -120,6 +122,21 @@ $coat-default: (
 		to-lightness($color-primary, 95),
 	standard-nav-link__background-color--before-active:
 		to-lightness($color-primary, 90),
+	standard-nav-link__content--before: " ",
+	standard-nav-link__position--before: absolute,
+	standard-nav-link__top--before: 50%,
+	standard-nav-link__left--before: 50%,
+	standard-nav-link__display--before: block,
+	standard-nav-link__z-index--before: -1,
+	standard-nav-link__width--before: 100%,
+	standard-nav-link__height--before: 100%,
+	standard-nav-link__opacity--before-hover: 1,
+	standard-nav-link__opacity--before-active: 1,
+	standard-nav-link__opacity--before: 0,
+	standard-nav-link__transition--before: all $transition,
+	standard-nav-link__transform--before: translate(-50%, -50%) scale(0.5),
+	standard-nav-link__transform--before-hover: translate(-50%, -50%) scale(1),
+	standard-nav-link__transform--before-active: translate(-50%, -50%) scale(1),
 	standard-nav-link__padding: 0.5em 1em,
 	standard-nav-link__border-radius--before: $border-radius,
 	standard-nav-link-sub__opacity: 0.66,
@@ -398,5 +415,19 @@ $coat-settings: map.merge($coat-default, $coat);
 				#{$prop}: coat($setting-key);
 			}
 		}
+	}
+}
+
+@mixin coat-auto-responsive($setting, $modifier: "") {
+	@include coat-auto($setting, $modifier);
+	$mod: "";
+	@if $modifier {
+		$mod: unquote(#{$mod}-);
+	}
+	@media #{$mobile} {
+		@include coat-auto($setting, #{$mod}mobile);
+	}
+	@media #{$desktop} {
+		@include coat-auto($setting, #{$mod}desktop);
 	}
 }
