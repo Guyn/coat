@@ -158,6 +158,7 @@ $coat-default: (
 	// Footer navigation
 		footer-nav__border: 1px 0 0 0 solid rgba($color-black, 0.25),
 	footer-nav__margin: 0,
+	footer-nav__max-width: 100vw,
 	footer-nav__padding: $base-space * 2 $base-space $base-space $base-space,
 	footer-nav__border-radius: $border-radius,
 	footer-nav__border-radius-mobile: $border-radius,
@@ -175,8 +176,8 @@ $coat-default: (
 	footnote__color: currentColor,
 	footnote__padding: 2em,
 	// Main section
-		main__padding: 0,
-	main__padding--mobile: $base-space 0,
+		main__padding: $base-space,
+	main__padding--mobile: $base-space,
 	// Overview section
 		overview__max-width: 75ch,
 	overview__width: 100%,
@@ -246,6 +247,7 @@ $coat-default: (
 		header__display--mobile: flex,
 	header__padding: $base-space,
 	header-title__text-align: left,
+	header__max-width: 100vw,
 	// Blog
 		blog-meta__margin-top: 2em,
 	blog-meta__background-color: $color-light,

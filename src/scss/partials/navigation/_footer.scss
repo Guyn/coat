@@ -28,9 +28,7 @@
 
 	nav > ul {
 		width: 100%;
-		max-width: coat(footer-nav, max-width);
-		border-radius: coat(footer-nav-list, border-radius);
-		background-color: coat(footer-nav-list, background-color);
+		@include coat-auto-responsive(footer-nav-list);
 		@media #{$medium} {
 			padding: coat(footer-nav, padding);
 			display: flex;
@@ -40,9 +38,6 @@
 			padding-left: 0;
 		}
 	}
-	// nav > ul > li {
-	// 	padding: coat(footer-nav,padding) coat(footer-nav,padding);
-	// }
 	nav > ul li {
 		position: relative;
 		margin: 0;

@@ -1,11 +1,5 @@
 #header {
-	@include coat-auto(header);
-	@media #{$medium} {
-		@include coat-auto(header, desktop);
-	}
-	@media #{$small} {
-		@include coat-auto(header, mobile);
-	}
+	@include coat-auto-responsive(header);
 
 	h1 {
 		width: 100%;
@@ -17,13 +11,7 @@
 		a img {
 			max-height: 1.5em;
 		}
-		@include coat-auto(header-title);
-		@media #{$medium} {
-			@include coat-auto(header-title, desktop);
-		}
-		@media #{$small} {
-			@include coat-auto(header-title, mobile);
-		}
+		@include coat-auto-responsive(header-title);
 	}
 	@media #{$medium} {
 		z-index: 2;
