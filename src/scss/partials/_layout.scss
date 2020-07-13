@@ -1,4 +1,6 @@
 #header {
+	position: sticky;
+	top: 0;
 	grid-area: header;
 }
 #sidebar {
@@ -26,6 +28,17 @@
 	max-width: 100%;
 }
 body {
+	@media #{$small} {
+		display: grid;
+		grid-template-areas:
+			"header"
+			"article"
+			"sidebar"
+			"main"
+			"web"
+			"overview"
+			"footer";
+	}
 	@media #{$medium} {
 		display: grid;
 		grid-template-areas:
