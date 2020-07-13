@@ -314,7 +314,7 @@ $coat-default: (
 	search-result__max-width: $small-width,
 	// Sections
 		section__padding: $base-space,
-	section__margin: 0 -$base-space,
+	section__margin-left: -$base-space,
 	section__width: calc(100% + (#{$base-space} * 2)),
 	section-column__padding: $base-space,
 	section-container__max-width: $max-width,
