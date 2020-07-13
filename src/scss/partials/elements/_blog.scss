@@ -18,4 +18,7 @@
 			@include coat-auto-responsive(blog-tag, before);
 		}
 	}
+	.blog-author + .blog-tags {
+		@include coat-auto-responsive(blog-tags, with-author);
+	}
 }

@@ -247,6 +247,9 @@ $coat-default: (
 	blog-meta__display: flex,
 	blog-meta__justify-content: space-between,
 	blog-tags__display: flex,
+	blog-tags__flex-wrap: wrap,
+	blog-tags__justify-content: center,
+	blog-tags__justify-content--with-author: flex-end,
 	blog-tags__margin: 0,
 	blog-tag__background-color: #{to-lightness($color-primary, 90)},
 	blog-tag__padding: 0.5em 1em,
@@ -421,7 +424,7 @@ $coat-settings: map.merge($coat-default, $coat);
 @mixin coat-auto-responsive($setting, $modifier: "") {
 	@include coat-auto($setting, $modifier);
 	$mod: "";
-	@if $modifier {
+	@if $modifier != "" {
 		$mod: unquote(#{$mod}-);
 	}
 	@media #{$mobile} {
