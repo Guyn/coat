@@ -1,0 +1,9 @@
+.section {
+	@include coat-auto-responsive(section);
+	&__container {
+		@include coat-auto-responsive(section-container);
+	}
+	.column {
+		@include coat-auto-responsive(section-column);
+	}
+}

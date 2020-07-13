@@ -30,6 +30,8 @@ $border-radius: 0.5em !default;
 $transition-time: 0.25s !default;
 $transition-bezier: cubic-bezier(0.15, 0.65, 0.65, 1.25) !default;
 $transition: #{$transition-time} #{$transition-bezier};
+$max-width: 960px;
+$base-space: 2em !default;
 
 $coat: () !default;
 
@@ -44,14 +46,14 @@ $coat-default: (
 	color-white: $color-white,
 	color-black: $color-black,
 	// Basics
-		padding: 2em,
-	padding--mobile: 1em 2em,
-	margin: 1em,
+		padding: $base-space,
+	padding--mobile: $base-space/2 $base-space,
+	margin: $base-space/2,
 	transition-time: $transition-time,
 	transition-bezier: $transition-bezier,
 	transition: $transition,
 	background-color: $color-white,
-	max-width: 960px,
+	max-width: $max-width,
 	border-radius: $border-radius,
 	border-color: $color-light,
 	border-width: 1px,
@@ -60,8 +62,8 @@ $coat-default: (
 		"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif'",
 	color: $color-dark,
 	// Body
-		body__padding: 2em,
-	body__padding--mobile: 1em 2em,
+		body__padding: $base-space,
+	body__padding--mobile: $base-space/2 $base-space,
 	body__color: $color-dark,
 	// Heading
 		heading-step: 0.5,
@@ -158,7 +160,7 @@ $coat-default: (
 	footer-nav__margin: 4em 0 0 0,
 	footer-nav__border-radius: $border-radius,
 	footer-nav__border-radius-mobile: $border-radius,
-	footer-nav__padding--mobile: 2em,
+	footer-nav__padding--mobile: $base-space,
 	footer-nav__background-color: transparent,
 	footer-nav__background-color--mobile: $color-light,
 	// Sidebar navigation
@@ -173,7 +175,7 @@ $coat-default: (
 	footnote__padding: 2em,
 	// Main section
 		main__padding: 0,
-	main__padding--mobile: 2em 0,
+	main__padding--mobile: $base-space 0,
 	// Overview section
 		overview__max-width: 75ch,
 	overview__width: 100%,
@@ -193,17 +195,17 @@ $coat-default: (
 	article__margin: 4em auto 0 auto,
 	article__font-size: 1em,
 	article__font-size--mobile: 1.25em,
-	article__padding: 2em auto,
+	article__padding: $base-space auto,
 	article-paragraph__line-height: 1.75,
 	article-paragraph__font-size--first: 1.25em,
 	article-paragraph__line-height--first: 1.5,
 	article-title__font-size: 4em,
-	article-title__font-size--mobile: 2em,
+	article-title__font-size--mobile: $base-space,
 	// Mobile
 		mobile-nav__background-color: rgba(0, 0, 0, 0.25),
-	mobile-nav__padding: 2em,
+	mobile-nav__padding: $base-space,
 	mobile-nav-list__background-color: $color-white,
-	mobile-nav-list__padding: 2em,
+	mobile-nav-list__padding: $base-space,
 	mobile-nav-list__border-radius: 0.5em,
 	// Alert
 		alert__padding: 1em,
@@ -223,7 +225,7 @@ $coat-default: (
 	alert__color--info: #{to-lightness($skyblue, 12.5)},
 	alert__background-color--info: #{to-lightness($skyblue, 90)},
 	// Blockquote
-		blockquote__padding: 1em,
+		blockquote__padding: $base-space/2,
 	blockquote__font-size: 1em,
 	blockquote__font-style: italic,
 	blockquote__opacity: 0.66,
@@ -246,7 +248,7 @@ $coat-default: (
 		blog-meta__margin-top: 2em,
 	blog-meta__background-color: $color-light,
 	blog-meta__border-radius: $border-radius,
-	blog-meta__padding: 1em,
+	blog-meta__padding: $base-space/2,
 	blog-meta__display: flex,
 	blog-meta__justify-content: space-between,
 	blog-tags__display: flex,
@@ -255,7 +257,7 @@ $coat-default: (
 	blog-tags__justify-content--with-author: flex-end,
 	blog-tags__margin: 0,
 	blog-tag__background-color: #{to-lightness($color-primary, 90)},
-	blog-tag__padding: 0.5em 1em,
+	blog-tag__padding: $base-space/4 $base-space/2,
 	blog-tag__line-height: 1,
 	blog-tag__font-size: 0.85em,
 	blog-tag__color: #{to-lightness($color-primary, 20)},
@@ -309,7 +311,14 @@ $coat-default: (
 	search-results__animation--focus: popIn $transition forwards,
 	search-result__min-width: 10em,
 	search-result__padding: 1em,
-	search-result__max-width: $small-width
+	search-result__max-width: $small-width,
+	// Sections
+		section__padding: $base-space,
+	section__margin: 0 -$base-space,
+	section__width: calc(100% - ($base-space * 2)),
+	section-column__padding: $base-space,
+	section-container__max-width: $max-width,
+	section-container__margin: auto
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

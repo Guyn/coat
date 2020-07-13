@@ -16,6 +16,9 @@
 #article {
 	grid-area: article;
 }
+#web {
+	grid-area: web;
+}
 body {
 	@media #{$medium} {
 		display: grid;
@@ -23,6 +26,7 @@ body {
 			"header header header header"
 			". article article ."
 			"sidebar main main ."
+			"web web web web"
 			". overview overview ."
 			"footer footer footer footer";
 		grid-template-columns: repeat(4, minmax(250px, 1fr));
