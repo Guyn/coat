@@ -246,6 +246,7 @@ $coat-default: (
 	// Header
 		header__display--mobile: flex,
 	header__padding: $base-space,
+	header__padding--mobile: $base-space / 2,
 	header__max-width: 100vw,
 	header-title__text-align: left,
 	// Blog
