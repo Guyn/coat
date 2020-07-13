@@ -1,6 +1,6 @@
 {
 	"name": "@guyn/coat",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"description": "Let your HTML put on a coat",
 	"main": "index.js",
 	"scripts": {
