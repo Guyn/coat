@@ -1,5 +1,12 @@
 .section {
 	@include coat-auto-responsive(section);
+	// Create background colors
+	@each $name, $value in $colors {
+		&.background--#{to-lower-case($name)} {
+			background-color: $value;
+			color: contra($value);
+		}
+	}
 	&__container {
 		@include coat-auto-responsive(section-container);
 	}

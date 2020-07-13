@@ -315,7 +315,7 @@ $coat-default: (
 	// Sections
 		section__padding: $base-space,
 	section__margin: 0 -$base-space,
-	section__width: calc(100% - ($base-space * 2)),
+	section__width: calc(100% - (#{$base-space} * 2)),
 	section-column__padding: $base-space,
 	section-container__max-width: $max-width,
 	section-container__margin: auto
