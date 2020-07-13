@@ -1,6 +1,7 @@
 #header {
-	@include coat-auto-responsive(header);
-
+	@media #{$small} {
+		@include coat-auto(header, "mobile");
+	}
 	h1 {
 		width: 100%;
 		a {
@@ -13,12 +14,12 @@
 		}
 		@include coat-auto-responsive(header-title);
 	}
+	@include coat-auto(header);
 	@media #{$medium} {
 		z-index: 2;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: coat(header-nav-padding);
 		nav {
 			z-index: 2;
 			justify-content: center;

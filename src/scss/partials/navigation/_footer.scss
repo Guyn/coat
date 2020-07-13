@@ -1,6 +1,6 @@
 #footer {
 	position: relative;
-	@include coat-auto-responsive(footer-nav);
+	@include coat-auto(footer-nav);
 
 	nav {
 		z-index: 2;
@@ -28,7 +28,7 @@
 
 	nav > ul {
 		width: 100%;
-		@include coat-auto-responsive(footer-nav-list);
+		@include coat-auto(footer-nav-list);
 		@media #{$medium} {
 			padding: coat(footer-nav, padding);
 			display: flex;
