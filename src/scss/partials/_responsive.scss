@@ -1,5 +1,5 @@
 .hide-mobile {
-	@media #{$mobile} {
+	@media #{$small} {
 		display: none !important;
 	}
 }

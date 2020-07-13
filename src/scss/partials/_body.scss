@@ -9,10 +9,10 @@ body {
 }
 body {
 	@include coat-auto(body);
-	@media #{$mobile} {
+	@media #{$small} {
 		@include coat-auto(body, mobile);
 	}
-	@media #{$desktop} {
+	@media #{$medium} {
 		@include coat-auto(body, desktop);
 	}
 }

@@ -1,12 +1,12 @@
 #sidebar {
 	@include coat-auto-responsive(sidebar-nav);
 
-	@media #{$desktop} {
+	@media #{$medium} {
 		nav {
 			z-index: 2;
 			display: inline-flex;
 			margin: 0;
-			@media #{$desktop} {
+			@media #{$medium} {
 				width: 100%;
 			}
 		}

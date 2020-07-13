@@ -10,7 +10,7 @@
 	li {
 		display: flex;
 		@include coat-auto-responsive(overview-item);
-		@media #{$mobile} {
+		@media #{$small} {
 			flex-direction: column;
 		}
 	}

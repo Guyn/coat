@@ -17,7 +17,7 @@
 	grid-area: article;
 }
 body {
-	@media #{$desktop} {
+	@media #{$medium} {
 		display: grid;
 		grid-template-areas:
 			"header header header header"

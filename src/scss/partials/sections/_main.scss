@@ -1,9 +1,9 @@
 #main {
 	@include coat-auto(main);
-	@media #{$mobile} {
+	@media #{$small} {
 		@include coat-auto(main, mobile);
 	}
-	@media #{$desktop} {
+	@media #{$medium} {
 		@include coat-auto(main, desktop);
 	}
 }

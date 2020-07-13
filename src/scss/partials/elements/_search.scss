@@ -45,13 +45,13 @@
 		&:hover {
 			@include coat-auto(search-link, hover);
 		}
-		@media #{$mobile} {
+		@media #{$small} {
 			@include coat-auto(search-link, mobile);
 			&:hover {
 				@include coat-auto(search-link, mobile-hover);
 			}
 		}
-		@media #{$desktop} {
+		@media #{$medium} {
 			@include coat-auto(search-link, desktop);
 			&:hover {
 				@include coat-auto(search-link, desktop-hover);
@@ -60,7 +60,7 @@
 	}
 }
 
-@media #{$mobile} {
+@media #{$small} {
 	nav + #search {
 		position: absolute;
 		right: 2em;

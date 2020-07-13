@@ -1,9 +1,9 @@
 #header {
 	@include coat-auto(header);
-	@media #{$desktop} {
+	@media #{$medium} {
 		@include coat-auto(header, desktop);
 	}
-	@media #{$mobile} {
+	@media #{$small} {
 		@include coat-auto(header, mobile);
 	}
 
@@ -18,14 +18,14 @@
 			max-height: 1.5em;
 		}
 		@include coat-auto(header-title);
-		@media #{$desktop} {
+		@media #{$medium} {
 			@include coat-auto(header-title, desktop);
 		}
-		@media #{$mobile} {
+		@media #{$small} {
 			@include coat-auto(header-title, mobile);
 		}
 	}
-	@media #{$desktop} {
+	@media #{$medium} {
 		z-index: 2;
 		display: flex;
 		justify-content: space-between;
@@ -39,7 +39,7 @@
 			background-color: coat(header-nav, background-color);
 			color: coat(header-nav, color);
 			margin: 0;
-			@media #{$mobile} {
+			@media #{$small} {
 				position: fixed;
 				top: 3em;
 				right: 3em;
@@ -67,7 +67,7 @@
 			border-radius: coat(header-nav, border-radius);
 			background-color: coat(header-nav, background-color);
 			padding: 0;
-			@media #{$mobile} {
+			@media #{$small} {
 				flex-direction: column;
 			}
 		}

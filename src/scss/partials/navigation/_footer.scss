@@ -31,7 +31,7 @@
 		max-width: coat(footer-nav, max-width);
 		border-radius: coat(footer-nav-list, border-radius);
 		background-color: coat(footer-nav-list, background-color);
-		@media #{$desktop} {
+		@media #{$medium} {
 			padding: coat(footer-nav, padding);
 			display: flex;
 			justify-content: center;
@@ -70,7 +70,7 @@
 			&:hover {
 				@include coat-auto-responsive(footer-nav-link-sub, active-hover);
 			}
-			@media #{$desktop} {
+			@media #{$medium} {
 				&:hover {
 					@include coat-auto(footer-nav-link-sub, desktop-active-hover);
 				}

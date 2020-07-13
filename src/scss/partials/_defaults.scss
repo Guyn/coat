@@ -12,10 +12,13 @@
 	@return hsla(hue($color), saturation($color), $lightness, alpha($color));
 }
 
-$mobile-width: 750px;
+$small-width: 750px;
+$medium-width: 750px;
+$large-width: 1680px;
 
-$mobile: "screen and (max-width: #{$mobile-width})";
-$desktop: "screen and (min-width: #{$mobile-width + 1})";
+$small: "screen and (max-width: #{$medium-width - 1})";
+$medium: "screen and (min-width: #{$medium-width})";
+$large: "screen and (min-width: #{$large-width})";
 
 $color-primary: $skyblue !default;
 $color-secondary: $orange !default;
@@ -306,7 +309,7 @@ $coat-default: (
 	search-results__animation--focus: popIn $transition forwards,
 	search-result__min-width: 10em,
 	search-result__padding: 1em,
-	search-result__max-width: $mobile-width
+	search-result__max-width: $small-width
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);
@@ -427,10 +430,10 @@ $coat-settings: map.merge($coat-default, $coat);
 	@if $modifier != "" {
 		$mod: unquote(#{$mod}-);
 	}
-	@media #{$mobile} {
+	@media #{$small} {
 		@include coat-auto($setting, #{$mod}mobile);
 	}
-	@media #{$desktop} {
+	@media #{$medium} {
 		@include coat-auto($setting, #{$mod}desktop);
 	}
 }

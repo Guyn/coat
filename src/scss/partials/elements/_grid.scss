@@ -24,14 +24,13 @@
 	}
 }
 .row {
-	&[class*="mobile-"] {
-		@media #{$mobile} {
-			@include grid-partials("mobile");
-		}
+	@media #{$small} {
+		@include grid-partials("small");
 	}
-	&[class*="desktop-"] {
-		@media #{$desktop} {
-			@include grid-partials("desktop");
-		}
+	@media #{$medium} {
+		@include grid-partials("medium");
+	}
+	@media #{$large} {
+		@include grid-partials("large");
 	}
 }
