@@ -287,6 +287,7 @@ $coat-default: (
 	// search__transform-origin--before: 100% 100%,
 		search-input__position: relative,
 	search-input__width: 1em,
+	search-input__background-color: transparent,
 	search-input__width--focus: 10em,
 	search-input__height: 1em,
 	search-input__height--focus: 2em,
@@ -319,8 +320,8 @@ $coat-default: (
 	search-result__max-width: $small-width,
 	// Sections
 		section__padding: $base-space 0,
-	section__margin-left--desktop: -$base-space,
-	section__width--desktop: calc(100% + (#{$base-space} * 2)),
+	// section__margin-left--desktop: -$base-space,
+		section__width--desktop: calc(100% + (#{$base-space} * 2)),
 	section__width--mobile: 100%,
 	section-column__padding: $base-space,
 	section-container__max-width: $max-width,
