@@ -182,7 +182,7 @@ $coat-default: (
 		overview__max-width: 75ch,
 	overview__width: 100%,
 	overview__margin: auto 0 auto,
-	overview__padding: $base-space,
+	overview__padding: #{$base-space * 2} 0,
 	overview-time__display: block,
 	overview-time__opacity: 0.5,
 	overview-time__font-size: 0.75em,

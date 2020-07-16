@@ -12,7 +12,7 @@
 #footer {
 	grid-area: footer;
 }
-#blog-footer {
+#overview {
 	grid-area: overview;
 }
 #article {
@@ -22,8 +22,9 @@
 	grid-area: web;
 }
 #main,
-#blog-footer,
+#overview,
 #article {
+	margin: auto;
 	width: $max-width;
 }
 body {
