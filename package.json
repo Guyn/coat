@@ -50,9 +50,7 @@
 		"sass": "^1.26.5",
 		"stylelint": "^13.5.0",
 		"stylelint-logical-order": "0.0.8",
-		"stylelint-order": "^4.0.0"
-	},
-	"dependencies": {
+		"stylelint-order": "^4.0.0",
 		"serve": "^11.3.2"
 	}
 }

@@ -1,0 +1,6 @@
+#content-nav {
+	@include coat-auto-responsive("content-nav");
+	a + a {
+		margin: 0;
+	}
+}

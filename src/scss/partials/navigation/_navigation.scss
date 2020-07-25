@@ -3,12 +3,14 @@
 @import "sidebar";
 @import "trigger";
 @import "overview";
+@import "content-navigation";
 @import "mobile";
 
 #header nav,
 #footer nav,
 #sidebar nav,
 #overview nav,
+#main nav,
 #search {
 	a {
 		@include coat-auto-responsive(standard-nav-link);

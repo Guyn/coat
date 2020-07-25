@@ -5,7 +5,7 @@
 		"excludeFolders": ["posts"]
 	},
 	"overrule": {
-		"css": ["/css/theme/coat-ext.css"]
+		"css": ["/css/theme/feather-ext.css"]
 	},
 	"copy": ["css", "src/script"],
 	"showNavigation": [

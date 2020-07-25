@@ -325,7 +325,12 @@ $coat-default: (
 	section__width--mobile: 100%,
 	section-column__padding: $base-space,
 	section-container__max-width: $max-width,
-	section-container__margin: auto
+	section-container__margin: auto,
+	content-nav__border-top: 2px solid $color-light,
+	content-nav__padding: $base-space 0,
+	content-nav__display: flex,
+	content-nav__justify-content: space-between,
+	content-nav__margin-top: $base-space
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);
