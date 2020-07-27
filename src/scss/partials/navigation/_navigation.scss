@@ -13,42 +13,20 @@
 #main nav,
 #search {
 	a {
-		@include coat-auto-responsive(standard-nav-link);
+		@include coat-auto(standard-nav-link);
 		&::before {
 			content: "" !important;
-			@include coat-auto-responsive(standard-nav-link, before);
-		}
-		&:hover {
-			@include coat-auto-responsive(standard-nav-link, hover);
-			&::before {
-				@include coat-auto-responsive(standard-nav-link, before-hover);
-			}
 		}
 	}
 	.active > a {
-		@include coat-auto-responsive(standard-nav-link, active);
-		&:hover {
-			@include coat-auto-responsive(standard-nav-link, active-hover);
-			&::before {
-				@include coat-auto-responsive(standard-nav-link, before-active-hover);
-			}
-		}
-		&::before {
-			@include coat-auto-responsive(standard-nav-link, before-active);
-		}
+		@include coat-auto(standard-nav-link-active);
 	}
 	ul ul {
 		a {
-			@include coat-auto-responsive(standard-nav-link-sub);
-			&:hover {
-				@include coat-auto-responsive(standard-nav-link-sub, hover);
-			}
+			@include coat-auto(standard-nav-link-sub);
 		}
 		.active a {
-			@include coat-auto-responsive(standard-nav-link-sub, active);
-			&:hover {
-				@include coat-auto-responsive(standard-nav-link-sub, active-hover);
-			}
+			@include coat-auto(standard-nav-link-sub-active);
 		}
 	}
 }

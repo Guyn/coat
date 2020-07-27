@@ -10,30 +10,14 @@
 		margin: 0;
 	}
 	nav a {
-		display: block;
-		@include coat-auto-responsive(footer-nav-link);
-		white-space: nowrap;
-		text-decoration: none;
-
-		&:hover {
-			@include coat-auto-responsive(footer-nav-link, hover);
-		}
+		@include coat-auto(footer-nav-link);
 	}
 	nav li.active > a {
-		@include coat-auto-responsive(footer-nav-link, active);
-		&:hover {
-			@include coat-auto-responsive(footer-nav-link, active-hover);
-		}
+		@include coat-auto(footer-nav-link-active);
 	}
 
 	nav > ul {
-		width: 100%;
 		@include coat-auto(footer-nav-list);
-		@media #{$medium} {
-			padding: coat(footer-nav, padding);
-			display: flex;
-			justify-content: center;
-		}
 		ul {
 			padding-left: 0;
 		}

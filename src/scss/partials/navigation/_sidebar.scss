@@ -1,5 +1,5 @@
 #sidebar {
-	@include coat-auto-responsive(sidebar-nav);
+	@include coat-auto(sidebar-nav);
 
 	@media #{$medium} {
 		nav {
@@ -14,17 +14,11 @@
 			display: inline-block;
 			white-space: nowrap;
 			text-decoration: none;
-			@include coat-auto-responsive(sidebar-nav-link);
-			&:hover {
-				@include coat-auto-responsive(sidebar-nav-link, hover);
-			}
+			@include coat-auto(sidebar-nav-link);
 		}
 
 		nav li.active > a {
-			@include coat-auto-responsive(sidebar-nav-link, active);
-			&:hover {
-				@include coat-auto-responsive(sidebar-nav-link, active-hover);
-			}
+			@include coat-auto(sidebar-nav-link-active);
 		}
 		nav a + a {
 			margin: 0;

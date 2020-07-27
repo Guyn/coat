@@ -3,11 +3,11 @@
 
 	&::before {
 		content: "";
-		@include coat-auto(search, before);
+		// @include coat-auto(search, before);
 	}
-	&:focus-within::before {
-		@include coat-auto(search, before-focus);
-	}
+	// &:focus-within::before {
+	// 	@include coat-auto(search, before-focus-within);
+	// }
 
 	label {
 		@include coat-auto(search-label);
@@ -29,22 +29,22 @@
 	input {
 		@include coat-auto(search-input);
 		&:focus {
-			@include coat-auto(search-input, focus);
+			// @include coat-auto(search-input, focus);
 			outline: none;
 		}
 	}
 	&__result {
 		@include coat-auto(search-result);
-		&:hover {
-			@include coat-auto(search-result, hover);
-		}
+		// &:hover {
+		// 	@include coat-auto(search-result, hover);
+		// }
 	}
 	&__link {
 		@include coat-auto(search-link);
 
-		&:hover {
-			@include coat-auto(search-link, hover);
-		}
+		// &:hover {
+		// 	@include coat-auto(search-link, hover);
+		// }
 		@media #{$small} {
 			@include coat-auto(search-link, mobile);
 			&:hover {

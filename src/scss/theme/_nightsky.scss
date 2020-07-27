@@ -22,5 +22,6 @@ $color-light: $nightblue;
 $color-white: $nightblue-dark;
 $color-black: white;
 
+@import "../mixins";
 @import "../partials/defaults";
 @import "../partials/base";

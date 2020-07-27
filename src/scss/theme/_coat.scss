@@ -12,5 +12,6 @@ $coat: (
 	code-block__font-family: "IBM Plex Mono",
 );
 
+@import "../mixins";
 @import "../partials/defaults";
 @import "../partials/base";

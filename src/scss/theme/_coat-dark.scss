@@ -20,6 +20,6 @@ $color-light: #222222;
 $color-white: #111111;
 $color-black: white;
 
+@import "../mixins";
 @import "../partials/defaults";
-
 @import "../partials/base";

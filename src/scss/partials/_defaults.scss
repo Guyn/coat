@@ -109,7 +109,8 @@ $coat-default: (
 	code-block__background-color: $color-light,
 	code-block__border-radius: $border-radius,
 	// Tables
-		table__border-radius: 0.2em,
+		table__max-width: 100%,
+	table__border-radius: 0.2em,
 	table__background-color: transparent,
 	table__color: currentColor,
 	table__border: 1px solid $color-light,
@@ -121,13 +122,13 @@ $coat-default: (
 	standard-nav-link__z-index: 1,
 	standard-nav-link__position: relative,
 	standard-nav-link__color--hover: to-lightness($color-primary, 20),
-	standard-nav-link__color--active: to-lightness($color-primary, 20),
+	standard-nav-link-active__color: to-lightness($color-primary, 20),
 	standard-nav-link__background-color--before: to-lightness($color-primary, 95),
-	standard-nav-link__background-color--before-hover:
+	standard-nav-link__background-color--hover-before:
 		to-lightness($color-primary, 95),
-	standard-nav-link__background-color--before-active:
+	standard-nav-link-active__background-color--before:
 		to-lightness($color-primary, 90),
-	standard-nav-link__content--before: " ",
+	standard-nav-link__content--before: "-",
 	standard-nav-link__position--before: absolute,
 	standard-nav-link__top--before: 50%,
 	standard-nav-link__left--before: 50%,
@@ -135,25 +136,25 @@ $coat-default: (
 	standard-nav-link__z-index--before: -1,
 	standard-nav-link__width--before: 100%,
 	standard-nav-link__height--before: 100%,
-	standard-nav-link__opacity--before-hover: 1,
-	standard-nav-link__opacity--before-active: 1,
+	standard-nav-link__opacity--hover-before: 1,
+	standard-nav-link-active__opacity--before: 1,
 	standard-nav-link__opacity--before: 0,
-	standard-nav-link__transition--before: all $transition,
+	standard-nav-link__transition--before: transform $transition,
 	standard-nav-link__transform--before: translate(-50%, -50%) scale(0.5),
-	standard-nav-link__transform--before-hover: translate(-50%, -50%) scale(1),
-	standard-nav-link__transform--before-active: translate(-50%, -50%) scale(1),
+	standard-nav-link__transform--hover-before: translate(-50%, -50%) scale(1),
+	standard-nav-link-active__transform--before: translate(-50%, -50%) scale(1),
 	standard-nav-link__padding: 0.5em 1em,
 	standard-nav-link__border-radius--before: $border-radius,
 	standard-nav-link-sub__opacity: 0.66,
 	standard-nav-link-sub__font-size: 0.9em,
 	standard-nav-link-sub__opacity--hover: 1,
-	standard-nav-link-sub__opacity--active: 1,
+	standard-nav-link-sub-active__opacity: 1,
 	standard-nav-link-sub__border-radius: $border-radius,
 	standard-nav-link-sub__color--hover: to-lightness($color-primary, 20),
-	standard-nav-link-sub__color--active: to-lightness($color-primary, 20),
-	standard-nav-link-sub__background-color--before-hover:
+	standard-nav-link-sub-active__color: to-lightness($color-primary, 20),
+	standard-nav-link-sub__background-color--hover-before:
 		to-lightness($color-primary, 90),
-	standard-nav-link-sub__background-color--before-active:
+	standard-nav-link-sub-active__background-color--before:
 		to-lightness($color-primary, 90),
 	// Footer navigation
 		footer-nav__border: 1px 0 0 0 solid rgba($color-black, 0.25),
@@ -165,6 +166,14 @@ $coat-default: (
 	footer-nav__padding--mobile: $base-space,
 	footer-nav__background-color: transparent,
 	footer-nav__background-color--mobile: $color-light,
+	footer-nav-link__margin--desktop: 0 1em,
+	footer-nav-link__display: block,
+	footer-nav-link__white-space: nowrap,
+	footer-nav-link__text-decoration: none,
+	footer-nav-list__width: 100%,
+	footer-nav-list__padding--desktop: $base-space,
+	footer-nav-list__display--desktop: flex,
+	footer-nav-list__justify-content--desktop: center,
 	// Sidebar navigation
 		sidebar-nav__border-radius: $border-radius,
 	sidebar-nav__padding--desktop: 1em,
@@ -199,8 +208,8 @@ $coat-default: (
 	article__font-size--mobile: 1.25em,
 	article__padding: $base-space auto,
 	article-paragraph__line-height: 1.75,
-	article-paragraph__font-size--first: 1.25em,
-	article-paragraph__line-height--first: 1.5,
+	article-paragraph__font-size--first-child: 1.25em,
+	article-paragraph__line-height--first-child: 1.5,
 	article-title__font-size: 4em,
 	article-title__font-size--mobile: $base-space,
 	// Mobile
@@ -239,10 +248,13 @@ $coat-default: (
 	trigger__box-shadow: 0 0.2em 0.25em 0 #{to-lightness($color-primary, 90)},
 	trigger__width: 2.5em,
 	trigger__height: 2.5em,
-	trigger__top--sidebar: 1em,
-	trigger__left--sidebar: 1em,
-	trigger__top--header: 1em,
-	trigger__right--header: 1em,
+	trigger__transform--desktop: scale(0),
+	trigger__z-index: 10,
+	trigger__display: block,
+	trigger-sidebar__top: 1em,
+	trigger-sidebar__left: 1em,
+	trigger-header__top: 1em,
+	trigger-header__right: 1em,
 	// Header
 		header__display--mobile: flex,
 	header__padding: $base-space,
@@ -259,7 +271,7 @@ $coat-default: (
 	blog-tags__display: flex,
 	blog-tags__flex-wrap: wrap,
 	blog-tags__justify-content: center,
-	blog-tags__justify-content--with-author: flex-end,
+	blog-tags__justify-content-with-author: flex-end,
 	blog-tags__margin: 0,
 	blog-tag__background-color: #{to-lightness($color-primary, 90)},
 	blog-tag__padding: $base-space/4 $base-space/2,
@@ -330,131 +342,11 @@ $coat-default: (
 	content-nav__padding: $base-space 0,
 	content-nav__display: flex,
 	content-nav__justify-content: space-between,
-	content-nav__margin-top: $base-space
+	content-nav__margin-top: $base-space,
+	content-nav-link__width--before: 1em,
+	content-nav-link__height--before: 1em,
+	content-nav-link__background--before: black,
+	content-nav-link__display--before: inline-block
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);
-
-@mixin setCustomProperty($setting) {
-	:root {
-		--coat-#{$setting}: #{map-get($coat, $setting)};
-	}
-}
-// Function: coat-setting-exists
-// Check if a Key exists in the settings
-@function coat-setting-exists($setting) {
-	@if map-get($coat-settings, $setting) {
-		@return true;
-	}
-	@return false;
-}
-// Function: coat
-// Get the value of a certain key in the settings and convert it to
-// a custom property with default value or if empty just the custom property.
-@function coat($setting, $prop: "", $modifier: "") {
-	@if $prop != "" {
-		$prop: "__#{$prop}";
-	}
-	@if $modifier != "" {
-		$modifier: "--#{$prop}";
-	}
-
-	$key: #{$setting}#{$prop}#{$modifier};
-
-	@if coat-setting-exists($key) {
-		$value: map-get($coat-settings, $key);
-		@if (str-index($key, "font-family")) {
-			@return #{$value};
-		} @else {
-			@return unquote("var(--coat-#{$key},#{$value})");
-		}
-	}
-	@return unquote("var(--coat-#{$setting})");
-}
-// Mixin: coat
-// Get the setting value and check if it exists. If it exists, add the property.
-
-@mixin coat($setting, $prop: "", $modifier: "") {
-	$prop-partial: "";
-	$modifier-partial: "";
-	@if $prop != "" {
-		$prop-partial: "__#{$prop}";
-	}
-	@if $modifier != "" {
-		$modifier-partial: "--#{$modifier}";
-	}
-
-	$key: #{$setting}#{$prop-partial}#{$modifier-partial};
-
-	// @debug "#{$key} ::: #{coat-setting-exists($key)} :: #{coat($key)}";
-	@if coat-setting-exists($key) {
-		#{$prop}: coat($key);
-	}
-}
-
-// Mixin: coats
-// List functionality for `mixin coat`. To do multiple properties at a time.
-@mixin coats($props, $setting, $modifier: "") {
-	@each $prop in $props {
-		@include coat($setting, $prop, $modifier);
-	}
-}
-
-// Is the modifier correct?
-@function modifier-is($setting, $modifier) {
-	@if $modifier == "" {
-		@if str-index($setting, "--") {
-			@return false;
-		}
-		@return true;
-	}
-	@if str-index($setting, "--#{$modifier}") {
-		@return true;
-	} @else {
-		@return false;
-	}
-}
-// Get the property from a string.
-@function get-prop($setting) {
-	@if str-index($setting, "__") {
-		$start: str-index($setting, "__");
-		$end: str-length($setting);
-		@if str-index($setting, "--") {
-			$end: str-index($setting, "--") - 1;
-		}
-		@return str-slice($setting, $start + 2, $end);
-	} @else {
-		@return null;
-	}
-}
-
-// Mixin Coat-Auto
-// Automatically find all properties link to a key and use them.
-@mixin coat-auto($setting, $modifier: "") {
-	@each $setting-key, $setting-value in $coat-settings {
-		@if modifier-is($setting-key, $modifier) and
-			str-index($setting-key, $setting + "__") ==
-			1
-		{
-			$prop: get-prop($setting-key);
-
-			@if $prop != null or $prop != "" and $setting-value {
-				#{$prop}: coat($setting-key);
-			}
-		}
-	}
-}
-
-@mixin coat-auto-responsive($setting, $modifier: "") {
-	@include coat-auto($setting, $modifier);
-	$mod: "";
-	@if $modifier != "" {
-		$mod: unquote(#{$mod}-);
-	}
-	@media #{$small} {
-		@include coat-auto($setting, #{$mod}mobile);
-	}
-	@media #{$medium} {
-		@include coat-auto($setting, #{$mod}desktop);
-	}
-}

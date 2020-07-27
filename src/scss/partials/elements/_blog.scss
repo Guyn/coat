@@ -19,6 +19,6 @@
 		}
 	}
 	.blog-author + .blog-tags {
-		@include coat-auto-responsive(blog-tags, with-author);
+		@include coat-auto-responsive(blog-tags-with-author);
 	}
 }

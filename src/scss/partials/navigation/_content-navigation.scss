@@ -3,4 +3,10 @@
 	a + a {
 		margin: 0;
 	}
+	&__link {
+		&::before {
+			content: "";
+		}
+		@include coat-auto-responsive("content-nav-link");
+	}
 }

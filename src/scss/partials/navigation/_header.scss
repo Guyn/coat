@@ -9,9 +9,9 @@
 		a img {
 			max-height: 1.5em;
 		}
-		@include coat-auto-responsive(header-title);
+		@include coat-auto(header-title);
 	}
-	@include coat-auto-responsive(header);
+	@include coat-auto(header);
 	@media #{$medium} {
 		z-index: 2;
 		display: flex;

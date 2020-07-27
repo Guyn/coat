@@ -1,0 +1,48 @@
+@use "sass:list";
+
+$pseudo-elements: (
+	"after",
+	"before",
+	"first-letter",
+	"first-line",
+	"selection"
+);
+$pseudo-classes: (
+	"active",
+	"checked",
+	"disabled",
+	"empty",
+	"enabled",
+	"first-child",
+	"first-of-type",
+	"focus",
+	"hover",
+	"in-range",
+	"invalid",
+	"lang",
+	"last-child",
+	"last-of-type",
+	"link",
+	"only-of-type",
+	"only-child",
+	"optional",
+	"out-of-range",
+	"read-only",
+	"read-write",
+	"required",
+	"root",
+	"target",
+	"valid",
+	"visited"
+);
+$pseudo-classes-arg: (
+	"lang",
+	"not",
+	"nth-child",
+	"nth-last-child",
+	"nth-last-of-type",
+	"nth-of-type"
+);
+
+$pseudo: list.join($pseudo-elements, $pseudo-classes);
+$pseudo: list.join($pseudo, $pseudo-classes-arg);

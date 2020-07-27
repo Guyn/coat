@@ -8,11 +8,11 @@
  */
 code[class*=language-],
 pre[class*=language-] {
-  color: var(--coat-code-block__color,#1C011B);
+  color: coat(code-block, color);
   font-weight: 400;
   font-size: 1em;
-  font-family: Menlo, 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
-  line-height: var(--coat-code-block__line-height,2);
+  font-family: coat(code-block, font-family);
+  line-height: coat(code-block, line-height);
   white-space: pre;
   direction: ltr;
   text-align: left;
@@ -32,7 +32,7 @@ pre > code {
 }
 
 pre > code[class*=language-] {
-  font-size: var(--coat-code__font-size,1em);
+  font-size: coat(code, font-size);
 }
 
 pre[class*=language-]::-moz-selection,
@@ -43,13 +43,13 @@ pre[class*=language-]::selection,
 pre[class*=language-] ::selection,
 code[class*=language-]::selection,
 code[class*=language-] ::selection {
-  background: var(--coat-code-selection);
+  background: coat(code-selection);
 }
 
 /* Code blocks */
 pre[class*=language-] {
-  border: 1px solid var(--coat-code-block__border-color,#fafafa);
-  background: var(--coat-code-block__background-color,#fafafa);
+  border: 1px solid coat(code-block, border-color);
+  background: coat(code-block, background-color);
   overflow: auto;
   padding: 1em;
 }
@@ -57,10 +57,10 @@ pre[class*=language-] {
 /* Inline code */
 :not(pre) > code,
 :not(pre) > code[class*=language-] {
-  border: 1px solid var(--coat-code__border-color,#fafafa);
-  background: var(--coat-code__background-color,#cfeefc);
-  font-size: var(--coat-code__font-size,1em);
-  line-height: var(--coat-code__line-height,1);
+  border: 1px solid coat(code, border-color);
+  background: coat(code, background-color);
+  font-size: coat(code, font-size);
+  line-height: coat(code, line-height);
 }
 
 .token.comment {

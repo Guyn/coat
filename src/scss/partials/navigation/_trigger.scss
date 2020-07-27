@@ -1,24 +1,16 @@
 .nav-trigger {
 	&__label {
-		z-index: 10;
-		display: block;
 		@include coat-auto(trigger);
 		span {
 			@include menu(1.5rem, 0.175rem, 0.33rem, currentColor);
 		}
-		&:hover {
-			@include coat-auto(trigger, hover);
-		}
 		&[for="sidebar-nav-trigger"] {
 			position: fixed;
-			@include coat-auto(trigger, sidebar);
+			@include coat-auto(trigger-sidebar);
 		}
 		&[for="header-nav-trigger"] {
 			position: fixed;
-			@include coat-auto(trigger, header);
-		}
-		@media #{$medium} {
-			transform: scale(0);
+			@include coat-auto(trigger-header);
 		}
 	}
 	&__input {
