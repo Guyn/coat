@@ -7,5 +7,6 @@
 	"overrule": {
 		"css": ["/css/theme/coat-ext.css"]
 	},
+	"skip": ["purge"],
 	"copy": ["css", "src/script"]
 }

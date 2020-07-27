@@ -1,24 +1,23 @@
 .blog {
 	&-meta {
-		@include coat-auto-responsive(blog-meta);
+		@include coat-auto(blog-meta);
 		.author {
-			@include coat-auto-responsive(blog-author);
+			@include coat-auto(blog-author);
 		}
 	}
 	&-author {
-		@include coat-auto-responsive(blog-author);
+		@include coat-auto(blog-author);
 	}
 	&-tags {
-		@include coat-auto-responsive(blog-tags);
-	}
-	&-tag {
-		@include coat-auto-responsive(blog-tag);
-		&::before {
-			content: "#";
-			@include coat-auto-responsive(blog-tag, before);
+		@include coat-auto(blog-tags);
+		&__tag {
+			@include coat-auto(blog-tag);
+			&::before {
+				content: "#";
+			}
 		}
 	}
 	.blog-author + .blog-tags {
-		@include coat-auto-responsive(blog-tags-with-author);
+		@include coat-auto(blog-tags-with-author);
 	}
 }

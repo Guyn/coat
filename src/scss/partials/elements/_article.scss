@@ -1,11 +1,5 @@
 article {
 	@include coat-auto(article);
-	@media #{$medium} {
-		@include coat-auto(article, desktop);
-	}
-	@media #{$small} {
-		@include coat-auto(article, mobile);
-	}
 
 	p {
 		@include coat-auto(article-paragraph);
@@ -15,11 +9,5 @@ article {
 	}
 	h1 {
 		@include coat-auto(article-title);
-		@media #{$medium} {
-			@include coat-auto(article-title, desktop);
-		}
-		@media #{$small} {
-			@include coat-auto(article-title, mobile);
-		}
 	}
 }

@@ -4,6 +4,7 @@
 		"js": ["/script/app.js"],
 		"excludeFolders": ["posts"]
 	},
+	"skip": ["purge"],
 	"overrule": {
 		"css": ["/css/theme/feather-ext.css"]
 	},
