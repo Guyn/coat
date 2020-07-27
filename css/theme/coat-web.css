@@ -1605,22 +1605,22 @@ article {
 article p {
   line-height: var(--coat-article-paragraph__line-height,1.75);
 }
-article p:first-child {
-  font-size: var(--coat-article-paragraph__font-size--first-child,1.25em);
+article p:first-of-type {
+  font-size: var(--coat-article-paragraph__font-size--first-of-type,1.25em);
 }
-article p:first-child {
-  line-height: var(--coat-article-paragraph__line-height--first-child,1.5);
+article p:first-of-type {
+  line-height: var(--coat-article-paragraph__line-height--first-of-type,1.5);
 }
 article > p:first-of-type {
   line-height: var(--coat-article-paragraph__line-height,1.75);
-  font-size: var(--coat-article-paragraph__font-size--first-child);
-  line-height: var(--coat-article-paragraph__line-height--first-child);
+  font-size: var(--coat-article-paragraph__font-size--first-of-type);
+  line-height: var(--coat-article-paragraph__line-height--first-of-type);
 }
-article > p:first-of-type:first-child {
-  font-size: var(--coat-article-paragraph__font-size--first-child,1.25em);
+article > p:first-of-type:first-of-type {
+  font-size: var(--coat-article-paragraph__font-size--first-of-type,1.25em);
 }
-article > p:first-of-type:first-child {
-  line-height: var(--coat-article-paragraph__line-height--first-child,1.5);
+article > p:first-of-type:first-of-type {
+  line-height: var(--coat-article-paragraph__line-height--first-of-type,1.5);
 }
 article h1 {
   font-size: var(--coat-article-title__font-size,4em);

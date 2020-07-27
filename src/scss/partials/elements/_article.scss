@@ -5,7 +5,7 @@ article {
 		@include coat-auto(article-paragraph);
 	}
 	& > p:first-of-type {
-		@include coat-auto(article-paragraph, first);
+		@include coat-auto(article-paragraph, first-of-type);
 	}
 	h1 {
 		@include coat-auto(article-title);

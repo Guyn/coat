@@ -208,8 +208,8 @@ $coat-default: (
 	article__font-size--mobile: 1.25em,
 	article__padding: $base-space auto,
 	article-paragraph__line-height: 1.75,
-	article-paragraph__font-size--first-child: 1.25em,
-	article-paragraph__line-height--first-child: 1.5,
+	article-paragraph__font-size--first-of-type: 1.25em,
+	article-paragraph__line-height--first-of-type: 1.5,
 	article-title__font-size: 4em,
 	article-title__font-size--mobile: $base-space,
 	// Mobile
