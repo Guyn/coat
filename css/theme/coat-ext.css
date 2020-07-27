@@ -542,9 +542,13 @@ blockquote {
   max-width: var(--coat-footer-nav__max-width,100vw);
   padding: var(--coat-footer-nav__padding,4em 2em 2em 2em);
   border-radius: var(--coat-footer-nav__border-radius,0.5em);
-  border-radius-mobile: var(--coat-footer-nav__border-radius-mobile,0.5em);
   background-color: var(--coat-footer-nav__background-color,transparent);
   /* Spacing */
+}
+@media screen and (max-width: 749px) {
+  #footer {
+    border-radius: var(--coat-footer-nav__border-radius--mobile,0.5em);
+  }
 }
 @media screen and (max-width: 749px) {
   #footer {
@@ -1706,16 +1710,21 @@ article h1 {
   display: var(--coat-blog-tags__display,flex);
   flex-wrap: var(--coat-blog-tags__flex-wrap,wrap);
   justify-content: var(--coat-blog-tags__justify-content,center);
-  justify-content-with-author: var(--coat-blog-tags__justify-content-with-author,flex-end);
   margin: var(--coat-blog-tags__margin,0);
+}
+.blog-tags--with-author {
+  justify-content: var(--coat-blog-tags__justify-content--with-author,flex-end);
 }
 @media screen and (max-width: 749px) {
   .blog-tags {
     display: var(--coat-blog-tags__display,flex);
     flex-wrap: var(--coat-blog-tags__flex-wrap,wrap);
     justify-content: var(--coat-blog-tags__justify-content,center);
-    justify-content-with-author: var(--coat-blog-tags__justify-content-with-author,flex-end);
+    justify-content: var(--coat-blog-tags__justify-content--with-author);
     margin: var(--coat-blog-tags__margin,0);
+  }
+  .blog-tags--with-author {
+    justify-content: var(--coat-blog-tags__justify-content--with-author,flex-end);
   }
 }
 @media screen and (min-width: 750px) {
@@ -1723,8 +1732,11 @@ article h1 {
     display: var(--coat-blog-tags__display,flex);
     flex-wrap: var(--coat-blog-tags__flex-wrap,wrap);
     justify-content: var(--coat-blog-tags__justify-content,center);
-    justify-content-with-author: var(--coat-blog-tags__justify-content-with-author,flex-end);
+    justify-content: var(--coat-blog-tags__justify-content--with-author);
     margin: var(--coat-blog-tags__margin,0);
+  }
+  .blog-tags--with-author {
+    justify-content: var(--coat-blog-tags__justify-content--with-author,flex-end);
   }
 }
 .blog-tag {
