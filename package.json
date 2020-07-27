@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "npm run test",
-		"build": "sass src/scss:css --style=compressed",
+		"build": "sass src/scss:css --style=compressed && npm run stylelint:fix",
 		"precommit": "npm run build",
 		"dev:sass": "sass src/scss:css --watch",
 		"dev:copy:css": "copy-and-watch css/* dokkie/css/ --watch",
@@ -15,7 +15,7 @@
 		"dev:docs": "npx dokkie@latest --skip=favicons && npm run dev",
 		"dev:blog": "npx dokkie@latest --type=blog --input=posts --config=blog.config.json --skip=favicons && npm run dev",
 		"stylelint": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss'",
-		"stylelint:fix": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss' --fix"
+		"stylelint:fix": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss' 'css/**/*.css' --fix"
 	},
 	"repository": {
 		"type": "git",

@@ -28,6 +28,9 @@
 
 	@if coat-setting-exists($key) {
 		$value: map-get($coat-settings, $key);
+		@if $value == "empty" {
+			$value: "''";
+		}
 		@if (str-index($key, "font-family")) {
 			@return #{$value};
 		} @else {

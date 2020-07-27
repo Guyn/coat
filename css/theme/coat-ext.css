@@ -1271,7 +1271,7 @@ blockquote {
 #overview nav a:before,
 #main nav a:before,
 #search a:before {
-  content: var(--coat-standard-nav-link__content--before,-);
+  content: var(--coat-standard-nav-link__content--before,'');
 }
 #header nav a:before,
 #footer nav a:before,

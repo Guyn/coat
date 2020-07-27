@@ -128,7 +128,7 @@ $coat-default: (
 		to-lightness($color-primary, 95),
 	standard-nav-link-active__background-color--before:
 		to-lightness($color-primary, 90),
-	standard-nav-link__content--before: "-",
+	standard-nav-link__content--before: empty,
 	standard-nav-link__position--before: absolute,
 	standard-nav-link__top--before: 50%,
 	standard-nav-link__left--before: 50%,
