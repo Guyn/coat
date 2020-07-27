@@ -11,6 +11,7 @@
 #sidebar nav,
 #overview nav,
 #main nav,
+#article nav,
 #search {
 	a {
 		@include coat-auto(standard-nav-link);
