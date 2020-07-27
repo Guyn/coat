@@ -40,20 +40,9 @@
 	nav > ul ul li {
 		a {
 			@include coat-auto-responsive(footer-nav-link-sub);
-			&:hover {
-				@include coat-auto-responsive(footer-nav-link-sub, hover);
-			}
 		}
 		&.active a {
-			@include coat-auto-responsive(footer-nav-link-sub, active);
-			&:hover {
-				@include coat-auto-responsive(footer-nav-link-sub, active-hover);
-			}
-			@media #{$medium} {
-				&:hover {
-					@include coat-auto(footer-nav-link-sub, desktop-active-hover);
-				}
-			}
+			@include coat-auto-responsive(footer-nav-link-sub-active);
 		}
 	}
 	/* Spacing */
