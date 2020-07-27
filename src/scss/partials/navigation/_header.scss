@@ -1,4 +1,26 @@
 #header {
+	@include coat-auto(header);
+	position: sticky;
+	top: 0;
+	opacity: 1;
+	transition: transform $transition, opacity $transition;
+
+	.scroll-down &,
+	.scroll-up & {
+		position: fixed;
+		width: 100%;
+	}
+	.scroll-down & {
+		transform: translateY(-50%);
+		opacity: 0;
+	}
+	.on-top & {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	.off-top & {
+		border-bottom: 1px solid $color-light;
+	}
 	h1 {
 		width: 100%;
 		a {
@@ -11,7 +33,6 @@
 		}
 		@include coat-auto(header-title);
 	}
-	@include coat-auto(header);
 	@media #{$medium} {
 		z-index: 2;
 		display: flex;

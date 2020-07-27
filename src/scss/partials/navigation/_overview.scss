@@ -1,24 +1,19 @@
 #overview {
-	@include coat-auto-responsive(overview);
+	@include coat-auto(overview);
 
 	li:before {
 		content: none;
 	}
 	ul {
-		@include coat-auto-responsive(overview-list);
+		@include coat-auto(overview-list);
 	}
 	li {
-		display: flex;
-		@include coat-auto-responsive(overview-item);
-		@media #{$small} {
-			flex-direction: column;
-		}
+		@include coat-auto(overview-item);
 	}
 	a {
-		@include coat-auto-responsive(overview-link);
+		@include coat-auto(overview-link);
 	}
 	time {
-		white-space: nowrap;
-		@include coat-auto-responsive(overview-time);
+		@include coat-auto(overview-time);
 	}
 }

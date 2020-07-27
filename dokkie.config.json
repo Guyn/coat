@@ -8,7 +8,12 @@
 	"overrule": {
 		"css": ["/css/theme/feather-ext.css"]
 	},
-	"copy": ["css", "src/script"],
+	"copy": ["css"],
+	"enhance": {
+		"search": true,
+		"scrollClasses": true,
+		"googleAnalytics": "SOME_CODE"
+	},
 	"showNavigation": [
 		"header",
 		"footer",

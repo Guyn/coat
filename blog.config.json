@@ -1,5 +1,6 @@
 {
 	"projectTitle": "Coat",
+	"input": "posts",
 	"add": {
 		"js": ["/script/app.js"],
 		"excludeFolders": ["pages"]
@@ -7,6 +8,11 @@
 	"overrule": {
 		"css": ["/css/theme/coat-ext.css"]
 	},
-	"skip": ["purge"],
-	"copy": ["css", "src/script"]
+	"skip": ["favicons", "purge"],
+	"enhance": {
+		"search": true,
+		"scrollClasses": true,
+		"googleAnalytics": "SOME_CODE"
+	},
+	"copy": ["css"]
 }
