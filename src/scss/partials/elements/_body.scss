@@ -1,0 +1,18 @@
+/*
+    Html & Body
+*/
+html,
+body {
+	background-color: coat(background-color);
+	color: coat(font-color);
+	font-family: coat(font-family);
+}
+body {
+	@include coat-auto(body);
+	@media #{$small} {
+		@include coat-auto(body, mobile);
+	}
+	@media #{$medium} {
+		@include coat-auto(body, desktop);
+	}
+}

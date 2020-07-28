@@ -1,0 +1,52 @@
+#header {
+	grid-area: header;
+}
+#sidebar {
+	grid-area: sidebar;
+}
+#main {
+	grid-area: main;
+}
+#footer {
+	grid-area: footer;
+}
+#overview {
+	grid-area: overview;
+}
+#article {
+	grid-area: article;
+}
+#web {
+	grid-area: web;
+}
+#main,
+#overview,
+#article {
+	margin: auto;
+	width: $max-width;
+}
+body {
+	@media #{$small} {
+		display: grid;
+		grid-template-areas:
+			"header"
+			"article"
+			"sidebar"
+			"main"
+			"web"
+			"overview"
+			"footer";
+	}
+	@media #{$medium} {
+		display: grid;
+		grid-template-areas:
+			"header header header"
+			". article ."
+			"sidebar main ."
+			"web web web"
+			". overview ."
+			"footer footer footer";
+		grid-template-columns: auto $max-width auto;
+		grid-template-rows: auto;
+	}
+}
