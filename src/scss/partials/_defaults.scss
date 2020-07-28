@@ -187,6 +187,7 @@ $coat-default: (
 	// Main section
 		main__padding: $base-space,
 	main__padding--mobile: $base-space,
+	main__height: 100%,
 	// Overview section
 		overview__max-width--mobile: 100vw,
 	overview__padding--mobile: $base-space,
@@ -342,8 +343,8 @@ $coat-default: (
 		section__width--desktop: calc(100% + (#{$base-space} * 2)),
 	section__width--mobile: 100%,
 	section-column__padding: $base-space,
-	section-container__max-width: $max-width,
-	section-container__margin: auto,
+	// section-container__max-width: $max-width,
+		section-container__margin: auto,
 	content-nav__border-top: 2px solid $color-light,
 	content-nav__padding--desktop: $base-space 0,
 	content-nav__display: flex,
