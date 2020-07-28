@@ -7,19 +7,26 @@
 
 	.scroll-down &,
 	.scroll-up & {
-		position: fixed;
 		width: 100%;
 	}
 	.scroll-down & {
 		transform: translateY(-50%);
 		opacity: 0;
 	}
+	.scroll-down & {
+		&:hover {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 	.on-top & {
 		transform: translateY(0);
 		opacity: 1;
 	}
 	.off-top & {
-		border-bottom: 1px solid $color-light;
+		@media #{$small-only} {
+			border-bottom: 1px solid $color-light;
+		}
 	}
 	h1 {
 		width: 100%;
