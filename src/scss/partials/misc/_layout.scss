@@ -22,8 +22,9 @@
 #main,
 #overview,
 #article {
-	margin: auto;
-	width: $max-width;
+	& > .content {
+		@include coat-auto("main-content");
+	}
 }
 body {
 	@media #{$small} {
@@ -42,11 +43,11 @@ body {
 		grid-template-areas:
 			"header header header"
 			". article ."
-			"sidebar main ."
+			"sidebar main main"
 			"web web web"
 			". overview ."
 			"footer footer footer";
-		grid-template-columns: auto $max-width auto;
+		grid-template-columns: auto 1fr auto;
 		grid-template-rows: auto;
 	}
 }

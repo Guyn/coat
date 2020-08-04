@@ -1,5 +1,8 @@
 #overview {
 	@include coat-auto(overview);
+	nav {
+		@include coat-auto(overview-nav);
+	}
 
 	li:before {
 		content: none;

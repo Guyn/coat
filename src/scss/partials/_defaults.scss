@@ -24,6 +24,7 @@ $color-primary: $skyblue !default;
 $color-secondary: $orange !default;
 $color-dark: $dark-dark !default;
 $color-light: to-lightness($gray, 98) !default;
+$color-lightgray: to-lightness($gray, 85) !default;
 $color-white: white !default;
 $color-black: black !default;
 $border-radius: 0.5em !default;
@@ -193,13 +194,14 @@ $coat-default: (
 		main__padding: $base-space,
 	main__padding--mobile: $base-space,
 	main__height: 100%,
-	main__max-width: $max-width,
+	main-content__width: 100%,
+	main-content__max-width: $max-width,
+	main-content__margin: auto,
 	// Overview section
 		overview__max-width--mobile: 100vw,
 	overview__padding--mobile: $base-space,
 	overview__width: 100%,
 	overview__margin: auto 0 auto,
-	overview__padding: #{$base-space * 2} $base-space,
 	overview-time__display: block,
 	overview-time__opacity: 0.5,
 	overview-time__font-size: 0.75em,
@@ -212,11 +214,15 @@ $coat-default: (
 	overview-item__padding: 0,
 	overview-link__margin--desktop: 0 0 0 1em,
 	overview-link__margin--mobile: 0,
+	overview-nav__margin: auto,
+	overview-nav__padding: #{$base-space * 2} $base-space,
+	overview-nav__width: 100%,
+	overview-nav__max-width: $max-width,
 	// Overview section
 		article__max-width--mobile: 100vw,
 	article__margin: 4em auto 0 auto,
 	article__font-size: 1em,
-	article__padding: $base-space,
+	article-content__padding: $base-space,
 	article-paragraph__line-height: 1.75,
 	article-paragraph__font-size--first-of-type: 1.25em,
 	article-paragraph__line-height--first-of-type: 1.5,
@@ -359,7 +365,22 @@ $coat-default: (
 	content-nav-link__width--before: 1em,
 	content-nav-link__height--before: 1em,
 	content-nav-link__background--before: black,
-	content-nav-link__display--before: inline-block
+	content-nav-link__display--before: inline-block,
+	tasklist-dot__display: inline-block,
+	tasklist-dot__width: 1em,
+	tasklist-dot__height: 1em,
+	tasklist-dot__content: "✗",
+	tasklist-dot__border: 1px solid $color-lightgray,
+	tasklist-dot__border-radius: $border-radius,
+	tasklist-dot__color: rgba(0, 0, 0, 0),
+	tasklist-dot__line-height: 1em,
+	tasklist-dot__text-align: center,
+	tasklist-dot-checked__color: to-lightness($color-primary, 80),
+	tasklist-dot-checked__background-color: currentColor,
+	tasklist-dot-checked__border: 1px solid transparent,
+	tasklist-label__label: 0.5,
+	tasklist-label-checked__opacity: 1,
+	tasklist-label-checked__color: currentColor
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

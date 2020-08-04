@@ -1,0 +1,19 @@
+.task-list-item {
+	line-height: 1.75;
+	.task-list-item-checkbox {
+		position: absolute;
+		opacity: 0;
+		& ~ label {
+			@include coat(tasklist-label);
+			&::before {
+				@include coat(tasklist-dot);
+			}
+		}
+		&:checked ~ label {
+			@include coat(tasklist-label-checked);
+			&::before {
+				@include coat(tasklist-dot-checked);
+			}
+		}
+	}
+}

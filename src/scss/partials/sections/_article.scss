@@ -1,5 +1,8 @@
 article {
 	@include coat-auto(article);
+	& > .content {
+		@include coat-auto(article-content);
+	}
 
 	p {
 		@include coat-auto(article-paragraph);

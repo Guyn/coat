@@ -526,6 +526,13 @@ iframe {
   background-color: var(--coat-alert__background-color--error,#fccfdb);
 }
 
+.task-list-item {
+  line-height: 1.75;
+}
+.task-list-item .task-list-item-checkbox {
+  position: absolute;
+  opacity: 0;
+}
 blockquote {
   padding: var(--coat-blockquote__padding,1em);
   font-size: var(--coat-blockquote__font-size,1em);
