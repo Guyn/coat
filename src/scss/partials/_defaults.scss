@@ -72,7 +72,7 @@ $coat-default: (
 		link__color: to-lightness($color-primary, 33),
 	link__color--hover: $color-primary,
 	link__padding: 0.25em 0.125em,
-	link__background-color--hover: $color-black,
+	link__background-color--hover: transparent,
 	link__text-decoration: none,
 	link__line-height: 1,
 	link__box-shadow: 0 -2px 0 0px rgba($color-primary, 0.25) inset,
@@ -115,6 +115,11 @@ $coat-default: (
 	table__color: currentColor,
 	table__border: 1px solid $color-light,
 	table-cell__padding: 0.5em 1em,
+	// Rule
+		rule__height: 2px,
+	rule__border: none,
+	rule__background-color: $color-light,
+	rule__color: $color-light,
 	// Link
 		standard-nav-link__color: $color-dark,
 	standard-nav-link__font-size: 1em,
@@ -188,6 +193,7 @@ $coat-default: (
 		main__padding: $base-space,
 	main__padding--mobile: $base-space,
 	main__height: 100%,
+	main__max-width: $max-width,
 	// Overview section
 		overview__max-width--mobile: 100vw,
 	overview__padding--mobile: $base-space,

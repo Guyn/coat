@@ -2,9 +2,5 @@
 	Dividers
 */
 hr {
-	height: 1px;
-	border: none;
-	background-color: coat(border-color);
-	color: coat(border-color);
-	opacity: 0.5;
+	@include coat-auto(rule);
 }
