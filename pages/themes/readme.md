@@ -7,10 +7,6 @@ Coat has a few themes to offer
 The default theme of Coat.
 <a href="#coat" onClick="setTheme('coat-ext')">Try Coat</a>
 
-### Coat Dark
-
-Coat in Darkmode
-<a href="#coat-dark-ext" onClick="setTheme('coat-dark-ext')">Try Coat Dark</a>
 
 ### Feather
 

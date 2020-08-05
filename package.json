@@ -5,8 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "npm run test",
+		"build:js": "node src/build.js",
 		"build": "sass src/scss:css --style=compressed && npm run stylelint:fix",
-		"precommit": "npm run build",
+		"precommit": "npm run build:js",
 		"dev:sass": "sass src/scss:css --watch",
 		"dev:copy:css": "copy-and-watch css/* dokkie/css/ --watch",
 		"dev:serve": "serve -l 4444 dokkie",
@@ -52,5 +53,8 @@
 		"stylelint-logical-order": "0.0.8",
 		"stylelint-order": "^4.0.0",
 		"serve": "^11.3.2"
+	},
+	"dependencies": {
+		"csso": "^4.0.3"
 	}
 }
