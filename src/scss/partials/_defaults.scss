@@ -369,18 +369,16 @@ $coat-default: (
 	tasklist-dot__display: inline-block,
 	tasklist-dot__width: 1em,
 	tasklist-dot__height: 1em,
-	tasklist-dot__content: "✗",
-	tasklist-dot__border: 1px solid $color-lightgray,
+	tasklist-dot__border: 1px solid rgba($color-primary, 0.5),
 	tasklist-dot__border-radius: $border-radius,
-	tasklist-dot__color: rgba(0, 0, 0, 0),
 	tasklist-dot__line-height: 1em,
 	tasklist-dot__text-align: center,
-	tasklist-dot-checked__color: to-lightness($color-primary, 80),
-	tasklist-dot-checked__background-color: currentColor,
-	tasklist-dot-checked__border: 1px solid transparent,
-	tasklist-label__label: 0.5,
-	tasklist-label-checked__opacity: 1,
-	tasklist-label-checked__color: currentColor
+	tasklist-dot__color: rgba(0, 0, 0, 0),
+	tasklist-dot-checked__color: $color-primary,
+	tasklist-dot-checked__border: 1px solid $color-primary,
+	tasklist-label__opacity: 1,
+	tasklist-label-checked__opacity: 0.5,
+	tasklist-label-checked__text-decoration: line-through
 ) !default;
 
 $coat-settings: map.merge($coat-default, $coat);

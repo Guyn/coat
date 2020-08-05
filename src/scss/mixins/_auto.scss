@@ -54,7 +54,6 @@
 
 	$key: #{$setting}#{$prop-partial}#{$modifier-partial};
 
-	// @debug "#{$key} ::: #{coat-setting-exists($key)} :: #{coat($key)}";
 	@if coat-setting-exists($key) {
 		#{$prop}: coat($key);
 	}

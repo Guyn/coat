@@ -533,6 +533,29 @@ iframe {
   position: absolute;
   opacity: 0;
 }
+.task-list-item .task-list-item-checkbox ~ .task-list-item-label {
+  opacity: var(--coat-tasklist-label__opacity,1);
+}
+.task-list-item .task-list-item-checkbox ~ .task-list-item-label::before {
+  content: "✓" !important;
+  display: var(--coat-tasklist-dot__display,inline-block);
+  width: var(--coat-tasklist-dot__width,1em);
+  height: var(--coat-tasklist-dot__height,1em);
+  border: var(--coat-tasklist-dot__border,1px solid rgba(73, 189, 242, 0.5));
+  border-radius: var(--coat-tasklist-dot__border-radius,0.5em);
+  line-height: var(--coat-tasklist-dot__line-height,1em);
+  text-align: var(--coat-tasklist-dot__text-align,center);
+  color: var(--coat-tasklist-dot__color,rgba(0, 0, 0, 0));
+}
+.task-list-item .task-list-item-checkbox:checked ~ .task-list-item-label {
+  opacity: var(--coat-tasklist-label-checked__opacity,0.5);
+  text-decoration: var(--coat-tasklist-label-checked__text-decoration,line-through);
+}
+.task-list-item .task-list-item-checkbox:checked ~ .task-list-item-label::before {
+  color: var(--coat-tasklist-dot-checked__color,#49BDF2);
+  border: var(--coat-tasklist-dot-checked__border,1px solid #49BDF2);
+}
+
 blockquote {
   padding: var(--coat-blockquote__padding,1em);
   font-size: var(--coat-blockquote__font-size,1em);
