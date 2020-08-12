@@ -74,7 +74,7 @@ const buildThemes = async () => {
 		LOG.BLOCK_LINE_SUCCESS(source.name);
 		const res = sass.renderSync({
 			file: source.path,
-			includePaths: ["node_modules/"],
+			includePaths: ["node_modules/guyn", "node_modules/cadds"],
 			data: source.data,
 		});
 		const outputFile = join(__dirname, `../css/theme/${source.name}.css`);

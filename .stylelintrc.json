@@ -18,7 +18,8 @@
 					"return",
 					"use",
 					"warn",
-					"debug"
+					"debug",
+					"forward"
 				]
 			}
 		],
