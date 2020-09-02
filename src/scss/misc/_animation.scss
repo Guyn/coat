@@ -1,0 +1,55 @@
+@mixin animation-pop($name: "pop") {
+	// Pop
+	@keyframes popIn {
+		from {
+			transform: scale(0);
+		}
+		to {
+			transform: scale(1);
+		}
+	}
+	@keyframes popOut {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(0);
+		}
+	}
+	.#{$name}-in {
+		animation: popIn base-get(transition) forwards;
+	}
+	.#{$name}-out {
+		animation: popOut base-get(transition) forwards;
+	}
+}
+@mixin animation-fade($name: "fade") {
+	// Pop
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadeOut {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+		}
+	}
+
+	.#{$name}-in {
+		animation: fadeIn base-get(transition) forwards;
+	}
+
+	.#{$name}-out {
+		animation: fadeOut base-get(transition) forwards;
+	}
+}

@@ -1,0 +1,23 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	Code
+
+@mixin section($el: section) {
+	@include builder(
+		(
+			"#{$el}": (
+				padding: v-space 0,
+				font-family: base-get("font-family"),
+				background-color: c-background,
+				color: c-foreground,
+			),
+			"#{$el}__container": (
+				margin: auto,
+			),
+			"#{$el} .column": (
+				padding: v-space,
+			),
+		)
+	);
+}

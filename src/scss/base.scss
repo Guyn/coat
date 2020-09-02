@@ -1,0 +1,38 @@
+$configure: () !default;
+@use "cadds" as *;
+@import "cadds";
+@import "cadds/helpers";
+@import "guyn-style/index.hard.scss";
+@import "layout";
+@import "typography";
+@import "elements";
+@import "utility-classes";
+@import "misc";
+@import "navigation";
+@include color-set(map-get($configure, "colors"));
+@include base-set(map-get($configure, "base"));
+
+@include typography(("headings"));
+@include elements(
+	(
+		"alert",
+		"body",
+		"blockquote",
+		"code",
+		"detail-list",
+		"horizontal-rule",
+		"list",
+		"task-list",
+		"table",
+		"media",
+		"reset",
+		"content"
+	)
+);
+
+// Misc
+@include sizing();
+@include hide();
+
+// @include animation-pop();
+// @include animation-fade();

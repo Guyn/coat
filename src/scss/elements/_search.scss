@@ -1,0 +1,103 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+// Media
+
+@mixin search($el: ".search") {
+	:root {
+		--circle-at: 70%;
+		--line-width: 0.1em;
+	}
+	@include builder(
+		(
+			"#{$el}": (
+				height: 3em,
+				position: relative,
+				background-color: transparent,
+				before: (
+					position: absolute,
+					right: 0.75em,
+					bottom: 8.75em,
+					width: 0.5em,
+					height: 2px,
+					transition: transform v-transition,
+					background-color: c-primary-accent-5,
+					transform: translateY(-100%) translateX(0) rotate(45deg),
+				),
+				focus: (
+					before: (
+						transform: translateY(150%) translateX(150%) rotate(45deg),
+					),
+				),
+				position--mobile: absolute,
+				right--mobile: calc(v-space * 3),
+			),
+			"#{$el} input": (
+				width: v-space,
+				height: v-space,
+				background-color: transparent,
+				width--focus: 10em,
+				height--focus: calc(v-space * 1.5),
+				right: 0,
+				border: none,
+				border-radius: v-border-radius,
+				transition: all v-transition,
+				focus: (
+					border: 1px solid c-primary,
+					outline: none,
+				),
+				appearance: none,
+			),
+			"#{$el} label": (
+				display: inline-flex,
+				align-items: center,
+				justify-content: center,
+				min-width: 3em,
+				height: 3em,
+				position: relative,
+				before: (
+					content: "",
+					width: v-space,
+					height: v-space,
+					position: absolute,
+					right: 0,
+					top: 50%,
+					transform: translate(-50%, -50%) rotate(-45deg),
+					background-size: "55% 55%, 30% 30%",
+					background-repeat: "no-repeat, no-repeat",
+					background-position: "top 15% center, bottom 15% center",
+					background-image:
+						"radial-gradient(transparent calc(var(--circle-at) - var(--line-width)), currentColor calc(var(--circle-at) - var(--line-width)), currentColor var(--circle-at), transparent var(--circle-at)), linear-gradient(to right, transparent calc(50% - var(--line-width)/2), currentColor calc(50% - var(--line-width)/2), currentColor calc(50% + var(--line-width)/2), transparent calc(50% + var(--line-width)/2))",
+				),
+			),
+			"#{$el} label ~ #{$el}__results": (
+				position: absolute,
+				background-color: c-background,
+				top: 100%,
+				right: 0,
+				margin: 0,
+				opacity: 0.5,
+				opacity--focus: 1,
+				border: v-border,
+				border-radius: v-border-radius,
+				transform: scale(0),
+				animation: popOut v-transition forwards,
+				animation--focus: popIn v-transition forwards,
+			),
+			"#{$el}__result": (
+				min-width: 10em,
+				padding: 1em,
+				max-width: 15em,
+			),
+			"#{$el} label ~ #{$el}__results--visible": (
+				transform: scale(1),
+				opacity: 1,
+				pointer-events: all,
+			),
+			"#{$el} label:focus-within": (),
+			"#{$el} label:focus-within input": (
+				border: v-border,
+			),
+		)
+	);
+}

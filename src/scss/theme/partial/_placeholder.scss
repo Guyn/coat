@@ -1,0 +1,27 @@
+@include placeholder-layout();
+
+#main {
+	grid-area: main;
+}
+#main {
+	& > .content {
+		width: 100%;
+		max-width: base-get(max-width);
+		margin: auto;
+	}
+}
+body {
+	@media #{mq-get(mobile)} {
+		display: grid;
+		grid-template-areas: "main";
+	}
+	@media #{mq-get(desktop)} {
+		display: grid;
+		grid-template-areas:
+			".  .   ."
+			". main ."
+			".  .   .";
+		grid-template-columns: auto 1fr auto;
+		grid-template-rows: auto 1fr auto;
+	}
+}

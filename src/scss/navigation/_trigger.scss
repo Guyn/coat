@@ -1,0 +1,112 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+// Content Navigation
+@mixin trigger-navigation($el: ".nav-trigger", $id: "trigger") {
+	@include builder(
+		(
+			"#{$el}__label": (
+				--shadow-color: rgba(0, 0, 0, 0.1),
+				z-index: 10,
+				flex-shrink: 0,
+				display: block,
+				position: relative,
+				display--desktop: none,
+				width: calc(v-space * 2),
+				height: calc(v-space * 2),
+				box-shadow:
+					"0 0.2em 0.25em 0 var(--shadow-color),0 0em 0.5em 0 var(--shadow-color)",
+				border-radius: v-border-radius,
+				background-color: c-background,
+				color: c-foreground,
+				hover: (
+					background-color: c-background-shade-95,
+				),
+			),
+			"#{$el}__label span": (
+				transform: translateY(-1px) translateX(-50%),
+				width: 50%,
+				before: (
+					width: 100%,
+					transform: translateY(calc(-200% - 1px)) translateX(-50%),
+				),
+				after: (
+					width: 100%,
+					transform: translateY(calc(200% - 1px)) translateX(-50%),
+				),
+			),
+			"#{$el}__label span, #{$el}__label span:before, #{$el}__label span:after":
+			(
+				transition: v-transition,
+				position: absolute,
+				display: block,
+				left: 50%,
+				top: 50%,
+				height: 2px,
+				background-color: currentColor,
+			),
+			"#{$el}__label span:before, #{$el}__label span:after": (
+				content: "",
+			),
+			"#{$el}[for="#{$id}"]": (
+					position: fixed,
+					top: v-space,
+					left: v-space,
+				),
+			"#{$el}__input": (
+				position: absolute,
+				display: none,
+				opacity: 0,
+			),
+			"#{$el}__input##{$id} ~ nav": (
+				transform-origin: 0% 0,
+			),
+		)
+	);
+	$trigger: "#{$el}__input##{$id}";
+
+	// Just for mobile;
+	@include builder(
+		(
+			"#{$trigger} ~ nav ": (
+				opacity: 0,
+				transition: "transform v-transition, opacity v-transition",
+				pointer-events: none,
+			),
+			"#{$trigger} ~ nav  > ul": (
+				transform: scale(0.5),
+				opacity: 0,
+				transition: "transform v-transition, opacity v-transition",
+			),
+			"#{$trigger} ~ nav > ul li": (
+				transform: translateX(-50%),
+				opacity: 0,
+				transition: "transform v-transition 0.1s, opacity v-transition",
+			),
+			"#{$trigger}:checked + label span": (),
+			"#{$trigger}:checked ~ nav": (
+				opacity: 1,
+				pointer-events: all,
+			),
+			"#{$trigger}:checked ~ nav > ul": (
+				transform: scale(1),
+				opacity: 1,
+			),
+			"#{$trigger}:checked ~ nav > ul li": (
+				transform: translateX(0),
+				opacity: 1,
+			),
+			"#{$trigger}:checked ~ label span": (
+				background-color: inherit,
+				transform: translateY(-1px) translateX(-50%) rotate(-45deg),
+			),
+			"#{$trigger}:checked ~ label span:before": (
+				transform: translateY(-50%) translateX(-50%) rotate(90deg),
+			),
+			"#{$trigger}:checked ~ label span:after": (
+				transform: translateY(-50%) translateX(-50%) rotate(180deg),
+			),
+		),
+		"mobile"
+	);
+}

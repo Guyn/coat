@@ -1,0 +1,17 @@
+@mixin hide() {
+	.hide-mobile {
+		@media #{mq-get(mobile)} {
+			display: none !important;
+		}
+	}
+	.hide-tablet {
+		@media #{mq-get(tablet)} {
+			display: none !important;
+		}
+	}
+	.hide-desktop {
+		@media #{mq-get(desktop)} {
+			display: none !important;
+		}
+	}
+}

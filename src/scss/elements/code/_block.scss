@@ -1,0 +1,48 @@
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+// @import "../partials/defaults";
+// Colors
+
+$blueish: #36acaa;
+$brownish: #999988;
+$blue: #00a4db;
+$redish: #e3116c;
+
+$tokens: (
+	comment: $brownish italic 1,
+	prolog: $brownish italic 1,
+	doctype: $brownish italic 1,
+	cdata: $brownish italic 1,
+	namespace: inherit normal 0.7,
+	string: $redish normal 1,
+	attr-value: $redish normal 1,
+	punctuation: c-foreground normal 0.8,
+	operator: #cccccc normal 1,
+	entity: $blueish normal 1,
+	url: $blueish normal 1,
+	symbol: $blueish normal 1,
+	number: $blueish normal 1,
+	boolean: $blueish normal 1,
+	variable: $blueish normal 1,
+	constant: $blueish normal 1,
+	property: $blueish normal 1,
+	regex: $blueish normal 1,
+	inserted: $blueish normal 1,
+	atrule: $blue italic 1,
+	keyword: $blue italic 1,
+	attr-name: $blue italic 1,
+	tag: c-background normal 1,
+	selector: c-background normal 1,
+	important: inherit bold 1,
+	function: inherit bold 1,
+	bold: inherit bold 1,
+	italic: inherit italic 1,
+);
+$language-autohotkey: (
+	selector: $blue italic 1,
+	tag: #9a050f normal 1,
+	keyword: #00009f normal 1,
+);
+@import "block-logic";

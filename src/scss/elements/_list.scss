@@ -1,0 +1,72 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	List
+@mixin list($el: null) {
+	@include builder(
+		(
+			"#{$el} ul": (
+				padding: 0,
+			),
+			"#{$el} ul > li": (
+				position: relative,
+				padding-left: v-space,
+				list-style-type: none,
+				line-height: 2,
+				before: (
+					position: absolute,
+					left: 0,
+					width: auto,
+					border-radius: v-border-radius,
+				),
+			),
+			"#{$el} ul > li + li": (
+				margin-top: v-space,
+			),
+			"#{$el} ul ul,#{$el} ul ol": (
+				padding-left: 0,
+			),
+		)
+	);
+}
+
+//	Unordered List -  - -
+@mixin unordered-list($el: null) {
+	@include list($el);
+	@include builder(
+		(
+			"#{$el} ul:not([class]) > li": (
+				counter-increment: list,
+				before: (
+					content: "—",
+					display: inline-block,
+					color: c-primary-accent-5,
+				),
+			),
+		)
+	);
+}
+
+//	Ordered List 1.2.3.
+@mixin ordered-list($el: null) {
+	@include list($el);
+	@include builder(
+		(
+			"#{$el} ol:not([class])": (
+				counter-reset: list,
+			),
+			"#{$el} ol:not([class]) > li": (
+				counter-increment: list,
+				before: (
+					content: counter(list) "",
+					width: auto,
+					border-radius: v-border-radius,
+					// background: c-primary-accent-95,
+						color: c-foreground-accent-95,
+					font-size: 0.75em,
+					margin-right: 0.25em,
+				),
+			),
+		)
+	);
+}

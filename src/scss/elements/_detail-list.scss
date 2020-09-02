@@ -1,0 +1,40 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	Detail list
+
+@mixin detail-list($el: dl) {
+	@include builder(
+		(
+			"#{$el}": (
+				padding: 0,
+			),
+			"#{$el} dt": (
+				font-weight: bold,
+				font-size: 14px,
+				font-style: italic,
+				padding: 0,
+				margin: v-space 0 v-space / 3,
+			),
+			"#{$el} dt:first-child": (
+				padding: 0,
+			),
+			"#{$el} dt > :first-child": (
+				margin-top: 0,
+			),
+			"#{$el} dt > :last-child": (
+				margin-bottom: 0,
+			),
+			"#{$el} dd": (
+				margin: 0 0 v-space,
+				padding: 0 v-space,
+			),
+			"#{$el} dd > :first-child": (
+				margin-top: 0,
+			),
+			"#{$el} dd > :last-child": (
+				margin-bottom: 0,
+			),
+		)
+	);
+}

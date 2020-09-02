@@ -1,0 +1,23 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	Code
+
+@mixin body($el: body) {
+	@include builder(
+		(
+			"#{$el},html": (
+				width: 100%,
+				min-height: 100vh,
+				margin: 0,
+				padding: 0,
+				background-color: c-background-shade-95,
+			),
+			"#{$el}": (
+				font-family: v-font-family,
+				background-color: c-background,
+				color: c-foreground,
+			),
+		)
+	);
+}

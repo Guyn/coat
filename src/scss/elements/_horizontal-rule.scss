@@ -1,0 +1,18 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	horizontal Rule
+
+@mixin horizontal-rule($el: hr) {
+	@include builder(
+		(
+			"#{$el}": (
+				display: block,
+				background-color: c-primary-accent-95,
+				color: c-primary-accent-95,
+				border: none,
+				margin: v-space 0,
+			),
+		)
+	);
+}

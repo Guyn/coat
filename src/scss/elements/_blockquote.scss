@@ -1,0 +1,17 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+// Blockquote
+
+@mixin blockquote($el: blockquote) {
+	@include builder(
+		(
+			"#{$el}": (
+				padding: calc(v-space / 2),
+				font-size: v-font-size,
+				font-style: italic,
+				opacity: 0.66,
+			),
+		)
+	);
+}

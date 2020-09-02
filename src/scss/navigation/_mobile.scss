@@ -1,0 +1,51 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+// Content Navigation
+@mixin mobile-navigation($el: "#header") {
+	@media #{mq-get('small')} {
+		#{$el} {
+			position: relative;
+			z-index: 3;
+		}
+		#{$el} nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			width: 100%;
+			height: 100vh;
+			background-color: c-foreground-accent;
+			overflow: scroll;
+			padding: v-space;
+			& > ul {
+				height: auto;
+				border-radius: base-get(border-radius);
+				background-color: c-background;
+				padding: v-space;
+			}
+
+			a {
+				display: block;
+				white-space: nowrap;
+				text-decoration: none;
+			}
+
+			/* Reset*/
+			li {
+				padding-left: 0;
+				& + li {
+					margin-top: 0;
+				}
+			}
+			li::before {
+				content: none;
+			}
+			ul {
+				margin-top: 0;
+			}
+		}
+	}
+}
