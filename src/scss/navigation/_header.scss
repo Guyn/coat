@@ -1,0 +1,93 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+// Content Navigation
+@mixin header-navigation($el: "#header") {
+	@include builder(
+		(
+			/// Animation
+				".scroll-down #{$el},.scroll-up #{$el}": (width: 100%),
+			".scroll-down #{$el}": (
+				opacity: 0,
+				transform: translateY(-50%),
+				transform--hover: translateY(0),
+				opacity--hover: 1
+			),
+			".on-top #{$el}": (transform: translateY(0), opacity: 1),
+			".off-top #{$el}": (border-bottom--mobile: v-border),
+			"#{$el}": (
+				display--mobile: flex,
+				padding: v-space,
+				padding--mobile: calc(v-space / 2) v-space,
+				max-width: 100vw,
+				position: sticky,
+				top: 0,
+				background-color--mobile: inherit,
+				opacity: 1,
+				transition: "transform v-transition, opacity v-transition",
+				z-index--desktop: 2,
+				display--desktop: flex,
+				justify-content--desktop: space-between,
+				align-items--desktop: center
+			),
+			"#{$el} nav": (
+				z-index--desktop: 2,
+				justify-content--desktop: center,
+				border-radius--desktop: v-border-radius,
+				background-color--desktop: transparent,
+				color--desktop: c-foreground,
+				margin--desktop: 0,
+				position--mobile: fixed,
+				padding--mobile: v-space,
+				background--mobile: c-background-shade-10
+			),
+			"#{$el} nav a": (
+				display--desktop: block,
+				white-space--desktop: nowrap,
+				text-decoration--desktop: none
+			),
+			"#{$el} nav > ul": (
+				display--desktop: flex,
+				justify-content--desktop: center,
+				border-radius--desktop: v-border-radius,
+				background-color--mobile: c-background,
+				padding--desktop: 0,
+				flex-direction--mobile: column,
+				padding--mobile: v-space
+			),
+			"#{$el} nav>ul li": (
+				position--desktop: relative,
+				margin--desktop: 0,
+				before: (
+					content: none,
+				)
+			),
+			"#{$el} nav>ul li:hover ul": (
+				transform--desktop: translateY(0) translateX(-50%),
+				opacity--desktop: 1
+			),
+			"#{$el} nav>ul ul": (
+				position--desktop: absolute,
+				top--desktop: 100%,
+				left--desktop: 50%,
+				z-index--desktop: 2,
+				display--desktop: flex,
+				flex-direction--desktop: column,
+				transform--desktop: translateY(1em) translateX(-50%),
+				opacity--desktop: 0,
+				transition--desktop: transform v-transition,
+				margin--desktop: 0
+			),
+			"#{$el} nav > ul ul li": (
+				position--desktop: relative,
+				z-index--desktop: 2
+			),
+			"#{$el} nav li": (padding--desktop: 0),
+			"#{$el} nav li + li, #{$el} nav li li + li,": (margin--desktop: 0),
+			// Heading Title
+				"#{$el} h1": (width: 100%, text-align: left),
+			"#{$el} h1 a": (color: inherit, text-decoration: none),
+			"#{$el} h1 img, #{$el} a img": (max-height: calc(v-space * 1.5))
+		)
+	);
+}

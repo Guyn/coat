@@ -1,0 +1,53 @@
+@include blog-layout();
+@include elements(("footnote", "search"));
+
+// Navigation
+@include navigation(("header", "footer", "content", "overview", "link"));
+
+#header {
+	grid-area: header;
+}
+#main {
+	grid-area: main;
+}
+#footer {
+	grid-area: footer;
+}
+#overview {
+	grid-area: overview;
+}
+#article {
+	grid-area: article;
+}
+
+#main,
+#overview,
+#article {
+	& > .content {
+		width: 100%;
+		max-width: v-max-width;
+		margin: auto;
+	}
+}
+body {
+	@media #{mq-get(mobile)} {
+		display: grid;
+		grid-template-areas:
+			"header"
+			"article"
+			"main"
+			"web"
+			"overview"
+			"footer";
+	}
+	@media #{mq-get(desktop)} {
+		display: grid;
+		grid-template-areas:
+			"header header header"
+			". article ."
+			". overview ."
+			"footer footer footer";
+		grid-template-columns: auto 1fr auto;
+		grid-template-rows: auto;
+	}
+}

@@ -1,0 +1,7 @@
+@use "sass:list";
+@use "headings";
+@mixin typography($output) {
+	@if list-has-value($output, "headings") {
+		@include headings.typography-headings();
+	}
+}

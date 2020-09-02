@@ -1,0 +1,30 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+// Alert
+
+@mixin alert($el: ".alert") {
+	@include builder(
+		(
+			"#{$el}": (
+				display: block,
+				padding: v-space,
+				border-radius: v-border-radius,
+				color: c-foreground-accent-95,
+				background-color: c-background-shade-95,
+				color--error: c-error-accent-20,
+				background-color--error: c-error,
+				color--warning: c-warning-accent-20,
+				background-color--warning: c-warning,
+				color--danger: c-danger-accent-20,
+				background-color--danger: c-danger,
+				color--tip: c-tip-accent-20,
+				background-color--tip: c-tip,
+				color--success: c-success-accent-20,
+				background-color--success: c-success,
+				color--info: c-info-accent-20,
+				background-color--info: c-info,
+			),
+		)
+	);
+}

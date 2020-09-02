@@ -1,0 +1,53 @@
+@mixin icon-arrow {
+	content: "";
+	display: block;
+	width: 1em;
+	height: 1em;
+	background-image: linear-gradient(to bottom, currentColor, currentColor),
+		linear-gradient(to bottom, currentColor, currentColor),
+		linear-gradient(
+			to right bottom,
+			transparent calc(50% - 1px),
+			currentColor calc(50% - 1px),
+			currentColor calc(50% + 1px),
+			transparent calc(50% + 1px)
+		);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: top right, top right, center center;
+	background-size: 0.75em 2px, 2px 0.75em, 100% 100%;
+	font-size: 0.75em;
+	opacity: 0.25;
+}
+
+@mixin icon-next($name: next) {
+	$el: "[class$=" #{$name}"]::after";
+	#{$el} {
+		@include icon-arrow();
+	}
+	@include builder(
+		(
+			"#{$el}": (
+				float: right,
+				margin-left: v-space,
+				margin-top: 0.25em,
+				transform: rotate(45deg),
+			),
+		)
+	);
+}
+@mixin icon-prev($name: prev) {
+	$el: "[class$=" #{$name}"]::after";
+	#{$el} {
+		@include icon-arrow();
+	}
+	@include builder(
+		(
+			"#{$el}": (
+				float: left,
+				margin-right: v-space,
+				margin-top: 0.25em,
+				transform: rotate(225deg),
+			),
+		)
+	);
+}

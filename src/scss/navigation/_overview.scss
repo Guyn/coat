@@ -1,0 +1,45 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+// Overview Navigation
+@mixin overview-navigation($el: "#overview") {
+	@include builder(
+		(
+			"#{$el}": (
+				max-width--mobile: 100vw,
+				padding--mobile: v-space,
+				width: 100%,
+				margin: auto 0 auto,
+			),
+			"#{$el} nav": (
+				margin: auto,
+				padding: calc(v-space * 2) v-space,
+				width: 100%,
+				max-width: base-get(max-width),
+			),
+			"#{$el} ul": (
+				padding: 0,
+			),
+			"#{$el} li": (
+				display: flex,
+				flex-direction--mobile: column,
+				padding: 0,
+				before: (
+					content: none,
+				),
+			),
+			"#{$el} a": (
+				margin--desktop: 0 0 0 v-space,
+				margin--mobile: 0,
+			),
+			"#{$el} time": (
+				display: block,
+				opacity: 0.5,
+				font-size: 0.75em,
+				font-weight: bold,
+				line-height--desktop: 4,
+				white-space: nowrap,
+			),
+		)
+	);
+}

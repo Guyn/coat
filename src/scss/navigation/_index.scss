@@ -1,0 +1,36 @@
+@use "content";
+@use "footer";
+@use "header";
+@use "sidebar";
+@use "mobile";
+@use "link";
+@use "trigger";
+@use "overview";
+
+@mixin navigation($output) {
+	@if list-has-value($output, "content") {
+		@include content.content-navigation();
+	}
+	@if list-has-value($output, "footer") {
+		@include footer.footer-navigation();
+	}
+	@if list-has-value($output, "header") {
+		@include header.header-navigation();
+	}
+	@if list-has-value($output, "sidebar") {
+		@include sidebar.sidebar-navigation();
+	}
+	@if list-has-value($output, "mobile") {
+		@include mobile.mobile-navigation();
+	}
+	@if list-has-value($output, "link") {
+		@include link.link-navigation();
+	}
+	@if list-has-value($output, "trigger") {
+		@include trigger.trigger-navigation(".nav-trigger", "sidebar-nav-trigger");
+		@include trigger.trigger-navigation(".nav-trigger", "header-nav-trigger");
+	}
+	@if list-has-value($output, "overview") {
+		@include overview.overview-navigation();
+	}
+}

@@ -1,0 +1,22 @@
+@mixin setTokenValues($token) {
+	@if nth($token, 1) !=
+		"inherit" or
+		nth($token, 1) !=
+		"none" or
+		nth($token, 1) !=
+		"null"
+	{
+		color: nth($token, 1);
+	}
+	@if nth($token, 2) != "normal" {
+		color: nth($token, 1);
+		@if nth($token, 2) == "bold" or type-of(nth($token, 2)) == "number" {
+			font-weight: nth($token, 2);
+		} @else {
+			font-style: nth($token, 2);
+		}
+	}
+	@if nth($token, 3) < 1 {
+		opacity: nth($token, 3);
+	}
+}

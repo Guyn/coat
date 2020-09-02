@@ -1,0 +1,33 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+@import "../utility-classes/icons";
+// Content Navigation
+@mixin content-navigation($el: "#content-nav") {
+	@include icon-next();
+	@include icon-prev();
+
+	@include builder(
+		(
+			"#{$el}": (
+				border-top: v-border,
+				padding--desktop: v-space,
+				display: flex,
+				justify-content: space-between,
+				margin-top: v-space,
+			),
+			"#{$el} a": (
+				before: (
+					content: "",
+					width: v-space,
+					height: v-space,
+					display: inline-block,
+					background: c-foreground,
+				),
+			),
+			"#{$el} a + a": (
+				margin: 0,
+			),
+		)
+	);
+}

@@ -1,0 +1,72 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	Code
+
+@mixin code($el: code) {
+	@include builder(
+		(
+			"code": (
+				display: inline-block,
+				font-family: v-font-family-code,
+			),
+			":not(pre) > code": (
+				padding: calc(v-space / 4) calc(v-space / 2),
+				font-size: v-font-size,
+				line-height: v-line-height,
+			),
+			"pre > code, :not(pre) > code": (
+				color: c-primary-shade-15,
+				font-size: v-font-size,
+				line-height: v-line-height,
+				background-color: c-background-shade-95,
+				border-radius: v-border-radius,
+				selection: (
+					color: c-primary,
+				),
+			),
+			"pre > code": (
+				padding: calc(v-space / 2) v-space,
+				width: 100%,
+				font-size: v-font-size,
+				line-height: v-line-height,
+			),
+			"pre": (
+				width: 100%,
+				border-radius: v-border-radius,
+				overflow-x: auto,
+				background-color: c-foreground-accent-90,
+				overflow: auto,
+			),
+			"code, pre": (
+				color: c-foreground,
+				font-weight: 400,
+				font-size: 1em,
+				font-family: v-font-family-code,
+				line-height: v-line-height,
+				white-space: pre,
+				direction: ltr,
+				text-align: left,
+				word-break: normal,
+				word-spacing: normal,
+			),
+			"pre::-moz-selection,code::-moz-selection,pre::selection,code::selection":
+			(
+				background-color: v-primary-accent-95,
+				color: v-primary-accent-5,
+			),
+		)
+	);
+
+	@each $token, $value in $tokens {
+		.token.#{$token} {
+			@include setTokenValues($value);
+		}
+	}
+
+	@each $token, $value in $language-autohotkey {
+		.language-autohotkey .token.#{$token} {
+			@include setTokenValues($value);
+		}
+	}
+}

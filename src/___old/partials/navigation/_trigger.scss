@@ -1,0 +1,64 @@
+.nav-trigger {
+	&__label {
+		@include coat-auto(trigger);
+		span {
+			@include menu(1.5rem, 0.175rem, 0.33rem, currentColor);
+		}
+		&[for="sidebar-nav-trigger"] {
+			position: fixed;
+			@include coat-auto(trigger-sidebar);
+		}
+		&[for="header-nav-trigger"] {
+			position: fixed;
+			@include coat-auto(trigger-header);
+		}
+	}
+	&__input {
+		position: absolute;
+		display: none;
+		opacity: 0;
+		&#sidebar-nav-trigger ~ nav {
+			transform-origin: 0 0%;
+		}
+		&#header-nav-trigger ~ nav {
+			transform-origin: 100% 0%;
+		}
+		@media #{$small} {
+			&#header-nav-trigger,
+			&#sidebar-nav-trigger {
+				& ~ nav {
+					opacity: 0;
+					transition: transform coat(transition), opacity coat(transition);
+					pointer-events: none;
+					& > ul {
+						transform: scale(0.5);
+						opacity: 0;
+						transition: transform coat(transition), opacity coat(transition);
+						li {
+							transform: translateX(-50%);
+							opacity: 0;
+							transition: transform coat(transition) 0.1s,
+								opacity coat(transition);
+						}
+					}
+				}
+
+				&:checked + label span {
+					@include menu-close();
+				}
+				&:checked ~ nav {
+					opacity: 1;
+					pointer-events: all;
+					& > ul {
+						transform: scale(1);
+						opacity: 1;
+						li {
+							transform: translateX(0);
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

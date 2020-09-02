@@ -1,0 +1,40 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	Code
+
+@mixin table($el: table) {
+	@include builder(
+		(
+			"#{$el}": (
+				width: 100%,
+				padding: 0,
+			),
+			"#{$el} tr": (
+				background-color: c-background,
+				margin: 0,
+				padding: 0,
+			),
+			"#{$el} tr:nth-child(2n)": (
+				background-color: c-background-shade-95,
+			),
+			"#{$el} th, #{$el} td": (
+				text-align: left,
+				margin: 0,
+				padding: calc(v-space / 2),
+			),
+			"#{$el} th": (
+				font-weight: bold,
+			),
+			"#{$el} td": (
+				border: v-border,
+			),
+			"#{$el} th:first-child, #{$el} td:first-child": (
+				margin-top: 0,
+			),
+			"#{$el} th:last-child, #{$el} td:last-child": (
+				margin-bottom: 0,
+			),
+		)
+	);
+}

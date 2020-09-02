@@ -1,0 +1,37 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+// Blog Layout
+
+@mixin blog-layout($el: ".blog") {
+	@include builder(
+		(
+			"#{$el}-meta": (
+				margin-top: v-space,
+				background-color: c-background-shade-95,
+				border-radius: v-border-radius,
+				padding: calc(v-space / 2),
+				display: flex,
+				justify-content: space-between,
+			),
+			"#{$el}-tags": (
+				display: flex,
+				flex-wrap: wrap,
+				justify-content: center,
+				justify-content--with-author: flex-end,
+			),
+			"#{$el}-tag": (
+				background-color: c-primary-accent-95,
+				padding: v-space / 4 calc(v-space / 2),
+				line-height: 1,
+				font-size: 0.85em,
+				color: c-primary-accent-5,
+				border-radius: v-border-radius,
+				color--before: inherit,
+			),
+			"#{$el}-author": (
+				line-height: 1,
+			),
+		)
+	);
+}

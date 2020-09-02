@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "npm run test",
-		"build:js": "node src/build.js",
+		"build:js": "node src/build.js && npm run stylelint:fix",
+		"build:js:dokkie": "node src/build.js dokkie/css && npm run stylelint:fix:dokkie",
 		"build": "sass src/scss:css --style=compressed && npm run stylelint:fix",
 		"precommit": "npm run build:js",
 		"dev:sass": "sass src/scss:css --watch",
@@ -16,7 +17,8 @@
 		"dev:docs": "npx dokkie@latest && npm run dev",
 		"dev:blog": "npx dokkie@latest --type=blog --config=blog.config.json && npm run dev",
 		"stylelint": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss'",
-		"stylelint:fix": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss' 'css/**/*.css' --fix"
+		"stylelint:fix": "stylelint 'src/scss/*.scss' 'src/scss/**/*.scss' 'css/**/*.css' --fix",
+		"stylelint:fix:dokkie": "stylelint 'dokkie/css/**/*.css' --fix"
 	},
 	"repository": {
 		"type": "git",
@@ -40,10 +42,12 @@
 		"cli-block": "^1.1.7",
 		"concurrently": "^5.2.0",
 		"copy-and-watch": "^0.1.4",
+		"csso": "^4.0.3",
 		"dokkie": "0.0.74",
 		"git-pre-commit": "^2.1.4",
 		"guyn-style": "0.1.0-alpha.16",
 		"postcss": "^7.0.31",
+		"prettier": "^2.0.5",
 		"rollup": "^2.12.0",
 		"rollup-plugin-livereload": "^1.3.0",
 		"rollup-plugin-sass": "^1.2.2",
@@ -56,7 +60,6 @@
 		"stylelint-order": "^4.0.0"
 	},
 	"dependencies": {
-		"cadds": "0.0.3",
-		"csso": "^4.0.3"
+		"cadds": "0.0.3"
 	}
 }

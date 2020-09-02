@@ -1,0 +1,16 @@
+article {
+	@include coat-auto(article);
+	& > .content {
+		@include coat-auto(article-content);
+	}
+
+	p {
+		@include coat-auto(article-paragraph);
+	}
+	& > p:first-of-type {
+		@include coat-auto(article-paragraph, first-of-type);
+	}
+	h1 {
+		@include coat-auto(article-title);
+	}
+}

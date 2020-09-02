@@ -1,0 +1,35 @@
+@mixin icon-arrow {
+	content: "";
+	display: block;
+	width: 1em;
+	height: 1em;
+	background-image: linear-gradient(to bottom, currentColor, currentColor),
+		linear-gradient(to bottom, currentColor, currentColor),
+		linear-gradient(
+			to right bottom,
+			transparent calc(50% - 1px),
+			currentColor calc(50% - 1px),
+			currentColor calc(50% + 1px),
+			transparent calc(50% + 1px)
+		);
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: top right, top right, center center;
+	background-size: 0.75em 2px, 2px 0.75em, 100% 100%;
+	font-size: 0.75em;
+	opacity: 0.25;
+}
+[class$="next"]::after {
+	@include icon-arrow();
+	float: right;
+	margin-left: 1em;
+	margin-top: 0.4em;
+	transform: rotate(45deg);
+}
+
+[class$="prev"]::after {
+	@include icon-arrow();
+	float: left;
+	margin-right: 1em;
+	margin-top: 0.4em;
+	transform: rotate(225deg);
+}

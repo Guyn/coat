@@ -1,0 +1,33 @@
+@import "footer";
+@import "header";
+@import "sidebar";
+@import "trigger";
+@import "overview";
+@import "content-navigation";
+@import "mobile";
+
+#header nav,
+#footer nav,
+#sidebar nav,
+#overview nav,
+#main nav,
+#article nav,
+#search {
+	a {
+		@include coat-auto(standard-nav-link);
+		&::before {
+			content: "" !important;
+		}
+	}
+	.active > a {
+		@include coat-auto(standard-nav-link-active);
+	}
+	ul ul {
+		a {
+			@include coat-auto(standard-nav-link-sub);
+		}
+		.active a {
+			@include coat-auto(standard-nav-link-sub-active);
+		}
+	}
+}

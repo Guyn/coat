@@ -1,0 +1,15 @@
+@mixin background-color($prefix: "background--") {
+	@each $name, $value in $colors {
+		.#{$prefix}#{to-lower-case($name)} {
+			background-color: $value;
+			color: contra($value);
+		}
+	}
+}
+@mixin text-color($prefix: "text--") {
+	@each $name, $value in $colors {
+		.#{$prefix}#{to-lower-case($name)} {
+			color: $value;
+		}
+	}
+}

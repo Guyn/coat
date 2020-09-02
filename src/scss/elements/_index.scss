@@ -1,0 +1,60 @@
+@use "blockquote" as bq;
+@use "code";
+@use "alert";
+@use "body";
+@use "detail-list" as dl;
+@use "footnote";
+@use "horizontal-rule" as hr;
+@use "list";
+@use "task-list" as tl;
+@use "media";
+@use "reset";
+@use "content";
+@use "table";
+@use "search";
+
+@mixin elements($output) {
+	@if list-has-value($output, "blockquote") {
+		@include bq.blockquote();
+	}
+	@if list-has-value($output, "code") {
+		@include code.code();
+	}
+	@if list-has-value($output, "alert") {
+		@include alert.alert();
+	}
+	@if list-has-value($output, "body") {
+		@include body.body();
+	}
+	@if list-has-value($output, "detail-list") {
+		@include dl.detail-list();
+	}
+	@if list-has-value($output, "footnote") {
+		@include footnote.footnote();
+	}
+	@if list-has-value($output, "horizontal-rule") {
+		@include hr.horizontal-rule();
+	}
+	@if list-has-value($output, "list") {
+		@include list.unordered-list(".content");
+		@include list.ordered-list(".content");
+	}
+	@if list-has-value($output, "task-list") {
+		@include tl.task-list();
+	}
+	@if list-has-value($output, "media") {
+		@include media.media();
+	}
+	@if list-has-value($output, "reset") {
+		@include reset.reset();
+	}
+	@if list-has-value($output, "table") {
+		@include table.table();
+	}
+	@if list-has-value($output, "content") {
+		@include content.content();
+	}
+	@if list-has-value($output, "search") {
+		@include search.search();
+	}
+}

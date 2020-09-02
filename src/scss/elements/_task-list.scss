@@ -1,0 +1,41 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	Task list
+@mixin task-list($el: ".task-list-item") {
+	@include builder(
+		(
+			"#{$el}": (
+				line-height: base-get(line-height),
+			),
+			"#{$el} #{$el}-checkbox": (
+				position: absolute,
+				opacity: 0,
+			),
+			"#{$el} #{$el}-checkbox ~ #{$el}-label": (
+				position: absolute,
+				opacity: 1,
+				before: (
+					content: "✓",
+					display: inline-block,
+					width: v-space,
+					height: v-space,
+					border: v-border,
+					border-radius: v-border-radius,
+					line-height: 1,
+					text-align: center,
+					color: c-foreground-accent-95,
+				),
+			),
+			"#{$el} #{$el}-checkbox:checked ~ #{$el}-label": (
+				opacity: 0.5,
+				text-decoration: line-through,
+				before: (
+					content: "✓",
+					color: c-primary,
+					border-color: c-primary,
+				),
+			),
+		)
+	);
+}

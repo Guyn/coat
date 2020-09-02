@@ -67,7 +67,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Lists
 
-(In this example, leading and trailing spaces are shown with with dots: ⋅)
+(In this example, leading and trailing v-spaces are shown with with dots: ⋅)
 
 ```
 1. First ordered list item
@@ -77,11 +77,11 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 ⋅⋅1. Ordered sub-list
 4. And another item.
 
-⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading v-spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
+⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing v-spaces.⋅⋅
 ⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing v-spaces are not required.)
 
 * Unordered list can use asterisks
 - Or minuses
@@ -97,11 +97,11 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 1. Ordered sub-list
 1. And another item.
 
-   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading v-spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-   To have a line break without a paragraph, you will need to use two trailing spaces.  
+   To have a line break without a paragraph, you will need to use two trailing v-spaces.  
    Note that this line is separate, but within the same paragraph.  
-   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+   (This is contrary to the typical GFM line break behaviour, where trailing v-spaces are not required.)
 
 - Unordered list can use asterisks
 
@@ -199,7 +199,7 @@ Inline `code` has `back-ticks around` it.
 
 Inline `code` has `back-ticks around` it.
 
-Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
+Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four v-spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
 
 <pre lang=""><code>```javascript
 var s = "JavaScript syntax highlighting";
@@ -391,7 +391,7 @@ Create styled tasklists in your documentation!
 - [ ] Add tasklists
 - [ ] Add tasklists
 - [ ] Add tasklists
-  
+
 ## Alert
 
 ::: tip

@@ -1,0 +1,19 @@
+@use "cadds" as *;
+@import "cadds/helpers";
+
+//	Code
+
+@mixin footnote($el: footnote) {
+	@include builder(
+		(
+			"#{$el}": (
+				display: block,
+				color: c-primary,
+				font-size: v-font-size,
+				text-align: center,
+				opacity: 1,
+				padding: v-space,
+			),
+		)
+	);
+}

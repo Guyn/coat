@@ -6,7 +6,7 @@
 	},
 	"skip": ["purge"],
 	"overrule": {
-		"css": ["/css/theme/feather-ext.css"]
+		"css": ["/css/theme/feather-docs.css"]
 	},
 	"copy": ["css"],
 	"enhance": {
