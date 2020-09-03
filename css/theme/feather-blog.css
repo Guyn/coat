@@ -938,10 +938,7 @@ nav ul ul a--hover-before {
   }
 }
 #overview nav {
-  margin: auto;
   padding: calc(var(--space, 1.5rem) * 2) var(--space, 1.5rem);
-  width: 100%;
-  max-width: var(--max-width, 960px);
 }
 #overview li {
   display: flex;
@@ -992,9 +989,10 @@ nav ul ul a--hover-before {
 }
 #article > .content,
 #main > .content,
+#overview nav,
 #overview > .content {
   width: 100%;
-  max-width: v-max-width;
+  max-width: var(--max-width, 960px);
   margin: auto;
 }
 @media screen and (max-width: 750px) {
