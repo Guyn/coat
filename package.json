@@ -60,6 +60,6 @@
 		"stylelint-order": "^4.1.0"
 	},
 	"dependencies": {
-		"cadds": "0.0.5"
+		"cadds": "0.0.6"
 	}
 }
