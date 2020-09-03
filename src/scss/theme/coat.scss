@@ -1,0 +1,10 @@
+$configure: (
+	base: (
+		font-family: "Inter",
+	),
+	colors: (
+		background: black,
+		foreground: white,
+	),
+);
+@import "../base";
