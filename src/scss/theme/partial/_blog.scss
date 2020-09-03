@@ -25,7 +25,7 @@
 #article {
 	& > .content {
 		width: 100%;
-		max-width: v-max-width;
+		max-width: base-get(max-width);
 		margin: auto;
 	}
 }
