@@ -143,8 +143,8 @@ code::-moz-selection,
 code::selection,
 pre::-moz-selection,
 pre::selection {
-  background-color: primary-accent-95;
-  color: primary-accent-5;
+  background-color: var(--primary-accent-95, #f2fcff);
+  color: var(--primary-accent-5, #0dcfff);
 }
 .token.cdata,
 .token.comment,
