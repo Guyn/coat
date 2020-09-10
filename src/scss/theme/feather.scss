@@ -1,1 +1,13 @@
+$configure: (
+	colors: (
+		error: #EF194F,
+		tip: 
+        #AAE9FF,
+		danger: 
+        #FFAE41,
+    	success: #7CDA0F,
+		info: #2E71BE,
+		foreground: white,
+	),
+);
 @import "../base";

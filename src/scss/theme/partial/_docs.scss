@@ -1,5 +1,5 @@
 @include docs-layout();
-@include elements(("footnote", "search"));
+@include elements(("blockquote","code","alert","body","detail-list","footnote","horizontal-rule","list","task-list","media","reset","table","content","search"));
 
 // Navigation
 @include navigation(

@@ -33,6 +33,7 @@ $configure: () !default;
 // Misc
 @include sizing();
 @include hide();
+@include task-list-item()
 
 // @include animation-pop();
 // @include animation-fade();

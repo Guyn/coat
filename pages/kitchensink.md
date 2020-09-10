@@ -399,20 +399,48 @@ Create styled tasklists in your documentation!
 Did you know...
 :::
 
+```markdown
+::: tip
+**tip**
+Did you know...
+:::
+```
+
 ::: warning
 **warning**
 Watch out, this might be something to check on to.
 :::
+
+```markdown
+::: warning
+**warning**
+Watch out, this might be something to check on to.
+:::
+```
 
 ::: error
 **error**
 This is going completely wrong.
 :::
 
+```markdown
+::: error
+**error**
+This is going completely wrong.
+:::
+```
+
 ::: success
 **Success**
 Oh yeah, that went well!
 :::
+
+```markdown
+::: success
+**Success**
+Oh yeah, that went well!
+:::
+```
 
 ::: info
 **info**
@@ -420,26 +448,6 @@ This is done like..
 :::
 
 ```markdown
-::: tip
-**tip**
-Did you know...
-:::
-
-::: warning
-**warning**
-Watch out, this might be something to check on to.
-:::
-
-::: error
-**error**
-This is going completely wrong.
-:::
-
-::: success
-**Success**
-Oh yeah, that went well!
-:::
-
 ::: info
 **info**
 This is done like..
